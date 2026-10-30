@@ -2,62 +2,55 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-**A rendering suite for Unity 2022.3 that makes the rendering workflow an editable graph.**
+**Edit how a frame is rendered, directly in Unity 2022.3.**
 
-FraxinusGraphics 2.0 centers on **ScriptableNode / UltraRP**, combining render-node authoring, typed RenderGraph execution, material tools and probe lighting in a coordinated source distribution. Connect drawing, shadows, post-processing and intermediate textures in a Renderer Graph, then extend the workflow with custom nodes and shaders.
+FraxinusGraphics 2.0 centers on **UltraRP**, an independent render pipeline. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
 
-UltraRP is an independent Scriptable Render Pipeline ported from the Fraxinus Engine Unity 6 branch to **Unity 2022.3.62f3**. This repository contains **four companion packages: FraxinusRP, Fraxinus Core, Shader Graph and Light Transport**. Installing and running UltraRP does not require URP.
+UltraRP combines this workflow with Hybrid Lit, realtime rectangle lights, APV / APRTV probe lighting, STP / SGSR upscaling and streaming virtual textures. Ported from the Fraxinus Engine Unity 6 branch, it targets **Unity 2022.3.62f3** and runs without URP.
 
 [Installation and usage](docs/Usage.md) · [Changes from 1.x](docs/ChangesFrom1.x.md) · [Local dependencies](docs/manifest.local.json) · [Git dependencies](docs/manifest.git.json)
 
-## Core features
+[![Sponza rendered in UltraRP, with intermediate texture previews in the Deferred Renderer Graph](docs/images/ultrarp-renderer-graph-sponza.png)](docs/images/ultrarp-renderer-graph-sponza.png)
 
-### Editable rendering workflows
+*Sponza and its Deferred Renderer Graph: the final image above, rendering nodes, resource connections and intermediate previews below. Click to view the full image.*
 
-**Renderer Graph** expresses the rendering workflow through nodes and resource connections, with Forward, Forward+, Stencil Deferred and Clustered Deferred paths. The graph editor supports saving, copy/paste, Undo/Redo and window reloads. Custom nodes and pass injection let projects extend their rendering logic.
+## Trace the image through the rendering workflow
 
-**Nested render contexts** provide separate color, depth and mutable frame data for the same camera view, including intermediate targets at different resolutions. Explicitly composite child results back into the parent to organize rendering stages and effects. Child contexts reuse the camera view and culling results and have no independent TAA / STP history.
+In the graph, shadow maps and the color-grading LUT connect to the nodes that consume them. GBuffer generation, deferred lighting, object draws, sky rendering and post-processing form the image together. Texture previews make the results of those connections visible: when color or shadows look wrong, follow the stages to find where the change begins, choosing a preview camera, texture and RGBA channels.
 
-Renderer Graph organizes rendering nodes; the underlying **RenderGraph** manages passes and resource dependencies. Together they connect visual authoring to rendering execution. [Graph workflow](Packages/FraxinusRP/Documentation~/ScriptableNode.md)
+The same graph controls the rendering workflow. To draw a group of ForwardOnly materials after deferred lighting, connect a DrawObjects node, configure its shader tags, render queue and layer mask, then pass color and depth targets to the following stages. Connections, draw settings and stage outputs can be inspected together. Custom nodes and pass injection provide extension points for project-specific processing.
 
-### Materials and realtime lighting
+Renderer Graph supports Forward, Forward+, Stencil Deferred and Clustered Deferred. **Nested contexts** create separate color, depth and frame data for intermediate results at different resolutions, then explicitly composite them into the parent target. They share the same camera view. Fraxinus Core's underlying RenderGraph manages pass and resource dependencies, while the graph editor organizes the rendering stages. [Renderer Graph and contexts](Packages/FraxinusRP/Documentation~/ScriptableNode.md)
 
-**Hybrid Lit** extends the Lit workflow with rough diffuse, GGX, micro-shadowing, FGD environment reflections and an AO multibounce approximation, with Clear Coat support. **LTC rectangle lights** provide realtime area lighting with size, diffuse/specular intensity and Rendering Layer controls. The current limit is 16 unshadowed rectangle lights per camera.
+## How UltraRP compares with URP and HDRP
 
-Volume effects include **GTAO**, main-directional-light **Contact Shadows** and histogram-based **Auto Exposure**, adding occlusion, nearby contact detail and brightness adaptation. See [Hybrid lighting](Packages/FraxinusRP/Documentation~/HybridLighting.md), [GTAO](Packages/FraxinusRP/Documentation~/AmbientOcclusion.md) and [contact shadows / exposure](Packages/FraxinusRP/Documentation~/ContactShadowsAndExposure.md) for material and rendering-path support.
+**URP emphasizes general-purpose rendering and Renderer Feature extensions. HDRP provides a comprehensive feature set for high-fidelity rendering. UltraRP makes editing the whole rendering workflow a central part of development.** The comparison below uses the same engine generation: **Unity 2022.3 / URP 14 / HDRP 14**, with their built-in capabilities.
 
-### Probe lighting and precomputed relighting
+| Area | Official URP 14 | Official HDRP 14 | UltraRP |
+| --- | --- | --- | --- |
+| **Editing the rendering workflow** | Renderer implements the main flow; extend it with Renderer Features / injected passes | Pipeline implements the main flow; inject draws or fullscreen processing through Custom Passes | Connect rendering stages and resources in Renderer Graph; extend nodes and nest contexts |
+| **Inspecting intermediate results** | Separate tools such as Frame Debugger and Rendering Debugger | Separate tools such as Frame Debugger and Rendering Debugger | Stage textures and RGBA channels previewed inside nodes, with access to Render Graph Viewer / Rendering Debugger |
+| **Realtime area lights** | Rectangle / Disc are baked only | Realtime Rectangle / Tube; Rectangle supports shadows | LTC rectangle lights, up to 16 per camera, currently without area-light shadows |
+| **Adaptive probes** | Traditional Light Probe Groups; no APV | Experimental APV with automatic placement, streaming and lighting-scenario blending | APV with a standalone Compute baker, including placement, sky occlusion and diffuse bounces; no DXR required |
+| **Indirect lighting after light changes** | Precomputed Enlighten realtime GI | SSGI / RTGI, or switching and blending prebaked lighting scenarios | APRTV responds to directional-light and HDR sky changes using precomputed transport |
+| **Anti-aliasing and upscaling** | TAA; FSR 1 spatial upscaling | TAA Upscale, DLSS, FSR 1 and other filters | TAA, FSR 1, plus STP, SGSR1 spatial upscaling and SGSR2 temporal upscaling |
+| **Streaming virtual textures** | No official SVT rendering integration | Native SVT + Shader Graph; transparent graphs fall back to ordinary sampling | Native SVT + UltraRP Lit / Unlit Shader Graph, including transparent-material feedback on supported paths |
 
-**APV** provides adaptive probe placement, standalone baking, sky occlusion and probe-data streaming. **APRTV** uses precomputed radiance-transfer data to respond to directional-light and HDR sky changes at runtime, with lighting-scenario blending. UltraRP integrates the corresponding backends, material sampling and relighting scheduling.
+These differences suit different development needs. Renderer Features fit projects that use the official URP ecosystem and add effects within its existing flow. HDRP provides more complete ready-made paths for features such as shadowed area lights and SSGI / RTGI. UltraRP is useful when a project needs to reorganize drawing stages, combine forward and deferred materials, or inspect a stage's inputs and outputs directly in Renderer Graph, alongside APRTV, STP / SGSR and other companion features on Unity 2022.3.
 
-Core's probe baker uses Light Transport's **Compute ray queries**, without requiring DXR. APRTV operates on precomputed static scenes: geometry and material changes require rebaking, and dynamic occlusion and runtime multibounce feedback are outside its current scope. APRT data loads in bulk for loaded scenes. [APV baking](Packages/Fraxinus-RPCore/Documentation~/StandaloneAPVBaking.md) · [APRTV](Packages/Fraxinus-RPCore/Documentation~/APRT.md)
+Official references: [Unity 2022.3 feature comparison](https://docs.unity3d.com/2022.3/Documentation/Manual/render-pipelines-feature-comparison.html), [URP pass extensions](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/intro-to-scriptable-render-passes.html), [HDRP Custom Pass](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Custom-Pass.html), [HDRP upscaling](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Dynamic-Resolution.html) and [SVT material support](https://docs.unity3d.com/2022.3/Documentation/Manual/svt-use-in-shader-graph.html).
 
-### Shader Graph and streaming virtual textures
+## From material lighting to scene illumination
 
-FraxinusRP provides **UltraRP Lit / Unlit Shader Graph targets** using internal APIs exposed by the companion Shader Graph fork, with transparency, alpha clipping and auxiliary passes for depth, normals, shadows, Meta and motion vectors. Projects can use visual material authoring alongside handwritten shaders.
+**Hybrid Lit** retains the Lit material workflow, using rough diffuse, GGX, micro-shadowing and FGD environment reflections, with Clear Coat support. LTC rectangle lights incorporate the source's dimensions into diffuse and specular lighting. GTAO and main-light Contact Shadows add occlusion and contact detail, while histogram-based Auto Exposure handles brightness adaptation. These features contribute to material and scene lighting on the selected rendering paths. [Hybrid lighting](Packages/FraxinusRP/Documentation~/HybridLighting.md) · [GTAO](Packages/FraxinusRP/Documentation~/AmbientOcclusion.md) · [Contact shadows and exposure](Packages/FraxinusRP/Documentation~/ContactShadowsAndExposure.md)
 
-**Streaming Virtual Texturing (SVT)** integrates Unity's native Texture Stacks, tile feedback and cache backend, with configurable cache budgets and coarse-mip preloading. Enable project VT and author compatible materials explicitly; ordinary Texture2D samples do not become virtual automatically. [Shader Graph](Packages/FraxinusRP/Documentation~/ShaderGraph.md) · [SVT](Packages/FraxinusRP/Documentation~/VirtualTexturing.md)
+Scene indirect lighting can use baked **APV** probes or **APRTV** precomputed transport. With geometry and materials held constant, APRTV updates probe lighting as the directional light and HDR sky change, allowing different sun directions, light colors and sky environments. It relies on precomputed static-scene data: geometry or material changes require rebaking, and dynamic occlusion is outside its current scope. Light Transport supplies the Compute ray queries used for APV baking. [APV baking](Packages/Fraxinus-RPCore/Documentation~/StandaloneAPVBaking.md) · [APRTV](Packages/Fraxinus-RPCore/Documentation~/APRT.md)
 
-### Upscaling and temporal processing
+## Material authoring and image reconstruction
 
-**STP, SGSR1 spatial upscaling and SGSR2 temporal upscaling** work with Render Scale to adjust rendering resolution. Temporal paths integrate motion vectors, camera history and history resets, with fallbacks for unsupported configurations. Select a path for the intended image quality and target hardware. [Upscaling configuration](Packages/FraxinusRP/Documentation~/Upscaling.md)
+Materials can use handwritten shaders or **UltraRP Lit / Unlit Shader Graph targets**, which also generate auxiliary passes for shadows, depth, normals, Meta and motion vectors. Materials that need texture streaming can use Texture Stacks and native **SVT**, with visible-tile feedback driving loading and configurable CPU / GPU cache budgets. [Shader Graph](Packages/FraxinusRP/Documentation~/ShaderGraph.md) · [SVT](Packages/FraxinusRP/Documentation~/VirtualTexturing.md)
 
-### Companion rendering infrastructure
-
-Fraxinus Core provides **Raster / Compute / Unsafe RenderGraph passes, RTHandle, Volume, Blitter and Rendering Debugger**, adapted to Unity 2022 execution APIs. Light Transport supplies Compute-based BVH construction and traversal, hit/occlusion queries and sampling tools for probe baking and custom computations. [Core](Packages/Fraxinus-RPCore/README.md) · [Light Transport](Packages/Fraxinus-Light-Transport/README.md)
-
-## How does it differ from other pipelines?
-
-The focus is on **combining editable rendering workflows, companion lighting features and modifiable rendering infrastructure on Unity 2022.3**. This comparison describes workflows and integration; there is no common benchmark establishing an image-quality or performance ranking.
-
-| Compared with | Main distinction | Adoption considerations |
-| --- | --- | --- |
-| Built-in Render Pipeline | UltraRP organizes rendering through an independent SRP, Renderer Graph and explicit resource dependencies, with its own materials and lighting paths. | Configure the pipeline asset, graph and matching materials; existing Built-in shaders need migration. |
-| Official URP 14 (Unity 2022.3) | URP is commonly extended through Renderers and Renderer Features. UltraRP exposes the rendering workflow as an editable node graph, with nested contexts, Hybrid Lit, LTC area lights and companion probe workflows. | Projects maintain graph connections and custom code; URP Renderer Features and materials need adaptation for UltraRP. |
-| Official HDRP | UltraRP focuses on composing features within an editable rendering workflow, including selected lighting implementations derived from HDRP algorithms and its own Core / Shader Graph integration. | Use the documented feature scope; this does not establish full HDRP coverage or HDRP material compatibility. |
-| Unity 6 SRP workflows | Selected newer rendering infrastructure and Fraxinus Engine workflows are brought to Unity 2022.3 for projects that still need that engine version. | Backports remain limited by engine APIs; Unity 6's native GPU Resident Drawer is unavailable on Unity 2022. |
-
-The source is intended for rendering research, project-specific effects and developers who want a modifiable node-based SRP on Unity 2022.3. When adopting it in an existing project, assess material migration, target-platform behavior and frame budgets with representative scenes.
+Rendering resolution can be chosen independently of output resolution. **SGSR1** reconstructs a single frame, while **SGSR2** uses motion vectors and camera history for temporal reconstruction; **STP** is another available option. The pipeline integrates these paths with Render Scale, post-processing and history resets, so different reconstruction methods can be evaluated in the same scene. [Upscaling configuration](Packages/FraxinusRP/Documentation~/Upscaling.md)
 
 ## The four packages
 

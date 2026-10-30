@@ -2,62 +2,55 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-**面向 Unity 2022.3 的可编排渲染套件，让渲染流程本身成为可编辑的图。**
+**在 Unity 2022.3 中，直接编辑一帧画面如何被渲染。**
 
-FraxinusGraphics 2.0 以 **ScriptableNode / UltraRP** 为核心，将渲染节点编辑、类型化 RenderGraph、材质创作与探针光照整合到一套配套源码中。你可以在 Renderer Graph 中连接绘制、阴影、后处理和中间纹理，按项目需要组织渲染流程，也可以编写自定义节点与 Shader。
+FraxinusGraphics 2.0 以独立渲染管线 **UltraRP** 为核心。它把阴影、几何绘制、光照和后处理组织成可编辑的 **Renderer Graph**，把各阶段的输出放回节点中预览，让渲染流程的修改和画面调试发生在同一张图里。
 
-UltraRP 是独立的 Scriptable Render Pipeline，从 Fraxinus Engine 的 Unity 6 分支移植到 **Unity 2022.3.62f3**。当前仓库包含 **FraxinusRP、Fraxinus Core、Shader Graph 和 Light Transport 四个包**，安装与运行 UltraRP 无需 URP。
+在这套工作流之上，UltraRP 集成了 Hybrid Lit、实时矩形面光、APV / APRTV 探针光照、STP / SGSR 超分辨率和流式虚拟纹理。项目从 Fraxinus Engine 的 Unity 6 分支移植，面向 **Unity 2022.3.62f3**，无需安装 URP。
 
 [安装与使用](docs/Usage.zh-CN.md) · [相对 1.x 的变化](docs/ChangesFrom1.x.md) · [本地依赖配置](docs/manifest.local.json) · [Git 依赖配置](docs/manifest.git.json)
 
-## 核心特性
+[![UltraRP 渲染的 Sponza 场景，以及带中间纹理预览的 Deferred Renderer Graph](docs/images/ultrarp-renderer-graph-sponza.png)](docs/images/ultrarp-renderer-graph-sponza.png)
 
-### 可编辑的渲染流程
+*Sponza 场景与 Deferred Renderer Graph：上方是最终画面，下方是渲染节点、资源连线和中间结果预览。点击图片可查看原图。*
 
-**Renderer Graph** 用节点与资源连接表达渲染流程，覆盖 Forward、Forward+、Stencil Deferred 与 Clustered Deferred。图编辑器支持保存、复制粘贴、Undo/Redo 和窗口重载；自定义节点与 Pass 注入用于扩展项目自己的渲染逻辑。
+## 从最终画面追溯渲染过程
 
-**嵌套渲染 Context** 可以为同一相机视角建立独立的颜色、深度与可变帧数据，并使用不同分辨率的中间目标。子结果可显式合成回父目标，适合组织局部渲染流程和多阶段合成。子 Context 复用相机视角与剔除结果，不拥有独立的 TAA / STP 历史。
+图中的阴影图和颜色分级 LUT 通过端口连接到使用它们的节点；GBuffer、延迟光照、物体绘制、天空与后处理共同构成画面的生成过程。节点里的纹理预览让这些连接具有可见的结果：当颜色或阴影出现异常时，可以沿着流程检查变化从哪一步开始，并选择预览来源相机、纹理和 RGBA 通道。
 
-Renderer Graph 负责组织渲染节点；底层 **RenderGraph** 负责 Pass 与资源依赖。两者共同构成从可视化编排到渲染执行的工作流。[图工作流](Packages/FraxinusRP/Documentation~/ScriptableNode.md)
+这张图也直接用于调整渲染。例如，要在延迟光照后补充一组 ForwardOnly 材质的绘制，可以接入 DrawObjects 节点，配置 Shader Tags、绘制队列和 Layer Mask，再把颜色与深度目标传给后续阶段。流程连接、绘制条件和阶段输出都能在图中一起查看；项目特有的处理则通过自定义节点或 Pass 注入扩展。
 
-### 材质与实时光照
+Renderer Graph 支持 Forward、Forward+、Stencil Deferred 与 Clustered Deferred。需要分辨率不同的中间结果时，**嵌套 Context** 可以为同一相机视角建立独立颜色、深度和帧数据，再显式合成回父目标。底层 Fraxinus Core RenderGraph 管理 Pass 与资源依赖，图编辑器负责组织这些渲染阶段。[渲染图与 Context](Packages/FraxinusRP/Documentation~/ScriptableNode.md)
 
-**Hybrid Lit** 在 Lit 工作流上加入 rough diffuse、GGX、微阴影、FGD 环境反射与 AO 多次反弹近似，并支持 Clear Coat。**LTC 矩形面光**提供具有面积感的实时照明，可设置尺寸、漫反射／高光强度及 Rendering Layers；当前每相机最多 16 盏，无面光阴影。
+## 与 URP、HDRP 的具体区别
 
-Volume 效果包括 **GTAO**、主方向光 **Contact Shadows** 和基于直方图的**自动曝光**，分别用于补充遮蔽、近距离接触细节与亮度适应。具体材质和渲染路径支持见 [Hybrid 光照](Packages/FraxinusRP/Documentation~/HybridLighting.md)、[GTAO](Packages/FraxinusRP/Documentation~/AmbientOcclusion.md)及[接触阴影与曝光](Packages/FraxinusRP/Documentation~/ContactShadowsAndExposure.md)。
+**URP 侧重通用渲染与 Renderer Feature 扩展，HDRP 提供面向高保真画面的完整功能体系，UltraRP 则把整帧流程的可编辑性作为主要工作流。** 以下以同一引擎代际的 **Unity 2022.3 / URP 14 / HDRP 14** 为基准，比较各自的内置能力。
 
-### 探针光照与预计算重光照
+| 比较项 | 官方 URP 14 | 官方 HDRP 14 | UltraRP |
+| --- | --- | --- | --- |
+| **渲染流程编辑** | 主流程由 Renderer 实现，通过 Renderer Feature / Pass 注入扩展 | 主流程由管线实现，通过 Custom Pass 注入绘制或全屏处理 | 在 Renderer Graph 中连接绘制阶段与资源，可扩展节点、嵌套 Context |
+| **中间结果查看** | 使用 Frame Debugger、Rendering Debugger 等独立调试工具 | 使用 Frame Debugger、Rendering Debugger 等独立调试工具 | 节点内直接预览阶段纹理与 RGBA 通道，同时保留 Render Graph Viewer / Rendering Debugger 入口 |
+| **实时面光** | Rectangle / Disc 仅用于烘焙 | 支持实时 Rectangle / Tube，Rectangle 可投射阴影 | LTC 实时矩形面光，每相机最多 16 盏，当前无面光阴影 |
+| **自适应探针** | 使用传统 Light Probe Groups，无 APV | 实验性 APV，支持自动布点、流式加载与光照场景混合 | APV 配合独立 Compute 烘焙器，支持布点、天空遮蔽与漫反射反弹，无需 DXR |
+| **灯光变化后的间接光** | 预计算 Enlighten 实时 GI | SSGI / RTGI，或预烘焙光照场景切换与混合 | APRTV 在预计算传输数据上响应方向光与 HDR 天空变化 |
+| **抗锯齿与超分辨率** | TAA；FSR 1 空间超分 | TAA Upscale、DLSS、FSR 1 等 | TAA、FSR 1，以及 STP、SGSR1 空间超分和 SGSR2 时序超分 |
+| **流式虚拟纹理** | 无官方 SVT 渲染集成 | 原生 SVT + Shader Graph；透明图回退为普通采样 | 原生 SVT + UltraRP Lit / Unlit Shader Graph；支持路径包含透明材质反馈 |
 
-**APV** 提供自适应探针布点、独立烘焙、天空遮蔽与探针数据流式加载。**APRTV** 使用预计算的辐射传输数据，在运行时响应方向光与 HDR 天空变化，并支持光照场景混合。UltraRP 已接入对应后端、材质采样与重光照调度。
+这些差异对应不同的开发需求：沿用官方 URP 生态、在既有流程中追加效果，可以继续使用 Renderer Feature；需要面光阴影、SSGI / RTGI 等高保真功能，HDRP 提供了更完整的现成路径。UltraRP 的价值在于，当项目需要重新组织绘制阶段、组合前向与延迟材质，或检查某个阶段的输入输出时，可以直接围绕 Renderer Graph 工作，并在 Unity 2022.3 上使用 APRTV、STP / SGSR 等配套功能。
 
-Core 的探针烘焙使用 Light Transport 提供的 **Compute 射线查询**，无需 DXR。APRTV 面向预计算的静态场景：几何和材质变化需要重烘，当前不处理动态遮挡或运行时多反弹反馈；APRT 数据按已加载场景整批加载。[APV 烘焙](Packages/Fraxinus-RPCore/Documentation~/StandaloneAPVBaking.md) · [APRTV](Packages/Fraxinus-RPCore/Documentation~/APRT.md)
+官方能力参照 [Unity 2022.3 功能对照](https://docs.unity3d.com/2022.3/Documentation/Manual/render-pipelines-feature-comparison.html)、[URP Pass 扩展](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/intro-to-scriptable-render-passes.html)、[HDRP Custom Pass](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Custom-Pass.html)、[HDRP 超分辨率](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Dynamic-Resolution.html)及 [SVT 材质支持](https://docs.unity3d.com/2022.3/Documentation/Manual/svt-use-in-shader-graph.html)。
 
-### Shader Graph 与流式虚拟纹理
+## 从材质受光到场景间接光
 
-FraxinusRP 提供 **UltraRP Lit / Unlit Shader Graph Target**，使用配套 Shader Graph 分支开放的内部 API，支持透明、Alpha Clip，以及深度、法线、阴影、Meta 和运动矢量等辅助 Pass，方便在可视化材质创作和手写 Shader 之间选择。
+**Hybrid Lit** 沿用 Lit 的材质工作流，通过 rough diffuse、GGX、微阴影和 FGD 环境反射处理表面受光，并支持 Clear Coat。LTC 矩形面光让光源尺寸参与漫反射和高光计算；GTAO 与主光 Contact Shadows 补充遮蔽和接触细节，直方图自动曝光负责亮度适应。这些功能共同服务于材质与场景的光照表现，按所选渲染路径启用。[Hybrid 光照](Packages/FraxinusRP/Documentation~/HybridLighting.md) · [GTAO](Packages/FraxinusRP/Documentation~/AmbientOcclusion.md) · [接触阴影与曝光](Packages/FraxinusRP/Documentation~/ContactShadowsAndExposure.md)
 
-**Streaming Virtual Texturing（SVT）**接入 Unity 原生 Texture Stack、纹理页反馈与缓存后端，并开放缓存预算和粗 mip 预加载配置。需要显式开启项目 VT 并创作对应材质；普通 Texture2D 不会自动转换为虚拟纹理。[Shader Graph](Packages/FraxinusRP/Documentation~/ShaderGraph.md) · [SVT](Packages/FraxinusRP/Documentation~/VirtualTexturing.md)
+场景间接光可以使用 **APV** 烘焙探针，也可以选择 **APRTV** 预计算传输。在几何和材质不变的场景中，APRTV 能随方向光和 HDR 天空变化更新探针光照，适合探索不同太阳方向、光色和天空环境。它依赖预计算的静态场景数据，几何或材质变化需要重烘，当前不处理动态遮挡。APV 烘焙所需的射线查询由 Light Transport 的 Compute 路径提供。[APV 烘焙](Packages/Fraxinus-RPCore/Documentation~/StandaloneAPVBaking.md) · [APRTV](Packages/Fraxinus-RPCore/Documentation~/APRT.md)
 
-### 超分辨率与时序处理
+## 材质创作与画面重建
 
-提供 **STP、SGSR1 空间超分辨率和 SGSR2 时序超分辨率**，配合 Render Scale 调整渲染分辨率。时序路径接入运动矢量、相机历史与历史重置，并针对不支持的配置提供回退；可按画质目标与目标设备选择。[超分辨率配置](Packages/FraxinusRP/Documentation~/Upscaling.md)
+材质既可以使用手写 Shader，也可以通过 **UltraRP Lit / Unlit Shader Graph Target** 创作；配套 Target 同时生成阴影、深度、法线、Meta 和运动矢量等辅助 Pass。对于需要纹理流送的材质，可使用 Texture Stack 与原生 **SVT**，由可见纹理页反馈驱动加载，并配置 CPU / GPU 缓存预算。[Shader Graph](Packages/FraxinusRP/Documentation~/ShaderGraph.md) · [SVT](Packages/FraxinusRP/Documentation~/VirtualTexturing.md)
 
-### 配套渲染基础设施
-
-Fraxinus Core 提供 **Raster / Compute / Unsafe RenderGraph Pass、RTHandle、Volume、Blitter 和 Rendering Debugger**，并适配 Unity 2022 执行接口。Light Transport 提供基于 Compute 的 BVH 构建与遍历、射线命中／遮挡查询和采样工具，供探针烘焙及自定义计算使用。[Core](Packages/Fraxinus-RPCore/README.zh-CN.md) · [Light Transport](Packages/Fraxinus-Light-Transport/README.zh-CN.md)
-
-## 与其他渲染管线有什么不同？
-
-本项目的重点是**在 Unity 2022.3 上，把可编辑渲染流程、配套光照功能和可修改的渲染底层放在一起**。下面比较的是工作流与集成方式；没有统一基准测试支持画质或性能排名。
-
-| 对照对象 | 主要区别 | 选择时需要考虑 |
-| --- | --- | --- |
-| Built-in Render Pipeline | UltraRP 使用独立 SRP、Renderer Graph 和显式资源依赖来组织渲染，并提供自己的材质与光照路径。 | 需要配置管线资产、图和对应材质；已有 Built-in Shader 需要迁移。 |
-| 官方 URP 14（Unity 2022.3） | URP 通常通过 Renderer 与 Renderer Feature 扩展；UltraRP 将渲染流程暴露为可编辑节点图，并提供嵌套 Context、Hybrid Lit、LTC 面光及配套探针工作流。 | 需要自己维护图连接与定制代码；URP Renderer Feature 和材质需要针对 UltraRP 适配。 |
-| 官方 HDRP | UltraRP 强调在可编排流程中组合所需功能，包含部分来自 HDRP 算法体系的光照实现，以及自己的 Core / Shader Graph 集成。 | 功能范围以本仓库文档为准；不能据此假定完整 HDRP 功能覆盖或 HDRP 材质兼容。 |
-| Unity 6 的 SRP 工作流 | 将部分新版渲染基础与 Fraxinus Engine 工作流带到 Unity 2022.3，适合仍需使用该引擎版本的项目。 | 回移范围受引擎 API 限制；Unity 6 原生 GPU Resident Drawer 在 Unity 2022 中不可用。 |
-
-如果你需要研究渲染流程、开发项目专用效果，或希望在 Unity 2022.3 上使用可修改的节点化 SRP，本项目提供了相应的源码基础。接入现有项目时，应先用代表性场景检查材质迁移、目标平台和帧预算。
+渲染分辨率可以独立于最终输出选择。**SGSR1** 从单帧重建图像，**SGSR2** 利用运动矢量与相机历史进行时序重建，另有 **STP** 可选；它们与 Render Scale、后处理和历史重置一起接入管线，方便在同一场景中比较不同重建方式的表现。[超分辨率配置](Packages/FraxinusRP/Documentation~/Upscaling.md)
 
 ## 四个包的分工
 
