@@ -2,9 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A Scriptable Render Pipeline (SRP) designed for visual rendering workflows and interactive debugging.
+A **Scriptable Render Pipeline** (SRP) designed for visual rendering workflows and interactive debugging in Unity.
 
-Unity-FraxinusRP brings **UltraRP**, an independent Unity render pipeline, and its companion packages into one repository. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
+Built around **UltraRP**, Unity-FraxinusRP lets you connect shadows, geometry, lighting and post-processing in an editable **Renderer Graph**. Inspect intermediate textures directly inside nodes, trace how each stage shapes the final image, and adapt the rendering workflow to your project.
 
 UltraRP combines this workflow with Hybrid Lit, realtime rectangle lights, APV / APRTV probe lighting, STP / SGSR upscaling and streaming virtual textures. Ported from the Fraxinus Engine Unity 6 branch, it targets **Unity 2022.3.62f3** and runs without URP.
 

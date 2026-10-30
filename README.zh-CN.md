@@ -2,9 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-面向可视化渲染工作流与交互式调试的***可编程渲染管线***（SRP）。
+面向 Unity 的**可编程渲染管线**（SRP），支持可视化渲染流程编排与交互式调试。
 
-Unity-FraxinusRP 将独立 Unity 渲染管线 **UltraRP** 及其配套包整合到同一仓库。它把阴影、几何绘制、光照和后处理组织成可编辑的 **Renderer Graph**，把各阶段的输出放回节点中预览，让渲染流程的修改和画面调试发生在同一张图里。
+Unity-FraxinusRP 以 **UltraRP** 为核心，让你在可编辑的 **Renderer Graph** 中连接阴影、几何绘制、光照与后处理。通过节点内的中间纹理预览，可以追踪各阶段如何影响最终画面，并按项目需求调整渲染流程。
 
 在这套工作流之上，UltraRP 集成了 Hybrid Lit、实时矩形面光、APV / APRTV 探针光照、STP / SGSR 超分辨率和流式虚拟纹理。项目从 Fraxinus Engine 的 Unity 6 分支移植，面向 **Unity 2022.3.62f3**，无需安装 URP。
 
