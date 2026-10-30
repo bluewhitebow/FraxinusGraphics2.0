@@ -68,11 +68,11 @@ The source is intended for rendering research, project-specific effects and deve
 | [Fraxinus-ShaderGraph](Packages/Fraxinus-ShaderGraph/FraxinusChanges.md) | `com.unity.shadergraph` | `14.0.12` | Shader Graph fork exposing the internal APIs needed by UltraRP targets. |
 | [Fraxinus-Light-Transport](Packages/Fraxinus-Light-Transport/README.md) | `com.fraxinus.rendering.light-transport` | `1.0.1` | Compute ray queries, acceleration structures and sampling. |
 
-**2.0 names the suite; each UPM package retains its own version.** Use all four packages from one checkout or Git revision. Matching version numbers do not make official packages interchangeable with these forks. Fraxinus URP, URP Config, GPU Batcher and GPU Terrain have been removed from the current distribution; see [Changes from 1.x](docs/ChangesFrom1.x.md) for the scope changes.
+**2.0 names the suite; each UPM package retains its own version.** Use all four packages from one checkout or Git revision. Matching version numbers do not make official packages interchangeable with these forks.
 
 ## Getting started
 
-1. Put this checkout beside your Unity project and merge the `dependencies` from [manifest.local.json](docs/manifest.local.json) into the project's `Packages/manifest.json`, preserving other dependencies. The [usage guide](docs/Usage.md) also covers Git installation after publication.
+1. Put this checkout beside your Unity project and merge the `dependencies` from [manifest.local.json](docs/manifest.local.json) into the project's `Packages/manifest.json`, preserving other dependencies. The [usage guide](docs/Usage.md) also covers Git installation.
 2. Open the consuming project with **Unity 2022.3.62f3** and let Package Manager resolve dependencies.
 3. Create a pipeline asset and its associated Renderer Graph through **Assets > Create > FraxinusEngine > UltraRP > UltraRP Asset**. Connect drawing, shadow and post-processing nodes using the [graph configuration guide](Packages/FraxinusRP/Documentation~/Installation.md).
 4. Assign the UltraRP asset in **Project Settings > Graphics** and check the active **Quality** override. Use the included UltraRP shaders or create Lit / Unlit graphs through **Assets > Create > Shader Graph > UltraRP**.
@@ -86,10 +86,10 @@ This repository contains packages and documentation. Open a consuming Unity proj
 - **Graph and material extensions:** `JobGraphProcessor` currently uses a synchronous fallback. Advanced Shader Graph targets and VFX integration still have isolated components. Project-defined nodes need reflection-preservation rules from the [IL2CPP guide](Packages/FraxinusRP/Documentation~/IL2CPP.md).
 - **Platforms and textures:** Unity labels SVT experimental. XR, hardware dynamic resolution and child contexts are among the paths that do not collect feedback. Other features have their own camera and platform limits, documented individually.
 
-The retained [integration validation](docs/Validation.md) covers local import and C# compilation of the earlier eight-package snapshot. **Unity validation has not been rerun for the current four-package layout.** Package-level GPU / Player results likewise apply to their historical source revisions and environments. See [UltraRP validation](Packages/FraxinusRP/Documentation~/Validation.md), [Core tests](Packages/Fraxinus-RPCore/Tests~/Unity2022APV/README.md) and [Light Transport smoke checks](Packages/Fraxinus-Light-Transport/Tests~/GpuSmoke/README.md).
+See the [validation guide](docs/Validation.md) for configuration checks and module test references. Individual package documents describe each feature's tested environments and support scope.
 
 ## Source and licensing
 
-The layout follows [FraxinusGraphics](https://github.com/bluewhitebow/FraxinusGraphics), with the retained packages drawn from the Fraxinus Unity 2022.3 development project. [PackageSources.json](docs/PackageSources.json) preserves the source revisions and content inventory from the initial eight-package import for historical traceability. This page and the [usage guide](docs/Usage.md) define the current installation scope.
+The layout follows [FraxinusGraphics](https://github.com/bluewhitebow/FraxinusGraphics), with source drawn from the Fraxinus Unity 2022.3 development project. Package source revisions are listed in [PackageSources.json](docs/PackageSources.json).
 
 Licenses and third-party notices remain with their respective packages; no new common license is assigned. See the [Core license](Packages/Fraxinus-RPCore/LICENSE.md), [Shader Graph license](Packages/Fraxinus-ShaderGraph/LICENSE.md), [Light Transport license](Packages/Fraxinus-Light-Transport/LICENSE.md) and [Hybrid lighting attribution](Packages/FraxinusRP/ShaderLibrary/Lighting/README.md). Parts of Hybrid lighting are adapted from IllusionRP, including algorithms originating in Unity HDRP.

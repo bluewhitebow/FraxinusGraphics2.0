@@ -4,11 +4,9 @@
 
 Use **Unity 2022.3**, with **2022.3.62f3** matching the source project. This repository is a collection of UPM packages. A consuming Unity project supplies its own `Assets`, `ProjectSettings` and `Packages/manifest.json`.
 
-The repository contains the four companion packages for **ScriptableNode / UltraRP**: Core, Light Transport, Shader Graph and FraxinusRP. The examples below install all four. UltraRP does not require URP; this distribution does not include URP integrations. See [Changes from 1.x](ChangesFrom1.x.md) for the package-scope changes.
+The repository contains the four companion packages for **ScriptableNode / UltraRP**: Core, Light Transport, Shader Graph and FraxinusRP. The examples below install all four. UltraRP does not require URP.
 
-Packages retain their source versions; `2.0` identifies the suite. Use this guide for the current installation: individual package documents retain historical independent-repository links, checkpoints and validation records. [PackageSources.json](PackageSources.json) records the original import, including packages subsequently removed.
-
-The inventory's `contentSha256` describes the initial copied working-tree bytes. Git line-ending conversion on another platform can change those bytes without changing the source semantics.
+Each package retains its own version; `2.0` identifies the suite. Use all four companion packages from the same revision.
 
 ## Install from a local checkout
 
@@ -40,7 +38,7 @@ Unity resolves the remaining registry and built-in dependencies from the package
 
 ## Install from Git
 
-After this repository's contents have been published to GitHub, merge the following entries into `dependencies`, or use [manifest.git.json](manifest.git.json). The `?path=` selects an individual UPM package inside the repository; the repository root is not itself a UPM package.
+Merge the following entries into `dependencies`, or use [manifest.git.json](manifest.git.json). The `?path=` selects an individual UPM package inside the repository; the repository root is not itself a UPM package.
 
 ```json
 {
@@ -73,9 +71,9 @@ The matching Shader Graph fork is required for UltraRP's internal target APIs. I
 | --- | --- |
 | Missing `ScopeData` or typed RenderGraph APIs | Check that UltraRP and Core come from the same repository revision, and that old embedded copies are not taking precedence. |
 | UltraRP Shader Graph access / target compilation errors | Confirm `com.unity.shadergraph` resolves to `Fraxinus-ShaderGraph`, not the registry package. |
-| Missing package / invalid Git path | Check that the remote has been published, `?path=/Packages/...` matches the exact directory, and all references use an available revision. Use local paths before publication. |
+| Missing package / invalid Git path | Check access to GitHub, that `?path=/Packages/...` matches the exact directory, and that all references use an available revision. |
 | Pipeline looks unchanged | Check Graphics and the current Quality pipeline asset; installing packages alone does not select a pipeline. |
 | Pink materials or an empty UltraRP view | Check shader compatibility, the Renderer Graph connections and drawing tags. URP Renderer Features are not UltraRP graph nodes. |
-| Historical package guide points to a different repository / checkpoint | Use this page's coordinated 2.0 dependency configuration; retain historical links as context for those original validation records. |
+| Package guide points to a different repository / checkpoint | Use this page's coordinated 2.0 dependency configuration. |
 
-See [UltraRP validation](../Packages/FraxinusRP/Documentation~/Validation.md) for recorded environments and feature boundaries. Historical test records do not substitute for validating the consuming project's scenes, target platform and Player build.
+See [UltraRP validation](../Packages/FraxinusRP/Documentation~/Validation.md) for tested environments and feature scope. Validate the consuming project's scenes, target platform and Player build during integration.

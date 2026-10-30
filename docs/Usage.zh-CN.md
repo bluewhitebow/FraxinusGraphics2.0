@@ -4,11 +4,9 @@
 
 使用 **Unity 2022.3**，其中 **2022.3.62f3** 与源工程一致。本仓库是一组 UPM 包，使用它们的 Unity 工程自行提供 `Assets`、`ProjectSettings` 和 `Packages/manifest.json`。
 
-本仓库包含 **ScriptableNode / UltraRP** 的四个配套包：Core、Light Transport、Shader Graph 和 FraxinusRP，下方配置安装这四个包。UltraRP 不依赖 URP，当前发行不包含 URP 集成；包范围的调整见[相对 1.x 的变化](ChangesFrom1.x.md)。
+本仓库包含 **ScriptableNode / UltraRP** 的四个配套包：Core、Light Transport、Shader Graph 和 FraxinusRP，下方配置安装这四个包。UltraRP 不依赖 URP。
 
-各包沿用原版本号，`2.0` 表示套件版本。当前安装以本指南为准：包内文档保留独立仓库的历史链接、检查点与验证记录。[PackageSources.json](PackageSources.json) 记录初始导入来源，其中包含后来已移除的包。
-
-清单中的 `contentSha256` 对应初始复制工作树的实际字节。Git 在其他平台上的换行转换可能改变这些字节，而不改变源码语义。
+各包保留自己的版本号，`2.0` 表示套件版本。请使用同一提交中的四个配套包。
 
 ## 使用本地 checkout
 
@@ -40,7 +38,7 @@ workspace/
 
 ## 使用 Git 安装
 
-本仓库内容发布到 GitHub 后，可将以下条目合并到 `dependencies`，也可使用 [manifest.git.json](manifest.git.json)。`?path=` 用于选择仓库中的单个 UPM 包；仓库根目录本身不是一个 UPM 包。
+将以下条目合并到 `dependencies`，也可使用 [manifest.git.json](manifest.git.json)。`?path=` 用于选择仓库中的单个 UPM 包；仓库根目录本身不是一个 UPM 包。
 
 ```json
 {
@@ -73,9 +71,9 @@ UltraRP 的 Target 内部 API 需要配套 Shader Graph 分支。它的版本仍
 | --- | --- |
 | 缺少 `ScopeData` 或类型化 RenderGraph API | 确认 UltraRP 与 Core 来自本仓库同一提交，并检查旧 embedded 副本是否优先生效。 |
 | UltraRP Shader Graph 内部访问或 Target 编译错误 | 确认 `com.unity.shadergraph` 解析到 `Fraxinus-ShaderGraph`，而不是官方包。 |
-| 找不到包或 Git 路径无效 | 检查远端内容是否已发布、`?path=/Packages/...` 是否与目录名称一致、所有引用的修订是否存在。发布前使用本地路径。 |
+| 找不到包或 Git 路径无效 | 检查 GitHub 连接、`?path=/Packages/...` 是否与目录名称一致、所有引用的修订是否存在。 |
 | 安装后仍使用原来的管线 | 检查 Graphics 与当前 Quality 的管线资产；安装包本身不会选择管线。 |
 | 材质变粉或 UltraRP 画面为空 | 检查材质对应的管线、Renderer Graph 连接及绘制标签。URP Renderer Feature 不是 UltraRP 图节点。 |
-| 包内历史安装文档指向其他仓库或检查点 | 使用本页的 2.0 配套依赖配置；历史链接用于理解原验证记录。 |
+| 包内安装文档指向其他仓库或检查点 | 使用本页的 2.0 配套依赖配置。 |
 
-[UltraRP 验证记录](../Packages/FraxinusRP/Documentation~/Validation.md)列出了历史环境和功能边界。历史测试不能替代使用方工程的场景、目标平台及 Player 构建验证。
+[UltraRP 验证记录](../Packages/FraxinusRP/Documentation~/Validation.md)列出了测试环境和功能范围。接入时请验证项目场景、目标平台及 Player 构建。

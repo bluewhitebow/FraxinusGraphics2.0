@@ -68,11 +68,11 @@ Fraxinus Core 提供 **Raster / Compute / Unsafe RenderGraph Pass、RTHandle、V
 | [Fraxinus-ShaderGraph](Packages/Fraxinus-ShaderGraph/FraxinusChanges.md) | `com.unity.shadergraph` | `14.0.12` | 为 UltraRP Target 开放所需内部 API 的 Shader Graph 分支。 |
 | [Fraxinus-Light-Transport](Packages/Fraxinus-Light-Transport/README.zh-CN.md) | `com.fraxinus.rendering.light-transport` | `1.0.1` | Compute 射线查询、加速结构与采样。 |
 
-**2.0 是套件名称，各 UPM 包保留自己的版本号。** 四个包应来自同一份 checkout 或同一个 Git 提交；版本号相同不代表官方包与定制分支可以互换。当前发行范围已移除 Fraxinus URP、URP Config、GPU Batcher 和 GPU Terrain，调整原因见[相对 1.x 的变化](docs/ChangesFrom1.x.md)。
+**2.0 是套件名称，各 UPM 包保留自己的版本号。** 四个包应来自同一份 checkout 或同一个 Git 提交；版本号相同不代表官方包与定制分支可以互换。
 
 ## 开始使用
 
-1. 将本仓库放在 Unity 工程的同级目录，将 [manifest.local.json](docs/manifest.local.json) 的 `dependencies` 合并到工程的 `Packages/manifest.json`，保留工程其他依赖。发布后的 Git 安装方式见[使用指南](docs/Usage.zh-CN.md)。
+1. 将本仓库放在 Unity 工程的同级目录，将 [manifest.local.json](docs/manifest.local.json) 的 `dependencies` 合并到工程的 `Packages/manifest.json`，保留工程其他依赖。Git 安装方式见[使用指南](docs/Usage.zh-CN.md)。
 2. 用 **Unity 2022.3.62f3** 打开使用这些包的工程，等待 Package Manager 完成依赖解析。
 3. 通过 **Assets > Create > FraxinusEngine > UltraRP > UltraRP Asset** 创建管线资产及关联的 Renderer Graph，按[图配置说明](Packages/FraxinusRP/Documentation~/Installation.md)连接绘制、阴影与后处理节点。
 4. 在 **Project Settings > Graphics** 指定 UltraRP 资产，检查当前 **Quality** 等级的覆盖设置。使用包内 UltraRP Shader，或通过 **Assets > Create > Shader Graph > UltraRP** 创建 Lit / Unlit 图。
@@ -86,10 +86,10 @@ Fraxinus Core 提供 **Raster / Compute / Unsafe RenderGraph Pass、RTHandle、V
 - **图与材质扩展**：`JobGraphProcessor` 当前使用同步后备实现；高级 Shader Graph Target 和 VFX 集成仍有隔离项。项目自定义节点需要按 [IL2CPP 指南](Packages/FraxinusRP/Documentation~/IL2CPP.md)配置反射保留。
 - **平台与纹理**：SVT 属于 Unity 实验性功能，XR、硬件动态分辨率和子 Context 等路径不收集反馈。其他功能也有各自的相机与平台范围，请以功能文档为准。
 
-仓库保留的[整合验证记录](docs/Validation.md)对应移除前的八包快照，覆盖本地导入与 C# 编译，**当前四包布局尚未重新执行 Unity 验证**。包内 GPU / Player 测试同样对应各自历史源码与环境；可查看 [UltraRP 验证记录](Packages/FraxinusRP/Documentation~/Validation.md)、[Core 测试](Packages/Fraxinus-RPCore/Tests~/Unity2022APV/README.md)和 [Light Transport 烟测](Packages/Fraxinus-Light-Transport/Tests~/GpuSmoke/README.md)。
+配置检查与各模块的测试入口见[验证说明](docs/Validation.md)。具体功能的测试环境和支持范围以对应包文档为准。
 
 ## 来源与许可证
 
-仓库结构参考 [FraxinusGraphics](https://github.com/bluewhitebow/FraxinusGraphics)，现有包来自 Fraxinus Unity 2022.3 开发工程。[PackageSources.json](docs/PackageSources.json) 保留初始八包导入时的来源提交与内容清单，用于追溯历史；当前安装范围以本页及[使用指南](docs/Usage.zh-CN.md)为准。
+仓库结构参考 [FraxinusGraphics](https://github.com/bluewhitebow/FraxinusGraphics)，源码来自 Fraxinus Unity 2022.3 开发工程。各包的来源提交见 [PackageSources.json](docs/PackageSources.json)。
 
 许可证与第三方声明保留在各自包中，未重新指定统一许可证。参见 [Core 许可证](Packages/Fraxinus-RPCore/LICENSE.md)、[Shader Graph 许可证](Packages/Fraxinus-ShaderGraph/LICENSE.md)、[Light Transport 许可证](Packages/Fraxinus-Light-Transport/LICENSE.md)及 [Hybrid 光照来源说明](Packages/FraxinusRP/ShaderLibrary/Lighting/README.md)。Hybrid 光照部分算法适配自 IllusionRP，其中包含源于 Unity HDRP 的算法。
