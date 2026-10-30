@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-**在 Unity 2022.3 中，直接编辑一帧画面如何被渲染。**
+**在 SRP 中，直接编辑一帧画面如何被渲染。**
 
 Unity-FraxinusRP 将独立 Unity 渲染管线 **UltraRP** 及其配套包整合到同一仓库。它把阴影、几何绘制、光照和后处理组织成可编辑的 **Renderer Graph**，把各阶段的输出放回节点中预览，让渲染流程的修改和画面调试发生在同一张图里。
 

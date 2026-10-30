@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-**Edit how a frame is rendered, directly in Unity 2022.3.**
+**Edit how a frame is rendered, directly in SRP.**
 
 Unity-FraxinusRP brings **UltraRP**, an independent Unity render pipeline, and its companion packages into one repository. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
 
