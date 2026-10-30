@@ -1,10 +1,10 @@
-# FraxinusGraphics 2.0
+# Unity-FraxinusRP
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 **在 Unity 2022.3 中，直接编辑一帧画面如何被渲染。**
 
-FraxinusGraphics 2.0 以独立渲染管线 **UltraRP** 为核心。它把阴影、几何绘制、光照和后处理组织成可编辑的 **Renderer Graph**，把各阶段的输出放回节点中预览，让渲染流程的修改和画面调试发生在同一张图里。
+Unity-FraxinusRP 将独立 Unity 渲染管线 **UltraRP** 及其配套包整合到同一仓库。它把阴影、几何绘制、光照和后处理组织成可编辑的 **Renderer Graph**，把各阶段的输出放回节点中预览，让渲染流程的修改和画面调试发生在同一张图里。
 
 在这套工作流之上，UltraRP 集成了 Hybrid Lit、实时矩形面光、APV / APRTV 探针光照、STP / SGSR 超分辨率和流式虚拟纹理。项目从 Fraxinus Engine 的 Unity 6 分支移植，面向 **Unity 2022.3.62f3**，无需安装 URP。
 
@@ -61,7 +61,7 @@ Renderer Graph 支持 Forward、Forward+、Stencil Deferred 与 Clustered Deferr
 | [Fraxinus-ShaderGraph](Packages/Fraxinus-ShaderGraph/FraxinusChanges.md) | `com.unity.shadergraph` | `14.0.12` | 为 UltraRP Target 开放所需内部 API 的 Shader Graph 分支。 |
 | [Fraxinus-Light-Transport](Packages/Fraxinus-Light-Transport/README.zh-CN.md) | `com.fraxinus.rendering.light-transport` | `1.0.1` | Compute 射线查询、加速结构与采样。 |
 
-**2.0 是套件名称，各 UPM 包保留自己的版本号。** 四个包应来自同一份 checkout 或同一个 Git 提交；版本号相同不代表官方包与定制分支可以互换。
+各 UPM 包保留自己的版本号。四个包应来自同一份 checkout 或同一个 Git 提交；版本号相同不代表官方包与定制分支可以互换。
 
 ## 开始使用
 

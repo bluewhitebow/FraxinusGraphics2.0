@@ -1,4 +1,4 @@
-# Using FraxinusGraphics 2.0
+# Using Unity-FraxinusRP
 
 [English](Usage.md) | [简体中文](Usage.zh-CN.md) · [Repository](../README.md)
 
@@ -6,7 +6,7 @@ Use **Unity 2022.3**, with **2022.3.62f3** matching the source project. This rep
 
 The repository contains the four companion packages for **ScriptableNode / UltraRP**: Core, Light Transport, Shader Graph and FraxinusRP. The examples below install all four. UltraRP does not require URP.
 
-Each package retains its own version; `2.0` identifies the suite. Use all four companion packages from the same revision.
+Use all four companion packages from the same revision.
 
 ## Install from a local checkout
 
@@ -14,7 +14,7 @@ Place the checkout beside the consuming project:
 
 ```text
 workspace/
-├── FraxinusGraphics2.0/
+├── Unity-FraxinusRP/
 │   └── Packages/
 └── MyUnityProject/
     └── Packages/
@@ -25,14 +25,14 @@ Merge these entries into the project's `Packages/manifest.json` → `dependencie
 
 ```json
 {
-  "com.unity.render-pipelines.core": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-RPCore",
-  "com.fraxinus.rendering.light-transport": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-Light-Transport",
-  "com.unity.shadergraph": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-ShaderGraph",
-  "com.bluewhitebow.fraxinus-rp": "file:../../FraxinusGraphics2.0/Packages/FraxinusRP"
+  "com.unity.render-pipelines.core": "file:../../Unity-FraxinusRP/Packages/Fraxinus-RPCore",
+  "com.fraxinus.rendering.light-transport": "file:../../Unity-FraxinusRP/Packages/Fraxinus-Light-Transport",
+  "com.unity.shadergraph": "file:../../Unity-FraxinusRP/Packages/Fraxinus-ShaderGraph",
+  "com.bluewhitebow.fraxinus-rp": "file:../../Unity-FraxinusRP/Packages/FraxinusRP"
 }
 ```
 
-`file:` paths are relative to the consuming project's **Packages directory**. Adjust them if the two directories are not siblings. For a project beside `D:/Unity/FraxinusGraphics2.0`, the paths above are already suitable.
+`file:` paths are relative to the consuming project's **Packages directory**. The examples use the default clone directory name, `Unity-FraxinusRP`. Adjust the paths if your checkout has a different name or is not beside the project.
 
 Unity resolves the remaining registry and built-in dependencies from the package declarations. The source project's resolved shared versions include Burst **1.8.28**, Collections **2.6.6** and Mathematics **1.3.2**. If the consuming manifest explicitly pins older versions, review those pins when adopting this set.
 
@@ -42,10 +42,10 @@ Merge the following entries into `dependencies`, or use [manifest.git.json](mani
 
 ```json
 {
-  "com.unity.render-pipelines.core": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-RPCore#main",
-  "com.fraxinus.rendering.light-transport": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-Light-Transport#main",
-  "com.unity.shadergraph": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-ShaderGraph#main",
-  "com.bluewhitebow.fraxinus-rp": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/FraxinusRP#main"
+  "com.unity.render-pipelines.core": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-RPCore#main",
+  "com.fraxinus.rendering.light-transport": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-Light-Transport#main",
+  "com.unity.shadergraph": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-ShaderGraph#main",
+  "com.bluewhitebow.fraxinus-rp": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/FraxinusRP#main"
 }
 ```
 
@@ -74,6 +74,6 @@ The matching Shader Graph fork is required for UltraRP's internal target APIs. I
 | Missing package / invalid Git path | Check access to GitHub, that `?path=/Packages/...` matches the exact directory, and that all references use an available revision. |
 | Pipeline looks unchanged | Check Graphics and the current Quality pipeline asset; installing packages alone does not select a pipeline. |
 | Pink materials or an empty UltraRP view | Check shader compatibility, the Renderer Graph connections and drawing tags. URP Renderer Features are not UltraRP graph nodes. |
-| Package guide points to a different repository / checkpoint | Use this page's coordinated 2.0 dependency configuration. |
+| Package guide points to a different repository / checkpoint | Use this page's coordinated dependency configuration. |
 
 See [UltraRP validation](../Packages/FraxinusRP/Documentation~/Validation.md) for tested environments and feature scope. Validate the consuming project's scenes, target platform and Player build during integration.

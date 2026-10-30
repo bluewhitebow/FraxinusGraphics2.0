@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "com.fraxinus.rendering.light-transport": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-Light-Transport",
-    "com.unity.render-pipelines.core": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-RPCore",
-    "com.unity.shadergraph": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-ShaderGraph",
-    "com.bluewhitebow.fraxinus-rp": "file:../../FraxinusGraphics2.0/Packages/FraxinusRP"
+    "com.fraxinus.rendering.light-transport": "file:../../Unity-FraxinusRP/Packages/Fraxinus-Light-Transport",
+    "com.unity.render-pipelines.core": "file:../../Unity-FraxinusRP/Packages/Fraxinus-RPCore",
+    "com.unity.shadergraph": "file:../../Unity-FraxinusRP/Packages/Fraxinus-ShaderGraph",
+    "com.bluewhitebow.fraxinus-rp": "file:../../Unity-FraxinusRP/Packages/FraxinusRP"
   }
 }

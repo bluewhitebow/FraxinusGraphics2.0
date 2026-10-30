@@ -1,4 +1,4 @@
-# FraxinusGraphics 2.0 使用指南
+# Unity-FraxinusRP 使用指南
 
 [English](Usage.md) | [简体中文](Usage.zh-CN.md) · [仓库首页](../README.zh-CN.md)
 
@@ -6,7 +6,7 @@
 
 本仓库包含 **ScriptableNode / UltraRP** 的四个配套包：Core、Light Transport、Shader Graph 和 FraxinusRP，下方配置安装这四个包。UltraRP 不依赖 URP。
 
-各包保留自己的版本号，`2.0` 表示套件版本。请使用同一提交中的四个配套包。
+请使用同一提交中的四个配套包。
 
 ## 使用本地 checkout
 
@@ -14,7 +14,7 @@
 
 ```text
 workspace/
-├── FraxinusGraphics2.0/
+├── Unity-FraxinusRP/
 │   └── Packages/
 └── MyUnityProject/
     └── Packages/
@@ -25,14 +25,14 @@ workspace/
 
 ```json
 {
-  "com.unity.render-pipelines.core": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-RPCore",
-  "com.fraxinus.rendering.light-transport": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-Light-Transport",
-  "com.unity.shadergraph": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-ShaderGraph",
-  "com.bluewhitebow.fraxinus-rp": "file:../../FraxinusGraphics2.0/Packages/FraxinusRP"
+  "com.unity.render-pipelines.core": "file:../../Unity-FraxinusRP/Packages/Fraxinus-RPCore",
+  "com.fraxinus.rendering.light-transport": "file:../../Unity-FraxinusRP/Packages/Fraxinus-Light-Transport",
+  "com.unity.shadergraph": "file:../../Unity-FraxinusRP/Packages/Fraxinus-ShaderGraph",
+  "com.bluewhitebow.fraxinus-rp": "file:../../Unity-FraxinusRP/Packages/FraxinusRP"
 }
 ```
 
-`file:` 路径相对于使用方工程的 **Packages 目录**。目录不同级时需相应调整；工程若与 `D:/Unity/FraxinusGraphics2.0` 同级，可直接使用上述相对路径。
+`file:` 路径相对于使用方工程的 **Packages 目录**。示例采用默认克隆目录名 `Unity-FraxinusRP`；如果 checkout 目录名称不同，或没有与工程放在同一级目录，请相应调整路径。
 
 其他官方及内置依赖由 Unity 按包声明解析。源工程已解析的共享依赖包括 Burst **1.8.28**、Collections **2.6.6** 和 Mathematics **1.3.2**。若使用方 manifest 显式锁定了更旧版本，接入时应检查这些固定版本。
 
@@ -42,10 +42,10 @@ workspace/
 
 ```json
 {
-  "com.unity.render-pipelines.core": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-RPCore#main",
-  "com.fraxinus.rendering.light-transport": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-Light-Transport#main",
-  "com.unity.shadergraph": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-ShaderGraph#main",
-  "com.bluewhitebow.fraxinus-rp": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/FraxinusRP#main"
+  "com.unity.render-pipelines.core": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-RPCore#main",
+  "com.fraxinus.rendering.light-transport": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-Light-Transport#main",
+  "com.unity.shadergraph": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/Fraxinus-ShaderGraph#main",
+  "com.bluewhitebow.fraxinus-rp": "https://github.com/bluewhitebow/Unity-FraxinusRP.git?path=/Packages/FraxinusRP#main"
 }
 ```
 
@@ -74,6 +74,6 @@ UltraRP 的 Target 内部 API 需要配套 Shader Graph 分支。它的版本仍
 | 找不到包或 Git 路径无效 | 检查 GitHub 连接、`?path=/Packages/...` 是否与目录名称一致、所有引用的修订是否存在。 |
 | 安装后仍使用原来的管线 | 检查 Graphics 与当前 Quality 的管线资产；安装包本身不会选择管线。 |
 | 材质变粉或 UltraRP 画面为空 | 检查材质对应的管线、Renderer Graph 连接及绘制标签。URP Renderer Feature 不是 UltraRP 图节点。 |
-| 包内安装文档指向其他仓库或检查点 | 使用本页的 2.0 配套依赖配置。 |
+| 包内安装文档指向其他仓库或检查点 | 使用本页的配套依赖配置。 |
 
 [UltraRP 验证记录](../Packages/FraxinusRP/Documentation~/Validation.md)列出了测试环境和功能范围。接入时请验证项目场景、目标平台及 Player 构建。

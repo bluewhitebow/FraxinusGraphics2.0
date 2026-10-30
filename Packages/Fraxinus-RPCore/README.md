@@ -17,7 +17,7 @@ Version: `14.0.99` · Package ID: `com.unity.render-pipelines.core`
 
 ## Integration and limits
 
-In FraxinusGraphics 2.0, use with [UltraRP](../FraxinusRP/README.md),
+In Unity-FraxinusRP, use with [UltraRP](../FraxinusRP/README.md),
 [Light Transport](../Fraxinus-Light-Transport/README.md), and the companion Shader Graph fork.
 The [suite usage guide](../../docs/Usage.md) defines the current four-package installation.
 Custom rendering code must target this fork's RenderGraph APIs. The native GPU Resident Drawer is unavailable on Unity 2022.

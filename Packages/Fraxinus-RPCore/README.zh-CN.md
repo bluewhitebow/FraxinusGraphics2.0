@@ -17,7 +17,7 @@
 
 ## 配套与边界
 
-在 FraxinusGraphics 2.0 中，与 [UltraRP](../FraxinusRP/README.md)、
+在 Unity-FraxinusRP 中，与 [UltraRP](../FraxinusRP/README.md)、
 [Light Transport](../Fraxinus-Light-Transport/README.zh-CN.md) 及配套 Shader Graph 分支共同使用。
 当前四包安装配置见[套件使用指南](../../docs/Usage.zh-CN.md)。
 自定义渲染代码需适配本分支的 RenderGraph API；Unity 2022 下原生 GPU Resident Drawer 不可用。

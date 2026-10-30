@@ -1,10 +1,10 @@
-# FraxinusGraphics 2.0
+# Unity-FraxinusRP
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 **Edit how a frame is rendered, directly in Unity 2022.3.**
 
-FraxinusGraphics 2.0 centers on **UltraRP**, an independent render pipeline. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
+Unity-FraxinusRP brings **UltraRP**, an independent Unity render pipeline, and its companion packages into one repository. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
 
 UltraRP combines this workflow with Hybrid Lit, realtime rectangle lights, APV / APRTV probe lighting, STP / SGSR upscaling and streaming virtual textures. Ported from the Fraxinus Engine Unity 6 branch, it targets **Unity 2022.3.62f3** and runs without URP.
 
@@ -61,7 +61,7 @@ Rendering resolution can be chosen independently of output resolution. **SGSR1**
 | [Fraxinus-ShaderGraph](Packages/Fraxinus-ShaderGraph/FraxinusChanges.md) | `com.unity.shadergraph` | `14.0.12` | Shader Graph fork exposing the internal APIs needed by UltraRP targets. |
 | [Fraxinus-Light-Transport](Packages/Fraxinus-Light-Transport/README.md) | `com.fraxinus.rendering.light-transport` | `1.0.1` | Compute ray queries, acceleration structures and sampling. |
 
-**2.0 names the suite; each UPM package retains its own version.** Use all four packages from one checkout or Git revision. Matching version numbers do not make official packages interchangeable with these forks.
+Each UPM package retains its own version. Use all four packages from one checkout or Git revision. Matching version numbers do not make official packages interchangeable with these forks.
 
 ## Getting started
 
