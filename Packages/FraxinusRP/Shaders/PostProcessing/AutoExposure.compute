@@ -1,0 +1,101 @@
+#pragma kernel ClearHistogram
+#pragma kernel BuildHistogram
+#pragma kernel ReduceHistogram
+#pragma target 4.5
+
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
+
+// A fixed range keeps the histogram stable when Volume EV limits change.
+#define HISTOGRAM_BINS 128
+#define HISTOGRAM_MIN_EV -16.0
+#define HISTOGRAM_RANGE_EV 40.0
+
+Texture2D<float4> _SourceTexture;
+Texture2D<float2> _PreviousExposure;
+RWTexture2D<float2> _ExposureOutput;
+RWStructuredBuffer<uint> _Histogram;
+float4 _SourceSize;       // Source viewport width/height, metering width/height.
+float4 _MeteringParams;   // Low/high percentile, min/max EV100.
+float4 _AdaptationParams; // Dark-to-light rate, light-to-dark rate, delta time, reset.
+float _Compensation;
+int _SourceIsGamma;
+
+groupshared uint s_Histogram[HISTOGRAM_BINS];
+
+[numthreads(HISTOGRAM_BINS, 1, 1)]
+void ClearHistogram(uint3 dispatchId : SV_DispatchThreadID)
+{
+    _Histogram[dispatchId.x] = 0;
+}
+
+[numthreads(16, 16, 1)]
+void BuildHistogram(uint3 dispatchId : SV_DispatchThreadID, uint groupIndex : SV_GroupIndex)
+{
+    uint2 pixel = dispatchId.xy;
+    if (groupIndex < HISTOGRAM_BINS)
+        s_Histogram[groupIndex] = 0;
+    GroupMemoryBarrierWithGroupSync();
+
+    if (all(pixel < (uint2)_SourceSize.zw))
+    {
+        uint2 sourcePixel = min((uint2)((pixel + 0.5) * _SourceSize.xy / _SourceSize.zw),
+                               (uint2)_SourceSize.xy - 1);
+        float3 color = _SourceTexture.Load(int3(sourcePixel, 0)).rgb;
+        if (!any(isnan(color)) && !any(isinf(color)))
+        {
+            color = max(color, 0.0);
+            if (_SourceIsGamma != 0)
+                color = SRGBToLinear(color);
+
+            // EV100 = log2(L * ISO / calibration), with ISO=100 and calibration=12.5.
+            float ev = log2(max(Luminance(color), 1e-8) * 8.0);
+            uint bin = min((uint)(saturate((ev - HISTOGRAM_MIN_EV) / HISTOGRAM_RANGE_EV)
+                                 * HISTOGRAM_BINS), HISTOGRAM_BINS - 1);
+            InterlockedAdd(s_Histogram[bin], 1);
+        }
+    }
+
+    GroupMemoryBarrierWithGroupSync();
+    if (groupIndex < HISTOGRAM_BINS)
+        InterlockedAdd(_Histogram[groupIndex], s_Histogram[groupIndex]);
+}
+
+[numthreads(1, 1, 1)]
+void ReduceHistogram(uint3 dispatchId : SV_DispatchThreadID)
+{
+    uint total = 0;
+    for (uint i = 0; i < HISTOGRAM_BINS; ++i)
+        total += _Histogram[i];
+
+    float lower = total * _MeteringParams.x;
+    float upper = total * _MeteringParams.y;
+    float accumulated = 0.0;
+    float weightedEV = 0.0;
+    float weight = 0.0;
+    for (uint bin = 0; bin < HISTOGRAM_BINS; ++bin)
+    {
+        float count = _Histogram[bin];
+        float accepted = max(0.0, min(accumulated + count, upper) - max(accumulated, lower));
+        float ev = HISTOGRAM_MIN_EV + (bin + 0.5) * (HISTOGRAM_RANGE_EV / HISTOGRAM_BINS);
+        weightedEV += ev * accepted;
+        weight += accepted;
+        accumulated += count;
+    }
+
+    // Do not read uninitialized history on the first frame, even for an empty/invalid image.
+    float previousEV = 0.0;
+    if (_AdaptationParams.w == 0.0)
+        previousEV = _PreviousExposure.Load(int3(0, 0, 0)).y;
+
+    float targetEV = weight > 0.0 ? weightedEV / weight : previousEV;
+    targetEV = clamp(targetEV, _MeteringParams.z, _MeteringParams.w);
+    float rate = targetEV > previousEV ? _AdaptationParams.x : _AdaptationParams.y;
+    float blend = _AdaptationParams.w != 0.0 ? 1.0 : 1.0 - exp(-rate * _AdaptationParams.z);
+    float adaptedEV = lerp(previousEV, targetEV, blend);
+    adaptedEV = clamp(adaptedEV, _MeteringParams.z, _MeteringParams.w);
+
+    // Scene-referred input is not pre-exposed. Map metered luminance to 18% gray.
+    float multiplier = 0.18 * 8.0 * exp2(-adaptedEV + _Compensation);
+    _ExposureOutput[uint2(0, 0)] = float2(multiplier, adaptedEV);
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "checkpoint_date": "2026-10-20",
+  "validation_utc": "2026-10-19T11:36:53.533468+00:00",
+  "status": "passed",
+  "environment": {
+    "unity": "2022.3.62f3",
+    "platform": "Windows",
+    "graphics_api": "Direct3D 11",
+    "gpu": "NVIDIA GTX 1650",
+    "core": "14.0.99",
+    "shader_graph": "14.0.12"
+  },
+  "groups": {
+    "scriptable_node": "passed",
+    "shadergraph": "passed",
+    "advanced_main": "passed",
+    "screen_shadow_compute": "passed",
+    "advanced_after_compute_fix": "passed",
+    "basic_mono": "passed",
+    "pipeline_switching": "passed",
+    "feature_builds": "passed",
+    "feature_players": "passed",
+    "settings_and_recovery": "passed",
+    "audits": "passed",
+    "source_inventory": "passed"
+  },
+  "player_evidence": {
+    "build_configurations": 8,
+    "mono_configurations": 7,
+    "il2cpp_high_stripping_configurations": 1,
+    "standalone_runs": 16,
+    "modes": [
+      "RenderTexture",
+      "Backbuffer"
+    ],
+    "feature_configurations": [
+      "Forward",
+      "Stencil Deferred",
+      "Clustered Deferred",
+      "MSAA",
+      "Camera Stack",
+      "Depth of Field"
+    ]
+  },
+  "integrity": {
+    "main_settings_restored": 7,
+    "matching_main_and_isolated_active_files": 2117,
+    "inventoried_files": 8564,
+    "unresolved_supported_references": 0,
+    "duplicate_active_guids": 0
+  },
+  "evidence_files": {
+    "Phase2Acceptance.json": {
+      "location": "Host project Logs/FraxinusRP/Phase2Acceptance.json",
+      "sha256": "8cf6c078672b8898dbbb620024e0023297f085e5c7445b58caa5448ff642f2c6"
+    },
+    "Phase2SourceHashes.json": {
+      "location": "Host project Logs/FraxinusRP/Phase2SourceHashes.json",
+      "sha256": "7765144fece3b39a21e448a67cf372b510b2aa4b44d90e3507265d4a6bdf986a"
+    },
+    "FeaturePlayerBuildReport.json": {
+      "location": "Host project Logs/FraxinusRP/FeaturePlayerBuildReport.json",
+      "sha256": "3dde234cf7246ddc84306b3314c0c85a65b1aa4c62f437e6400c4c2a4e68d279"
+    },
+    "FeaturePlayerEvidence.json": {
+      "location": "Host project Logs/FraxinusRP/FeaturePlayerEvidence.json",
+      "sha256": "07a802db9b9a76685520cf9a968ec995c336ee83d9c73f3ec5440619d67027cf"
+    },
+    "FeatureBuildWarnings.json": {
+      "location": "Host project Logs/FraxinusRP/FeatureBuildWarnings.json",
+      "sha256": "3c0b28d061fc316a5d230ecdcf9e9e08445b24dd402f3bbafb50c5bcb8830380"
+    }
+  },
+  "scope_notes": [
+    "This portable summary accompanies the source checkpoint. Full host-project logs and Player binaries are not included in this package.",
+    "Editor A/B image comparisons establish effect behavior; standalone smoke checks establish runtime nodes, scene pixels and recorded diagnostics.",
+    "Basic Mono, Shader Graph IL2CPP and the Forward feature build precede the compute-only screen-shadow explicit-LOD fix. Their fragment branch is unchanged; targeted compute, Advanced07 and subsequent feature builds cover the fix.",
+    "The first Deferred build is rejected despite exit 0 because shader compilation errors were present. Only the replacement build is accepted.",
+    "The four accepted feature-build logs contain zero shader-error lines and 129099 repeated shader-warning lines; see Validation.md for categories.",
+    "JobGraphProcessor is synchronous. XR, Unity 6 native GPU Resident Drawer and other unsupported paths listed in Validation.md are outside acceptance.",
+    "Camera stacking and MSAA are tested independently. Screen-space shadow coverage is compilation only."
+  ],
+  "reproduction": "See Documentation~/Validation.md and source tag unity2022-checkpoint-2026-10-20 for the historical test fixtures. Example scenes and generators are not included in the current package."
+}

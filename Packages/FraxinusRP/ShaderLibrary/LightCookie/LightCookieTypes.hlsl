@@ -1,0 +1,13 @@
+#ifndef ULTRA_LIGHT_COOKIE_TYPES_INCLUDED
+#define ULTRA_LIGHT_COOKIE_TYPES_INCLUDED
+
+#include "Packages/com.bluewhitebow.fraxinus-rp/ShaderLibrary/UnityTypes.hlsl"
+
+// Types
+
+#define ULTRA_LIGHT_COOKIE_FORMAT_NONE (-1)
+#define ULTRA_LIGHT_COOKIE_FORMAT_RGB (0)
+#define ULTRA_LIGHT_COOKIE_FORMAT_ALPHA (1)
+#define ULTRA_LIGHT_COOKIE_FORMAT_RED (2)
+
+#endif //ULTRA_LIGHT_COOKIE_TYPES_INCLUDED

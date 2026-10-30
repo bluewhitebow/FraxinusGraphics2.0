@@ -1,0 +1,19 @@
+/Validation~/**/Library/
+/Validation~/**/Temp/
+/Validation~/**/Logs/
+/Validation~/**/obj/
+/Validation~/**/UserSettings/
+/Validation~/**/Builds/
+/Library/
+/Temp/
+/Logs/
+/Builds/
+/obj/
+/UserSettings/
+*.csproj
+*.sln
+
+# Demo scenes and sample generators stay outside the distributed package.
+/Samples~/
+/Editor/UltraRPEditor/Samples/
+/Editor/UltraRPEditor/Samples.meta

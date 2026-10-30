@@ -1,0 +1,27 @@
+{
+  "name": "Fraxinus.UltraRP.Editor",
+  "rootNamespace": "FraxinusEditor.Rendering.Ultra",
+  "references": [
+    "Fraxinus.Runtime",
+    "Fraxinus.Editor",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Core.Editor",
+    "Unity.RenderPipelines.Core.Runtime.Shared",
+    "Unity.RenderPipelines.Core.Editor.Shared",
+    "Unity.Mathematics",
+    "Unity.Collections",
+    "Unity.Burst",
+    "Unity.ShaderGraph.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

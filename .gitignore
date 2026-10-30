@@ -1,0 +1,17 @@
+# Generated files from opening the repository in Unity or an IDE.
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/.vs/
+/.idea/
+/.release-assets/
+/.validation/
+/*.csproj
+/*.sln
+/*.slnx
+.DS_Store
+Thumbs.db

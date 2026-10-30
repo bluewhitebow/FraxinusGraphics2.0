@@ -1,0 +1,241 @@
+/* Scoped to renderer pass nodes; shared graph and inspector styles stay independent. */
+.fraxinus-renderer-node {
+    color: #d7e0ea;
+    font-size: 11px;
+}
+
+.fraxinus-renderer-node #node-border {
+    background-color: #252d38;
+    border-color: #414d5e;
+    border-width: 1px;
+    border-radius: 7px;
+}
+
+.fraxinus-renderer-node #selection-border {
+    border-color: #60c7b8;
+    border-radius: 9px;
+}
+
+.fraxinus-renderer-node #title {
+    background-color: #2e3845;
+    min-height: 34px;
+    padding-left: 8px;
+    padding-right: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-width: 1px;
+    border-bottom-color: #414d5e;
+    border-left-width: 3px;
+    border-left-color: #60c7b8;
+}
+
+.fraxinus-renderer-node #title-label {
+    color: #edf3f8;
+    -unity-font-style: bold;
+    font-size: 13px;
+    flex-grow: 1;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    white-space: normal;
+}
+
+.fraxinus-renderer-node #RightTitleContainer {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.fraxinus-renderer-node #ButtonRow {
+    height: 26px;
+    padding-left: 10px;
+    padding-right: 6px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #29323e;
+    border-bottom-width: 1px;
+    border-bottom-color: #364252;
+}
+
+.fraxinus-renderer-node .fraxinus-node-category {
+    color: #80cfc2;
+    font-size: 9px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: 4px;
+    padding-left: 0;
+}
+
+.fraxinus-renderer-node #ExecutionStatusBorder {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.fraxinus-renderer-node.fraxinus-node--shadow #title {
+    border-left-color: #b39bdc;
+}
+
+.fraxinus-renderer-node.fraxinus-node--shadow .fraxinus-node-category {
+    color: #c1b0e4;
+}
+
+.fraxinus-renderer-node.fraxinus-node--post #title {
+    border-left-color: #d8b879;
+}
+
+.fraxinus-renderer-node.fraxinus-node--post .fraxinus-node-category {
+    color: #e0c58f;
+}
+
+.fraxinus-renderer-node.fraxinus-node--resource #title {
+    border-left-color: #7caee0;
+}
+
+.fraxinus-renderer-node.fraxinus-node--resource .fraxinus-node-category {
+    color: #9bc5ec;
+}
+
+.fraxinus-renderer-node.fraxinus-node--context #title {
+    border-left-color: #95a6be;
+}
+
+.fraxinus-renderer-node.fraxinus-node--context .fraxinus-node-category {
+    color: #adbbcf;
+}
+
+.fraxinus-renderer-node #ButtonRow #settings-button,
+.fraxinus-renderer-node #ButtonRow .PinButton {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    padding: 4px;
+    margin: 0;
+    border-width: 0;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.fraxinus-renderer-node #ButtonRow #settings-button:hover,
+.fraxinus-renderer-node #ButtonRow .PinButton:hover {
+    background-color: #435365;
+}
+
+.fraxinus-renderer-node #ButtonRow #settings-button.clicked {
+    background-color: #3d655f;
+}
+
+.fraxinus-renderer-node #ButtonRow .PinButton Image {
+    width: 14px;
+    height: 14px;
+}
+
+.fraxinus-renderer-node #ButtonRow .ActiveToggle {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin: 0 3px 0 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.fraxinus-renderer-node #contents {
+    background-color: #252d38;
+    border-top-width: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.fraxinus-renderer-node #top {
+    background-color: #252d38;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.fraxinus-renderer-node PortView {
+    min-height: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fraxinus-renderer-node PortView > Label {
+    color: #bdcbd9;
+    font-size: 11px;
+}
+
+.fraxinus-renderer-node PortView.Vertical {
+    min-height: 6px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fraxinus-renderer-node #controls {
+    background-color: #252d38;
+    padding: 5px 8px 8px 8px;
+}
+
+.fraxinus-renderer-node #controls .unity-base-field {
+    min-height: 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.fraxinus-renderer-node #controls .unity-base-field__label {
+    color: #b6c3d2;
+    font-size: 11px;
+    min-width: 88px;
+    padding-left: 0;
+}
+
+.fraxinus-renderer-node #controls .unity-base-field__input {
+    background-color: #1e2630;
+    border-color: #414d5e;
+    border-radius: 3px;
+}
+
+.fraxinus-renderer-node #controls .unity-base-field__input:hover {
+    border-color: #687b92;
+}
+
+.fraxinus-renderer-node #controls .unity-base-field__input:focus {
+    border-color: #60c7b8;
+}
+
+.fraxinus-renderer-node #controls .unity-base-text-field__input,
+.fraxinus-renderer-node #controls .unity-popup-field__text {
+    color: #e0e8f0;
+    font-size: 11px;
+}
+
+.fraxinus-renderer-node #controls .PropertyEditorTitle,
+.fraxinus-renderer-node #controls .PropertyEditorHeader {
+    color: #d8e4ee;
+    font-size: 11px;
+    -unity-font-style: bold;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.fraxinus-renderer-node .Preview {
+    background-color: #1c242e;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.fraxinus-renderer-node .fraxinus-post-list > Foldout > Toggle {
+    color: #d8bd89;
+    -unity-font-style: bold;
+    margin-bottom: 6px;
+}
+
+.fraxinus-renderer-node .fraxinus-post-item {
+    border-left-width: 2px;
+    border-left-color: rgba(0, 0, 0, 0);
+}
+
+.fraxinus-renderer-node .fraxinus-post-item:hover {
+    border-left-color: #d8b879;
+}

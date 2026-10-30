@@ -1,0 +1,89 @@
+{
+  "suite": "FraxinusGraphics 2.0",
+  "sourceProject": "HybirdFraxinusRP",
+  "unity": "2022.3.62f3",
+  "snapshotPolicy": "Current working-tree contents: tracked and nonignored untracked files, excluding deleted files and nested Git metadata. Source commits identify the base only; dirty working-tree edits are included.",
+  "hashAlgorithm": "SHA-256 of sorted UTF-8 package-relative POSIX paths, each followed by NUL and the 32-byte SHA-256 digest of the file contents.",
+  "packages": [
+    {
+      "folder": "Fraxinus-Light-Transport",
+      "name": "com.fraxinus.rendering.light-transport",
+      "version": "1.0.1",
+      "sourceCommit": "43aa6bdedbe20762defd2b97cdc49aad035d11f5",
+      "sourceWorktreeDirty": false,
+      "fileCount": 186,
+      "bytes": 1920495,
+      "contentSha256": "372ef862628c1c325a126b1d61ef7385457ed1c7ce98e4ddc6c26d4829ce2283"
+    },
+    {
+      "folder": "Fraxinus-RPCore",
+      "name": "com.unity.render-pipelines.core",
+      "version": "14.0.99",
+      "sourceCommit": "5a7a0c68efae9e2c527332c15349227077326679",
+      "sourceWorktreeDirty": false,
+      "fileCount": 2426,
+      "bytes": 23573657,
+      "contentSha256": "7b0cda6ee3b73456f2bf8de480b52d4d371cdbcf9d97543d24d1dad0d5e41eac"
+    },
+    {
+      "folder": "Fraxinus-ShaderGraph",
+      "name": "com.unity.shadergraph",
+      "version": "14.0.12",
+      "sourceCommit": "ac5b57a251cf2bf170baca4c8a08c6bc08ccc87d",
+      "sourceWorktreeDirty": true,
+      "fileCount": 4252,
+      "bytes": 212307680,
+      "contentSha256": "c39fa68ad88521f31218d37e4879c81b2f40c89af0dfff619cd3d6f6d53b9b7c"
+    },
+    {
+      "folder": "Fraxinus-URPExtensions",
+      "name": "com.unity.render-pipelines.universal",
+      "version": "14.0.99",
+      "sourceCommit": "162e7059c38ae0e47bcf6ce92e75889ea08c28fb",
+      "sourceWorktreeDirty": false,
+      "fileCount": 3359,
+      "bytes": 127604845,
+      "contentSha256": "237a176e67d93fe5142f2e6a7e0685a4b2d75819ff7173032ff441573a3353bf"
+    },
+    {
+      "folder": "Fraxinus-URPGlobal",
+      "name": "com.unity.render-pipelines.universal-config",
+      "version": "14.0.99",
+      "sourceCommit": "fe230634bcc018cf309105ad0f4d5ee2cf69e8ff",
+      "sourceWorktreeDirty": false,
+      "fileCount": 29,
+      "bytes": 19904,
+      "contentSha256": "cb0b092a65e343e4d99eef323d900af5cbd65f46eec8612410bcc47bb427c55a"
+    },
+    {
+      "folder": "FraxinusGPUBatcher",
+      "name": "com.bluewhitebow.fraxinus-gpu-batcher",
+      "version": "0.1.0",
+      "sourceCommit": "fc43eec8b4cd6f8a568ee0935ca1100eab7140f6",
+      "sourceWorktreeDirty": false,
+      "fileCount": 446,
+      "bytes": 14512530,
+      "contentSha256": "6573b934753d98edfc933dc9a4f768601ad88c9a6038fc77e039934fb93295a8"
+    },
+    {
+      "folder": "FraxinusGPUTerrain",
+      "name": "com.bluewhitebow.fraxinus-gputerrain",
+      "version": "0.0.1",
+      "sourceCommit": "8c791b09b6ab4f4b5207480af6d0ab1e602c9ee6",
+      "sourceWorktreeDirty": false,
+      "fileCount": 197,
+      "bytes": 5582207,
+      "contentSha256": "502fe3eb6ffea64f0a662c0e9e4708c22bdf311e094d7233eab920fb4dc86f76"
+    },
+    {
+      "folder": "FraxinusRP",
+      "name": "com.bluewhitebow.fraxinus-rp",
+      "version": "0.1.0",
+      "sourceCommit": "6e23ebef02e036c432edca96cb339cd4ee1d668a",
+      "sourceWorktreeDirty": false,
+      "fileCount": 2114,
+      "bytes": 18632356,
+      "contentSha256": "cf78d5a035624252f0d8d21faa3af7e061d5c6f870e3b584bd831e0de2effd8d"
+    }
+  ]
+}

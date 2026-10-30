@@ -1,0 +1,2922 @@
+[
+  {
+    "path": "Editor/UltraRPEditor/Analytics/AssetReimporterAnalytic.cs.meta",
+    "sourceGuid": "e6b197b525ca7a545aa2c6a4d0cd6190",
+    "guid": "d792327dd35452eb9d7c8945c2c92bab",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Analytics\\AssetReimporterAnalytic.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Analytics/PostProcessDataAnalytics.cs.meta",
+    "sourceGuid": "09cca3e7fbb9d25469cfb2bb082201d4",
+    "guid": "330fde7f8db0582ab317e7330d40161a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Analytics\\PostProcessDataAnalytics.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/GraphicsSettingsStrippers/RendererStripper.cs.meta",
+    "sourceGuid": "1929d7278217e2044b79817cf49db603",
+    "guid": "c7f2cdfa580e5a8dbbb07e8c8b859ec5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\GraphicsSettingsStrippers\\RendererStripper.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/GraphicsSettingsStrippers.meta",
+    "sourceGuid": "2f3616b2dfb87f24b87d934d1c8ea882",
+    "guid": "7f3d60e9cc765aba8ce8a4c670cc9353",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\GraphicsSettingsStrippers.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/UltraRPBuildData.cs.meta",
+    "sourceGuid": "122ed720f49f925479817132b614f11a",
+    "guid": "519c2d158b1553869e45553416be9a37",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\URPBuildData.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/UltraRPBuildDataValidator.cs.meta",
+    "sourceGuid": "1c4da76b9d8087f4f99ecdfc238a4d2e",
+    "guid": "3aa3e49b76fa59f98ae68908899d2ef6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\URPBuildDataValidator.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/UltraRPPreprocessBuild.cs.meta",
+    "sourceGuid": "ab5f850e3c753a74eb7b4c1cc5ebaa0f",
+    "guid": "9bbc5cb2838c557e9d462dcbdd734a12",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\URPPreprocessBuild.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/BuildProcessors/UltraRPProcessScene.cs.meta",
+    "sourceGuid": "fce2d726a9fb304408cfa649e000006f",
+    "guid": "93534362adc554b0b330466ab9e3b10b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\BuildProcessors\\URPProcessScene.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/CreateDecalProjector.cs.meta",
+    "sourceGuid": "9b18b0fc0f8fa024bad93dc11774b8f4",
+    "guid": "2cf12a3189125b58afd5a1b1de8a7f65",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\CreateDecalProjector.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/DecalPass.template.meta",
+    "sourceGuid": "39262bb9f1f65f040aefacd75fbd0e47",
+    "guid": "f72155f43e505c71b6ed9ae4b04f25c9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\DecalPass.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/DecalProjectorEditor.cs.meta",
+    "sourceGuid": "e95fca79248379e42bece9300ebf44ab",
+    "guid": "62ddcc61c8b352e199e307646534ff46",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\DecalProjectorEditor.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/DecalProjectorEditor.Skin.cs.meta",
+    "sourceGuid": "c91e96badf0e2d4439afbed8e4befceb",
+    "guid": "bd8e248788bf5860804908a4239b37a4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\DecalProjectorEditor.Skin.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/DecalShaderGraphGUI.cs.meta",
+    "sourceGuid": "e4470a4bb8b24974a828f392bdcd4d0d",
+    "guid": "c97056773eed59f59931e307a280dd57",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\DecalShaderGraphGUI.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/DisplacableRectHandles.cs.meta",
+    "sourceGuid": "ed534566ab68d00408f22fdba23b0848",
+    "guid": "ba14b13825d15ad69c56ef47cbd3521f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\DisplacableRectHandles.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/ProjectedTransform.cs.meta",
+    "sourceGuid": "11a1c63a9dcda4740920a8e98e4ee672",
+    "guid": "4f08a61fc7225c82be89cc43becde1d6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\ProjectedTransform.cs.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/Resources/DecalGizmo.png.meta",
+    "sourceGuid": "9ba98ca4f0fc0754caca09e38af0cc0a",
+    "guid": "50fdd5fae6405379b998a3a6137af815",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\Resources\\DecalGizmo.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Decal/Resources.meta",
+    "sourceGuid": "3522f385657caf14b8c18df878a3c65b",
+    "guid": "3c99ba872a5054b2a7490622a5fd085f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Decal\\Resources.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Gizmos/Camera_Base.png.meta",
+    "sourceGuid": "24b1fe14c2b41d6489a7e7819483df6b",
+    "guid": "405b6021aeab5beb9fbe82b4b3573318",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Gizmos\\Camera_Base.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Gizmos/Camera_Offscreen.png.meta",
+    "sourceGuid": "99c1f1ec31ff9924e9a75aff82e6b986",
+    "guid": "717ed1bdd1ae53ceae5748deca19a78f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Gizmos\\Camera_Offscreen.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Gizmos/Camera_Overlay.png.meta",
+    "sourceGuid": "de8dba0dc20209d4086c0dd93ddf0dd4",
+    "guid": "a6688e928be351919d38d192b9a316d5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Gizmos\\Camera_Overlay.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Gizmos/Camera_PostProcessing.png.meta",
+    "sourceGuid": "916f43e9d8e15c448a2c8a5d30b26dbd",
+    "guid": "1567b4f2ae225676b0cee27b9822eeba",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Gizmos\\Camera_PostProcessing.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Gizmos/Camera_UI.png.meta",
+    "sourceGuid": "e3c6759aa8004ae458959d7fe48d6a74",
+    "guid": "58a9ba4d1ffa5401b83450844681c9dc",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Gizmos\\Camera_UI.png.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Overrides/Shaders/CurveBackground.shader.meta",
+    "sourceGuid": "0d0f817524897904ba47a6a1d55e7668",
+    "guid": "4d44a9a0666651ab8e20321145338cca",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Overrides\\Shaders\\CurveBackground.shader.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Overrides/Shaders/ShadowsMidtonesHighlightsCurves.shader.meta",
+    "sourceGuid": "95e15a77195eb574ab82aaac18b1c796",
+    "guid": "08e6308a359a586daee84ffe5d7c715a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Overrides\\Shaders\\ShadowsMidtonesHighlightsCurves.shader.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/Overrides/Shaders/TrackballEditor.shader.meta",
+    "sourceGuid": "77cfa04f893eb8745b6a454a3d51b43c",
+    "guid": "b1fa598af5a55d2ebf7a693f4b2094b4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\Overrides\\Shaders\\TrackballEditor.shader.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleHexahedron/PassForward2D.template.meta",
+    "sourceGuid": "2d6519c74f7a7584685798d2431960f2",
+    "guid": "80514bc69def504bb8a1b987ff688d3b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleHexahedron\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleHexahedron.meta",
+    "sourceGuid": "a2a46415c7cedaf418d42532b73efd24",
+    "guid": "742dc294549f53358ff4f8e524205617",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleHexahedron.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleLines/PassForward2D.template.meta",
+    "sourceGuid": "f3ec7f3c24cdbba49986aa6478b5867f",
+    "guid": "8911e8b5ab835adfade2a9553f0b8b6c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleLines\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleLines.meta",
+    "sourceGuid": "18a4907a4ab1eb24882f891e45c993db",
+    "guid": "0b0c602b53c85e2686602f6ad34b8250",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleLines.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleLinesSW/PassForward2D.template.meta",
+    "sourceGuid": "526188e7c1965614aa36043f95c18390",
+    "guid": "48c262ccf34c5d3984fb0eba9b2c9ef5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleLinesSW\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleLinesSW.meta",
+    "sourceGuid": "792601c2ba0e2bc41986706670f378d4",
+    "guid": "9edb39a9031a58f7b919dca7bc1b4877",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleLinesSW.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshes/PassForward2D.template.meta",
+    "sourceGuid": "ec0dd9ca912a8824590a57224cabd290",
+    "guid": "96e03543c7f756a991b6bad6eb463378",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshes\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshes.meta",
+    "sourceGuid": "e3f2e22f0a32625498c3494d01930342",
+    "guid": "bab791ea922e5626be34189e6b9a448b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshes.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/Pass.template.meta",
+    "sourceGuid": "77e942a6f106f7746bec78ed934de11a",
+    "guid": "887f8116deb450ee9ee9a32136b4292b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\Pass.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassDepth.template.meta",
+    "sourceGuid": "23f922a362522a540b38b85bb2a5353f",
+    "guid": "84a090afc46c564c9a62a17f2e777dba",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassDepth.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassDepthNormal.template.meta",
+    "sourceGuid": "75feef1dfebc40e4697124cb20d3f4fe",
+    "guid": "4439853aee9957f0bd14a1ede8e63534",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassDepthNormal.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassDepthOrMV.template.meta",
+    "sourceGuid": "a55128324929eba40884977cd5c1669e",
+    "guid": "fe65f4ba1219571db44a52796d530cac",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassDepthOrMV.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassForward.template.meta",
+    "sourceGuid": "286d87cbf8c19c749b69078915c9be88",
+    "guid": "21953701aef75c4da4d5ac74f2e7d90a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassForward.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassGBuffer.template.meta",
+    "sourceGuid": "268a144f637cfd343e3952cf770998d5",
+    "guid": "1addbb753bcf5a369feebcb18ba52400",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassGBuffer.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassSelection.template.meta",
+    "sourceGuid": "915f7a9ae9b5ab542b48b313dbf0489c",
+    "guid": "13a3f63b327b521b8d4fb7195f161f8a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassSelection.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassShadowCaster.template.meta",
+    "sourceGuid": "9e62eb3c33b50c54badb6f7cd6eb7a8c",
+    "guid": "c3c1681730395f69bdd6ba459965abe1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassShadowCaster.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit/PassVelocity.template.meta",
+    "sourceGuid": "4b313a234ad620945b078e06349d46f5",
+    "guid": "df88258334bc5c3fa66fece2e5c00f9b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit\\PassVelocity.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticleMeshesLit.meta",
+    "sourceGuid": "76287eaf161827c40994b1ba2f2af31f",
+    "guid": "cdc594584e6d5999bcc7932739ee3db7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticleMeshesLit.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitives/PassForward2D.template.meta",
+    "sourceGuid": "60e6c40c533c7ed4fbf6a90081f0e415",
+    "guid": "650ee6b5a0ae5f2d84a81eb32b420876",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitives\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitives.meta",
+    "sourceGuid": "93a7f042c0fafec41b13ea8cffc632c1",
+    "guid": "a5618fd024dc5ae0b3e8790d6ddf9ee1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitives.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassDepth.template.meta",
+    "sourceGuid": "37d26d1c1d738be4cba8c98b84ff0da3",
+    "guid": "229fa5fa096852239e1bcb0751faafc7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassDepth.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassDepthNormal.template.meta",
+    "sourceGuid": "341677e7847d0874abedb1fc1748b2cf",
+    "guid": "92aa88c7de045bf685f6bfe1c99530f1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassDepthNormal.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassDepthOrMV.template.meta",
+    "sourceGuid": "e54411f64dc2beb43998b9727f62fa32",
+    "guid": "07a6afb781cf5c2cb92ff1615330623e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassDepthOrMV.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassForward.template.meta",
+    "sourceGuid": "5fa54a2ce1bced448b6bd9cfcac6c25d",
+    "guid": "32173229255a51e7a58f7f6eac27ba60",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassForward.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassGBuffer.template.meta",
+    "sourceGuid": "9efeaf56a8f5826418111f0d669150c1",
+    "guid": "07ddf706c51a5778b44dbc87127d8339",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassGBuffer.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassSelection.template.meta",
+    "sourceGuid": "01ac01709d809ff46966b98b9ec1104d",
+    "guid": "068f7c81fe5e5c0bb851ebed8599853e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassSelection.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassShadowCaster.template.meta",
+    "sourceGuid": "7d07176ae506b05458500c8aa695d90e",
+    "guid": "053e539940465a5b82ea1b9cfbff1afc",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassShadowCaster.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit/PassVelocity.template.meta",
+    "sourceGuid": "40cf578c410cce34895b4a55f12d31d1",
+    "guid": "e68509d10f5057e5bb7699cd760d05ce",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit\\PassVelocity.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePlanarPrimitivesLit.meta",
+    "sourceGuid": "2eda2aff451e93441b6b576a8db601a3",
+    "guid": "5d9549b1031f54ee94e653d024f63137",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePlanarPrimitivesLit.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePoints/PassForward2D.template.meta",
+    "sourceGuid": "909b99072e12b6248b33e572f4c04095",
+    "guid": "65413d29e48a5cdfae3be5fc2d1a7094",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePoints\\PassForward2D.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/ParticlePoints.meta",
+    "sourceGuid": "4880ad95c4d23714986fc0ae33cc43f1",
+    "guid": "427c1bc33cea507ababab1e64dbbd34b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\ParticlePoints.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/URPDecal/PassDBuffer.template.meta",
+    "sourceGuid": "b1a0121f4ab34ed9a0480537b0f8e6f5",
+    "guid": "b04c76b73eff5373a6ecec1889520614",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\URPDecal\\PassDBuffer.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/URPDecal/PassForwardEmissive.template.meta",
+    "sourceGuid": "6ca5883cd45940728412e0fa8e22403c",
+    "guid": "47bcf49114575759987aa026ecf9c3a2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\URPDecal\\PassForwardEmissive.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/URPDecal/PassGBuffer.template.meta",
+    "sourceGuid": "92bae492fd0c48fca15a3c15dc732416",
+    "guid": "8806ac9385a559149bcbd33e9aaad428",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\URPDecal\\PassGBuffer.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/URPDecal/PassScreenSpace.template.meta",
+    "sourceGuid": "4059f0b867f24f38b3d2baed5de3cc8c",
+    "guid": "305391c48c575687a447622dbf4ad7f9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\URPDecal\\PassScreenSpace.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/URPDecal.meta",
+    "sourceGuid": "e81d9b0cdeff465cb187f5a9bb544aa5",
+    "guid": "1e56aac079735710985bd7cb911b287d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\URPDecal.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleBasicCube.template.meta",
+    "sourceGuid": "6400081753199864e8880210a0c8ce24",
+    "guid": "a230885ebe5359f093f99b0c410260a6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleBasicCube.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleCube.template.meta",
+    "sourceGuid": "16b454c8be4c1854fab1aa702812af16",
+    "guid": "180e9f3d12cf52ae81e567afe06ecaae",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleCube.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleDecal.template.meta",
+    "sourceGuid": "b8fd50c1927bb714b8fe5141cb40f34a",
+    "guid": "bc378447bfa052c9b20c4d942ba65c25",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleDecal.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleLinesHW.template.meta",
+    "sourceGuid": "1c9e0e166435ac24eacc5a8f047aff75",
+    "guid": "81011c19aed558aa8e9759e26cc2c615",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleLinesHW.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleLinesSW.template.meta",
+    "sourceGuid": "349d67d896d33a54181e800b229b65ec",
+    "guid": "5eb64d2c9f2f595a8625b03f4fe402cd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleLinesSW.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleLitMesh.template.meta",
+    "sourceGuid": "7edabebf429ea534a8a5bbdf10b327d1",
+    "guid": "be630ba9170e5190b4d17baabb861547",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleLitMesh.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleLitPlanarPrimitive.template.meta",
+    "sourceGuid": "571ac9b288ab81e4c9c3aad150d6cb3e",
+    "guid": "f6d33ccd8bc65b17ab512cad17103ce6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleLitPlanarPrimitive.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleMeshes.template.meta",
+    "sourceGuid": "e1c9418ea80ea1f438a3b984293b811c",
+    "guid": "58d817f729575c7e88dcdb01217765a7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleMeshes.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticlePlanarPrimitive.template.meta",
+    "sourceGuid": "bf2c8e09bda2786468d6b49e9f5422bb",
+    "guid": "d1cf9a59b9fc5aa49d626c8f13eacd08",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticlePlanarPrimitive.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticlePoints.template.meta",
+    "sourceGuid": "677f238dc37937045b856e9468e21666",
+    "guid": "af88bdb05874555086476364699f8a47",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticlePoints.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates/VFXParticleURPDecal.template.meta",
+    "sourceGuid": "c7a8c3a8c44540639fe72b8ba1c8d176",
+    "guid": "a2950ca911405d0e9619209b465be718",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates\\VFXParticleURPDecal.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/Templates.meta",
+    "sourceGuid": "ce87f332afb5ca24ca5486d4bf5caa15",
+    "guid": "e379080a29ed52c09205e7680121e98b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\Templates.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXDecal.template.meta",
+    "sourceGuid": "d422a258210649e8bf5d57f759d8e5da",
+    "guid": "0ad18dca34c452a0a1c2260cb0a83711",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXDecal.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXDecalVaryings.template.meta",
+    "sourceGuid": "5fa2eae08a4a4852be54781bb3cf5736",
+    "guid": "e5b33e81ed4055178f27a100a27d36e7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXDecalVaryings.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXLit.template.meta",
+    "sourceGuid": "b182b2f5194c5574eb1983f8bb8b3d04",
+    "guid": "7feeaa6cafc25bbfb362796b8753419a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXLit.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXLitVaryings.template.meta",
+    "sourceGuid": "56fd66c66c0d99848be7cc4829d45942",
+    "guid": "77174d9e5cea50508f6563c83f144351",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXLitVaryings.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXPasses.template.meta",
+    "sourceGuid": "3d707c2c34101af48b8dc0b38ea50a1f",
+    "guid": "7ff8760c08ec5e84832bd0fb8cf925cd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXPasses.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXSGSurfaceData.template.meta",
+    "sourceGuid": "4c72c43322666bd4dbe58de9815b0639",
+    "guid": "ed71c39252a35dbfa187e94ab792299d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXSGSurfaceData.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders/VFXVertexProbeSampling.template.meta",
+    "sourceGuid": "89944a86d17a433682835ec4b89dc07f",
+    "guid": "3d22703fab725ef1945b313b424b1456",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders\\VFXVertexProbeSampling.template.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/Shaders.meta",
+    "sourceGuid": "7d77ae3715c5eea4ca5de8d2fe3dfa2c",
+    "guid": "a1bd54ddf200527ebd48700eeb798366",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\Shaders.meta"
+    ]
+  },
+  {
+    "path": "Editor/UltraRPEditor/VFXGraph/VFXShaderGraphGUI.cs.meta",
+    "sourceGuid": "19860e28f507465db66c1b9c82b7bc41",
+    "guid": "3066c8781d1e5508b899294877718a82",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Editor\\VFXGraph\\VFXShaderGraphGUI.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalChunk.cs.meta",
+    "sourceGuid": "c8e19e79f3205474ab6ddb2a8c2d50f7",
+    "guid": "7addd81fa50752989d9eb0aabb280fd1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalChunk.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalCreateDrawCallSystem.cs.meta",
+    "sourceGuid": "939a2c8bde6318d4aae61003b98bafd0",
+    "guid": "705ef5e872d3589398e8c03beab0a22b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalCreateDrawCallSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalDrawSystem.cs.meta",
+    "sourceGuid": "8e7118b526134a64dac2e096e1466dd6",
+    "guid": "a736321b9fd15c6889f7c9edb22fa5db",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalDrawSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalEntityManager.cs.meta",
+    "sourceGuid": "d776af40f15db584481ac25590babc57",
+    "guid": "d4c9a4ac5c9655af92b278f3b46b54d7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalEntityManager.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalSkipCulledSystem.cs.meta",
+    "sourceGuid": "ad9384b4a85870d429d445bbad3ed38d",
+    "guid": "dd2f669e6cbc51c8b94b21af74e4124f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalSkipCulledSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalUpdateCachedSystem.cs.meta",
+    "sourceGuid": "3353b3e35f17cf840bda1ee7e858a4c7",
+    "guid": "a42d07f8ecb854a493f856ba63360078",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalUpdateCachedSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalUpdateCulledSystem.cs.meta",
+    "sourceGuid": "46a8b2f3e1abb2145a6a4f00b699a87e",
+    "guid": "e2172627ac0f52eea458a1ffc39d0a77",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalUpdateCulledSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "Runtime/UltraRP/Decal/Entities/DecalUpdateCullingGroupSystem.cs.meta",
+    "sourceGuid": "81f448cc93783d24fbc04af4b95e8af0",
+    "guid": "506c19c45a315ae4b4d4b553ba59d082",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Runtime\\Decal\\Entities\\DecalUpdateCullingGroupSystem.cs.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/AmbientOcclusion.hlsl.meta",
+    "sourceGuid": "1c0cb2353d9a4debbc61e650002843f4",
+    "guid": "85f05683bc185b288d1316be96550e54",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\AmbientOcclusion.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/BRDF.hlsl.meta",
+    "sourceGuid": "e325eaafb90d419598a94581ba3335a4",
+    "guid": "a15e67c9c1bc5e2fb7926f43d11a1448",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\BRDF.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Clustering.hlsl.meta",
+    "sourceGuid": "5c52f3d26791c415b9e887442bfc817c",
+    "guid": "ac616400aa7d5f65b17843db14b0ecf6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Clustering.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Core.hlsl.meta",
+    "sourceGuid": "53686bf58189656459fca4c6ab04ebe5",
+    "guid": "956468e5a0f458018f165d704d91be47",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Core.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DBuffer.hlsl.meta",
+    "sourceGuid": "9041fd6e0797cf74a8f08340e6157c0d",
+    "guid": "63a77a9113f757aa86e4b5542bd7d362",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DBuffer.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/Debugging2D.hlsl.meta",
+    "sourceGuid": "4ee4501622ea4008903e313980a6b1b2",
+    "guid": "02e0bdde229053f5af7c2ee0686389bb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\Debugging2D.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/Debugging3D.hlsl.meta",
+    "sourceGuid": "d8ae717b647341719f2a89f20faaf51b",
+    "guid": "4e9751cbca845ad9b7c0a13ba08c0a14",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\Debugging3D.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/DebuggingCommon.hlsl.meta",
+    "sourceGuid": "a419d344c87843af8e1ce2e8c571fcb6",
+    "guid": "006db0137270541ea6d82f45a90a7e47",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\DebuggingCommon.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/DebuggingFullscreen.hlsl.meta",
+    "sourceGuid": "4203f0a40f114a18a614d8fa38c29be9",
+    "guid": "b43b8633923b5197bac5a5e39a7fd3f9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\DebuggingFullscreen.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/DebugViewEnums.cs.hlsl.meta",
+    "sourceGuid": "448811f26ae38ae4cbb2edb0d2b9186c",
+    "guid": "38dc08e6ccfe5b979b6834f16eefcfe7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\DebugViewEnums.cs.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug/DebugViewEnums.cs.meta",
+    "sourceGuid": "ef707b0a4fc04a4fb4501a4dec1c376d",
+    "guid": "77239200cfdf574889d98eb9917aba6a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug\\DebugViewEnums.cs.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Debug.meta",
+    "sourceGuid": "9f4aa226a5594efa99614cb0158c2f59",
+    "guid": "f264ee40168f5cf0bffa687d589aa3ca",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Debug.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DecalInput.hlsl.meta",
+    "sourceGuid": "3e4be2c2c37a850478a159473b68a63f",
+    "guid": "f2dbc497aa3d5edca69787e633aea253",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DecalInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DeclareDepthTexture.hlsl.meta",
+    "sourceGuid": "ff20ba0133cd2904ebf470aedb16e9a2",
+    "guid": "044ceb60592155328639d4548f66095c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DeclareDepthTexture.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DeclareNormalsTexture.hlsl.meta",
+    "sourceGuid": "92a8a2733f9d18a44aad998449c6ee51",
+    "guid": "d84a19d8c2d753f79efd25e4ce5fed73",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DeclareNormalsTexture.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DeclareOpaqueTexture.hlsl.meta",
+    "sourceGuid": "29619926ce55c944aa978fe5e07cc3db",
+    "guid": "c1af764bacaf5ba987dae9793e5653ae",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DeclareOpaqueTexture.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DeclareRenderingLayerTexture.hlsl.meta",
+    "sourceGuid": "6db8433897838284fa5c7571f3088db8",
+    "guid": "9461792fef3b50a182b23c09a2dca5a2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DeclareRenderingLayerTexture.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/DOTS.hlsl.meta",
+    "sourceGuid": "71338c4661f9c40249e1fdb27df62e92",
+    "guid": "65b9de1717205d6a8a58f242e9a0e0f9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\DOTS.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/GlobalIllumination.hlsl.meta",
+    "sourceGuid": "1be91b057dbe43239a838d9e45a42a32",
+    "guid": "e9abd06dc379519db32c5f5e93cb0a06",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\GlobalIllumination.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Input.hlsl.meta",
+    "sourceGuid": "b2555155ead696140913bef1ec93adf0",
+    "guid": "243c0bd63546556a862381890d0225a1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Input.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/LightCookie/LightCookie.hlsl.meta",
+    "sourceGuid": "8878828335bd847b493e10211fcbf825",
+    "guid": "f58d60f63bb15f7c886c8be1482423c5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\LightCookie\\LightCookie.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/LightCookie/LightCookieInput.hlsl.meta",
+    "sourceGuid": "a70b6c101edaa442a80370b0d514fb3c",
+    "guid": "4ba1a056071256ed80ff69e2ea3431a9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\LightCookie\\LightCookieInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/LightCookie/LightCookieTypes.hlsl.meta",
+    "sourceGuid": "394c5e9a352f74e998cb797d7aa461d4",
+    "guid": "3837b66442bc553db6d0dbbe4db67b8f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\LightCookie\\LightCookieTypes.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/LightCookie.meta",
+    "sourceGuid": "a648b46fb6b4749f589f22d9ef6e441a",
+    "guid": "df2c464f9c2952ac910c9784a4a3685c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\LightCookie.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Lighting.hlsl.meta",
+    "sourceGuid": "762f0a4829f44584ba01e2f0661150d9",
+    "guid": "513d8211ba2a532d86b329418465bc17",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Lighting.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/LODCrossFade.hlsl.meta",
+    "sourceGuid": "ef46fb1e00bf67142ae3548411a562b6",
+    "guid": "5754535a2da358e19ed7a5fb854ae2b3",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\LODCrossFade.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/MetaInput.hlsl.meta",
+    "sourceGuid": "6c9c9877e9a3dff4fbc73fd447c653d8",
+    "guid": "f98748e582ba535591347bb55eb84204",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\MetaInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/MotionVectorsCommon.hlsl.meta",
+    "sourceGuid": "a20568904d9c412459181938be987e12",
+    "guid": "0ba547d8d78b5a7b8e2ce8281a918f28",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\MotionVectorsCommon.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/NormalReconstruction.hlsl.meta",
+    "sourceGuid": "20013f01a8cbaef4c9545926c27b8d73",
+    "guid": "cbc754659e055ae0be8da22a17de526e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\NormalReconstruction.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ObjectMotionVectors.hlsl.meta",
+    "sourceGuid": "6d239a0044031854a817ab72a66ce766",
+    "guid": "eeb64da41375535583b4c5476419c752",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ObjectMotionVectors.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Particles.hlsl.meta",
+    "sourceGuid": "58997c4bd657ad848919e91029ee01eb",
+    "guid": "4dfc46d7c596503dbaf8077025e3c789",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Particles.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ParticlesInstancing.hlsl.meta",
+    "sourceGuid": "c70398529f54bc44ca6a3ed0211e039f",
+    "guid": "84b70d9e5e205ec8bfbcc840ffde6b68",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ParticlesInstancing.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ProbeVolumeVariants.hlsl.meta",
+    "sourceGuid": "4156fde60711cfd4c9cc05a737bd013e",
+    "guid": "7e43453d172f50c680840f4be70b752b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ProbeVolumeVariants.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/RealtimeLights.hlsl.meta",
+    "sourceGuid": "4e8e2a4c57cb4eb6bf8653ab88069a9c",
+    "guid": "3f1ea8cf9f1e5902beb0aa2119fd471a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\RealtimeLights.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/RenderingLayers.hlsl.meta",
+    "sourceGuid": "bcd650cf6823f4f7fb62fe0eccae07b0",
+    "guid": "31a0a23ab6f151819f43fb1f05a0fae1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\RenderingLayers.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ShaderGraphFunctions.hlsl.meta",
+    "sourceGuid": "9adc879d74aec4400bbdce89ff664a05",
+    "guid": "7b3075491f6a50caa67244b0c43c2af1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ShaderGraphFunctions.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ShaderTypes.cs.hlsl.meta",
+    "sourceGuid": "6be8cfeb6b34eca43b000cb7bad7255e",
+    "guid": "579e220d0a6556a9bc2bf2905c147013",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ShaderTypes.cs.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ShaderTypes.cs.meta",
+    "sourceGuid": "f82f912becb8b444f8f6c886f823bea6",
+    "guid": "5107c92b65da54b2b42116b14451d667",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ShaderTypes.cs.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ShaderVariablesFunctions.deprecated.hlsl.meta",
+    "sourceGuid": "77a6d2810aa974e0bad8b56aec6e87f4",
+    "guid": "87294327d2265d14959914ffe8e59e17",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ShaderVariablesFunctions.deprecated.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/ShaderVariablesFunctions.hlsl.meta",
+    "sourceGuid": "a8db2eae5ac4548a683f17e8c528c05c",
+    "guid": "cbaf3bd0ded05803b3ab7c639d67f477",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\ShaderVariablesFunctions.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Shadows.deprecated.hlsl.meta",
+    "sourceGuid": "51fae96488b3f402a8abcda4217b37e1",
+    "guid": "d26ae2a10b015136ae8fed1de92fd9d2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Shadows.deprecated.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Shadows.hlsl.meta",
+    "sourceGuid": "5cb845b7decdb4db6a7fcc676b127b6d",
+    "guid": "c34d2f25b02c5a7a90921fc9e0deb2c4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Shadows.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/SixWayLighting.hlsl.meta",
+    "sourceGuid": "d5c9d8a733254102b894def0429c24c4",
+    "guid": "aa323d46567e5d21a725f5f8bb93eddd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\SixWayLighting.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/SSAO.hlsl.meta",
+    "sourceGuid": "930a5f40803cb414b84db9a1889f890c",
+    "guid": "f0fe92fdfb7755fd80e085e900734285",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\SSAO.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/SurfaceData.hlsl.meta",
+    "sourceGuid": "181b211e2007bd4478d853b8964457ab",
+    "guid": "7eea75f99ea255c489135fd46236d5a8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\SurfaceData.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/SurfaceInput.hlsl.meta",
+    "sourceGuid": "546b9685ee7cc0941afd734baa08db2a",
+    "guid": "f511f638663c5c7d9382b6c7eecee38e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\SurfaceInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/UltraDOTSInstancing.hlsl.meta",
+    "sourceGuid": "91bd1404255c4cb28a6c81f20300308f",
+    "guid": "ca1c660fd31d5ff386242a16d6d5e781",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\UniversalDOTSInstancing.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/UltraMetaPass.hlsl.meta",
+    "sourceGuid": "573542356fb54fe4583ff78639189cf8",
+    "guid": "dba4ea1aca2255d0b60c9a4822805a57",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\UniversalMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/UnityGBuffer.hlsl.meta",
+    "sourceGuid": "db51e39af1b3c01449a3e6b1ce782a48",
+    "guid": "e3b9a8c24ff95a29951b94e8dd987c2d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\UnityGBuffer.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/UnityInput.hlsl.meta",
+    "sourceGuid": "6564342aa7c6ca44a86b97323a311d74",
+    "guid": "73241bb277745ba4b690b1b692d46ff7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\UnityInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/UnityTypes.hlsl.meta",
+    "sourceGuid": "8d0dd75f99f9243d584a08489c8498b8",
+    "guid": "39cef6b2bf9d5923a102f7d796f8a7d7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\UnityTypes.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/Unlit.hlsl.meta",
+    "sourceGuid": "823e07282e194f119e8032f1555676ee",
+    "guid": "d8ba3a1b03df59c4a9008a765e812d66",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\Unlit.hlsl.meta"
+    ]
+  },
+  {
+    "path": "ShaderLibrary/VisualEffectVertex.hlsl.meta",
+    "sourceGuid": "41a9ae1971520f84c89225b0e84299ec",
+    "guid": "6ecee8253cd95c2b8622ea4086a765f8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\ShaderLibrary\\VisualEffectVertex.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/CombinedShapeLightShared.hlsl.meta",
+    "sourceGuid": "e7ee44e4db2311b428e6f789318838f8",
+    "guid": "337fdeb9091d5e28b76ae7970b0099a2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\CombinedShapeLightShared.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/Core2D.hlsl.meta",
+    "sourceGuid": "882f88039036f6c49a8df5ce3d214444",
+    "guid": "88913e0f9382561fb1cf1a072a44e490",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\Core2D.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/InputData2D.hlsl.meta",
+    "sourceGuid": "15c09e9f82634f5881e6676d62f25bcb",
+    "guid": "f433bdb6cb0c51299badb50ba5b239b7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\InputData2D.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/LightingUtility.hlsl.meta",
+    "sourceGuid": "931e5ffca47cea54783e99bf989216b5",
+    "guid": "978a731f56d25a2b88812399436f8fea",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\LightingUtility.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/NormalsRenderingShared.hlsl.meta",
+    "sourceGuid": "b9c3f97797bd9374cb2607614554fe54",
+    "guid": "476761323b765c8ab078441cb5cad951",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\NormalsRenderingShared.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/ShadowProjectVertex.hlsl.meta",
+    "sourceGuid": "97832dc646b4fb4498bf5aa61e366c13",
+    "guid": "6cc5391067a35c78961ac89822779aee",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\ShadowProjectVertex.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/ShapeLightShared.hlsl.meta",
+    "sourceGuid": "4151cfb2494f10243a255c8a553306e3",
+    "guid": "d7b19bbb76a6539686877212f89eb18a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\ShapeLightShared.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/ShapeLightVariables.hlsl.meta",
+    "sourceGuid": "5ce9e51bf709e4e459da190b3cf4d110",
+    "guid": "820182f1c3ba5aa29c3cc04c5f0bf2dd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\ShapeLightVariables.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/SpriteMaskShared.hlsl.meta",
+    "sourceGuid": "c9ac51d204bc24b118ec6bc5ab6c29c6",
+    "guid": "609769949bbe50c493e0ca2fd3c5caee",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\SpriteMaskShared.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include/SurfaceData2D.hlsl.meta",
+    "sourceGuid": "2861459260b14a2481f8f8e7f6637d8f",
+    "guid": "71deffab57815bf79520902a5bc111f5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include\\SurfaceData2D.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Include.meta",
+    "sourceGuid": "b1e0c8a42c5ad194389231f7780e158d",
+    "guid": "3d76bff2a8c65826a81e37a0b4efe0c8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Include.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Light2D.shader.meta",
+    "sourceGuid": "3f6c848ca3d7bca4bbe846546ac701a1",
+    "guid": "f0ed4d4e04885fb9a3543f4059895b42",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Light2D.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Shadow2D-Projected.shader.meta",
+    "sourceGuid": "ce09d4a80b88c5a4eb9768fab4f1ee00",
+    "guid": "56a02b71ad9d5ed0987f286f674e7df4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Shadow2D-Projected.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Shadow2D-Shadow-Geometry.shader.meta",
+    "sourceGuid": "19349a0f9a7ed4c48a27445bcf92e5e1",
+    "guid": "bfd1230d5a5a5da5adbeb75efa12f713",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Shadow2D-Shadow-Geometry.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Shadow2D-Shadow-Sprite.shader.meta",
+    "sourceGuid": "44fc62292b65ab04eabcf310e799ccf6",
+    "guid": "d3cc3d88b15c56a4ab9ded06c75477c8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Shadow2D-Shadow-Sprite.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Shadow2D-Unshadow-Geometry.shader.meta",
+    "sourceGuid": "77774d9009bb81447b048c907d4c6273",
+    "guid": "ea40a0db5dc756dfac71021cdfe45759",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Shadow2D-Unshadow-Geometry.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Shadow2D-Unshadow-Sprite.shader.meta",
+    "sourceGuid": "de02b375720b5c445afe83cd483bedf3",
+    "guid": "aaa81983e3065cfdb85c73d708689871",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Shadow2D-Unshadow-Sprite.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Sprite-Lit-Default.shader.meta",
+    "sourceGuid": "e260cfa7296ee7642b167f1eb5be5023",
+    "guid": "30284dd10b9b59a6b840f1c49f2e3544",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Sprite-Lit-Default.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Sprite-Mask.shader.meta",
+    "sourceGuid": "e39bd598ce13f44ba8af997d3e42cd18",
+    "guid": "f3649d664d7e5ca48542cb33ff61f91d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Sprite-Mask.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/Sprite-Unlit-Default.shader.meta",
+    "sourceGuid": "13c02b14c4d048fa9653293d54f6e0e1",
+    "guid": "add069ff31cf5e29a998906a830b3677",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\Sprite-Unlit-Default.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/VFXSpriteLit.shadergraph.meta",
+    "sourceGuid": "24a73dccd7b6fad4798be282f96a21f4",
+    "guid": "213060cb4da2543a8c9acc6a7cfd8861",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\VFXSpriteLit.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D/VFXSpriteUnlit.shadergraph.meta",
+    "sourceGuid": "d7288f66e4fb0634c9afef98c31b722a",
+    "guid": "98f415e94e545be892c6b28a09a9f201",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D\\VFXSpriteUnlit.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/2D.meta",
+    "sourceGuid": "e674d0c2643d94245b5da6cc11dfe0ec",
+    "guid": "723ca1c8e50c5373880f85b834cbcd44",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\2D.meta"
+    ]
+  },
+  {
+    "path": "Shaders/AutodeskInteractive/AutodeskInteractive.shadergraph.meta",
+    "sourceGuid": "0e9d5a909a1f7e84882a534d0d11e49f",
+    "guid": "77b4a1c0a48c591ab367e47e66b9c094",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\AutodeskInteractive\\AutodeskInteractive.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/AutodeskInteractive/AutodeskInteractiveMasked.shadergraph.meta",
+    "sourceGuid": "80aa867ac363ac043847b06ad71604cd",
+    "guid": "4fdc9408533f591894242156b8430b12",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\AutodeskInteractive\\AutodeskInteractiveMasked.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/AutodeskInteractive/AutodeskInteractiveTransparent.shadergraph.meta",
+    "sourceGuid": "5c81372d981403744adbdda4433c9c11",
+    "guid": "210ae6d5dbe95eaca4e8248e483a0bac",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\AutodeskInteractive\\AutodeskInteractiveTransparent.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/AutodeskInteractive.meta",
+    "sourceGuid": "ffac7c69f2faf9345b5b32ae0580e2e9",
+    "guid": "308ccce989825da585fbf1ca6e199396",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\AutodeskInteractive.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BakedLit.shader.meta",
+    "sourceGuid": "0ca6dca7396eb48e5849247ffd444914",
+    "guid": "f94994659a4f59938ac878c190a9663f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BakedLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BakedLitDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "9604e389528d04ae39fe05a7b4212172",
+    "guid": "991003d0c71954f09a39b94f41ac36dd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BakedLitDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BakedLitForwardPass.hlsl.meta",
+    "sourceGuid": "70003ec87ea6481a920369a377c1b623",
+    "guid": "43127910dec0577189d1b9c7fb27814b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BakedLitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BakedLitInput.hlsl.meta",
+    "sourceGuid": "463a8185744c2459f8e621f4e4eb74d3",
+    "guid": "cf9923348c7e52ecbe2a2724060aa3ab",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BakedLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BakedLitMetaPass.hlsl.meta",
+    "sourceGuid": "f31bf343921b848fa8e5cde15f1dbaab",
+    "guid": "317844d403b45923b747a91f305c3668",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BakedLitMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/BRGPicking.shader.meta",
+    "sourceGuid": "74b1585886a85614aa34e2c8e303c77a",
+    "guid": "d05e6dd64b6a5d63af7a392c0e40532f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\BRGPicking.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/CameraMotionVectors.shader.meta",
+    "sourceGuid": "c56b7e0d4c7cb484e959caeeedae9bbf",
+    "guid": "f13c64e6d0c752ad9742a85c54e96a9d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\CameraMotionVectors.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/ComplexLit.shader.meta",
+    "sourceGuid": "ee7e4c9a5f6364b688a332c67fc32cca",
+    "guid": "06a6eed24ba059ef93a368a2fab0d669",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\ComplexLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Debug/DebugReplacement.shader.meta",
+    "sourceGuid": "cf852408f2e174538bcd9b7fda1c5ae7",
+    "guid": "8f7266c598fd5b8e859cb4ff59cd1f15",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Debug\\DebugReplacement.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Debug/HDRDebugView.shader.meta",
+    "sourceGuid": "573620ae32aec764abd4d728906d2587",
+    "guid": "ae738fcbc6565909820c9171c6030bd5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Debug\\HDRDebugView.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Debug/ProbeVolumeSamplingDebugPositionNormal.compute.meta",
+    "sourceGuid": "53626a513ea68ce47b59dc1299fe3959",
+    "guid": "aa256fd4ff185d6ca8ca9679cf0f6d99",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Debug\\ProbeVolumeSamplingDebugPositionNormal.compute.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Debug.meta",
+    "sourceGuid": "83e12e3399064822abd3e69798ce3053",
+    "guid": "c61a1326e7e85ee199a384740db8cded",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Debug.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Decal.shadergraph.meta",
+    "sourceGuid": "9b4e681081e2b4c469111bb649e2f7ee",
+    "guid": "0e8e48c793145f27ab9725d91aff4b1e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Decal.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/DepthNormalsPass.hlsl.meta",
+    "sourceGuid": "b76d45ea333b2a049bc45c5328ef3e7c",
+    "guid": "a9f8dfa6134352328084941cb6f7fb6a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\DepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/DepthOnlyPass.hlsl.meta",
+    "sourceGuid": "0acd4fdbcf0cf654a9cdf3e9ccc2edce",
+    "guid": "670b00b0acc65f5297c836e484b95519",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\DepthOnlyPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/FullscreenInvertColors.shadergraph.meta",
+    "sourceGuid": "fb6390f650ca44a5ba3246d8dda47927",
+    "guid": "f115ebd1425559f68145a50f996f6d8c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\FullscreenInvertColors.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Lit.shader.meta",
+    "sourceGuid": "933532a4fcc9baf4fa0491de14d08ed7",
+    "guid": "d1abb3a09f345893b396cdcac4502546",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Lit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/LitDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "d6641dcdedd1f422aa58ffec746e5342",
+    "guid": "8a5fe1891f2e53e6a6b72e6f8871ad32",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\LitDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/LitForwardPass.hlsl.meta",
+    "sourceGuid": "116bd973269b9f741b7177c8523b9e50",
+    "guid": "4dc6160fc8fc523589a6f19f495c3a45",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\LitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/LitGBufferPass.hlsl.meta",
+    "sourceGuid": "92673cbb58cac8e4d8b5d044ce912dd8",
+    "guid": "b55662513a9157e68a8a12955cc4af54",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\LitGBufferPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/LitInput.hlsl.meta",
+    "sourceGuid": "c46f85bf266d7496d9b3659acfbdc711",
+    "guid": "9900bb3483ba5d469af86f32095a0e86",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\LitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/LitMetaPass.hlsl.meta",
+    "sourceGuid": "dcf4e762d48204e33b575f8007e3d563",
+    "guid": "70bccfaad95b5551a8a3d92e3c1dba1b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\LitMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7.shader.meta",
+    "sourceGuid": "0f4122b9a743b744abe2fb6a0a88868b",
+    "guid": "b3e2abf73ca456459b8466a440871b3e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7Billboard.shader.meta",
+    "sourceGuid": "5ec81c81908db34429b4f6ddecadd3bd",
+    "guid": "79a81a4aaf2a5e06b2f361e5314b9d76",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7Billboard.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7BillboardInput.hlsl.meta",
+    "sourceGuid": "693515911c7346d448c10a3cfc4acf45",
+    "guid": "1d7ea48be6d2599aa5720dc52dfc2fdb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7BillboardInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7BillboardPasses.hlsl.meta",
+    "sourceGuid": "8ba36b6596e931145bbad992032afb1a",
+    "guid": "259038bf468f574c8e4bfa8613b94ac3",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7BillboardPasses.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7CommonInput.hlsl.meta",
+    "sourceGuid": "55e6929e00a20d64eadff49d59e097db",
+    "guid": "10c5f974c7d35572b6689ceee7acf923",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7CommonInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7CommonPasses.hlsl.meta",
+    "sourceGuid": "85f7860cf76171b438c51eb5fcd238ce",
+    "guid": "247410b16caf5d238300e96d067da78d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7CommonPasses.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7Input.hlsl.meta",
+    "sourceGuid": "519469e5f151ddb40a650b66f48175cb",
+    "guid": "e7be237ad2575478b38e02df8cb1ecbc",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7Input.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree7Passes.hlsl.meta",
+    "sourceGuid": "f3f941933e171854386001194281536f",
+    "guid": "7fdf7f14d1175881a284614fdb9e0498",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree7Passes.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree8.shader.meta",
+    "sourceGuid": "99134b1f0c27d54469a840832a28fadf",
+    "guid": "e14f54ea96f259d899a6d23233107f11",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree8.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree8_PBRLit.shadergraph.meta",
+    "sourceGuid": "9920c1f1781549a46ba081a2a15a16ec",
+    "guid": "a2d8abe9798c58f1acc7ab19af6b7871",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree8_PBRLit.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree8Input.hlsl.meta",
+    "sourceGuid": "e9fc1df17be32ac41a7186d571c669d5",
+    "guid": "4843d61603265154b187835e859fdfbf",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree8Input.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree8Passes.hlsl.meta",
+    "sourceGuid": "0613a5abac2db2247bdcd7380e98bba1",
+    "guid": "dd6c803ba4f550c98d3dbada7b000b4f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree8Passes.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTree9_URP.shadergraph.meta",
+    "sourceGuid": "cbd3e1cc4ae141c42a30e33b4d666a61",
+    "guid": "5d960ee2faa95d89a01fd65688c292ee",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTree9_URP.shadergraph.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature/SpeedTreeUtility.hlsl.meta",
+    "sourceGuid": "c245162389fbe944dbc0d721bee26fe0",
+    "guid": "715327637c1c58f69fa95adfe4fa1b6e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature\\SpeedTreeUtility.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Nature.meta",
+    "sourceGuid": "4cbffddcbed277c40a97feee7c42e857",
+    "guid": "a8d47cf41e0e530685675f86fddecd8d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Nature.meta"
+    ]
+  },
+  {
+    "path": "Shaders/ObjectMotionVectorFallback.shader.meta",
+    "sourceGuid": "7b3ede40266cd49a395def176e1bc486",
+    "guid": "60de968878db5895bcaac15539a5f69c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\ObjectMotionVectorFallback.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "637c27b6fe6224a06b2b066769d0a6e6",
+    "guid": "af8c8cb5b9405da795145ff448d8a905",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesDepthOnlyPass.hlsl.meta",
+    "sourceGuid": "e9795406c7fc049d2b125cce47405fa9",
+    "guid": "e30af8332b1b54a89ea3916b2d6d15e0",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesDepthOnlyPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesEditorPass.hlsl.meta",
+    "sourceGuid": "b75058dfffdae7a41bf0373f3d2f264c",
+    "guid": "76583575f16150ab9aa3f9b86a0baac6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesEditorPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesInput.hlsl.meta",
+    "sourceGuid": "1acd75ff24dbc43cca235408192130b7",
+    "guid": "4ffc7bde994e5752b85989b4bdf2d84b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesLit.shader.meta",
+    "sourceGuid": "b7839dad95683814aa64166edc107ae2",
+    "guid": "875d04cc870350038eeab41640da5c39",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesLitForwardPass.hlsl.meta",
+    "sourceGuid": "a8d5c97876fe84413b2f630e2debf75b",
+    "guid": "f7204abd19f55b58ba8697e8d1aafed6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesLitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesLitGbufferPass.hlsl.meta",
+    "sourceGuid": "cc421706a0b598946982fee0c0d4bf51",
+    "guid": "a85092b963995f378df2cfd07dc66ea1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesLitGbufferPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesLitInput.hlsl.meta",
+    "sourceGuid": "a3129e299d0744bb7bd42c2cea7cea2b",
+    "guid": "dfaab8d7800c53cfab9ff169e8db8855",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesSimpleLit.shader.meta",
+    "sourceGuid": "8516d7a69675844a7a0b7095af7c46af",
+    "guid": "9578554a95cf59b28b7b70bbce9fdb7c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesSimpleLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesSimpleLitForwardPass.hlsl.meta",
+    "sourceGuid": "d0ccc42c5a0934462a0ff237772dceff",
+    "guid": "3524f32fa49651098a9db74a2035fb49",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesSimpleLitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesSimpleLitGBufferPass.hlsl.meta",
+    "sourceGuid": "ca0e14e5bf6ac934086f42ca329f4ef1",
+    "guid": "ff640db19c2b52f599b105ec8955c2ee",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesSimpleLitGBufferPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesSimpleLitInput.hlsl.meta",
+    "sourceGuid": "01fa3f8c89aa44160b9a735fc22362d0",
+    "guid": "e1cbe88dd687542a9b2c31e331644994",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesSimpleLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesUnlit.shader.meta",
+    "sourceGuid": "0406db5a14f94604a8c57ccfbc9f3b46",
+    "guid": "1b9a87ad5af356efa09bfc9a20396248",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesUnlit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesUnlitForwardPass.hlsl.meta",
+    "sourceGuid": "a361552991159403bbd785132d5cb812",
+    "guid": "75b6abe04a065dd6815d3d7d25e8e245",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesUnlitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles/ParticlesUnlitInput.hlsl.meta",
+    "sourceGuid": "0ddf9719bc9ff43e1a017712e21bb5e6",
+    "guid": "6c277d744b7b5071974caa61abf7d1eb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles\\ParticlesUnlitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Particles.meta",
+    "sourceGuid": "7aa17bb9699a0ee4282141a28d9fb8ea",
+    "guid": "15307e7186a35cef8c60c040e586e0aa",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Particles.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/Bloom.shader.meta",
+    "sourceGuid": "5f1864addb451f54bae8c86d230f736e",
+    "guid": "3a98d38dfadd507f928c00ed5a31da57",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\Bloom.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/BokehDepthOfField.shader.meta",
+    "sourceGuid": "2aed67ad60045d54ba3a00c91e2d2631",
+    "guid": "7daa076824975837b7f69a8c0f3e56be",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\BokehDepthOfField.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/CameraMotionBlur.shader.meta",
+    "sourceGuid": "1edcd131364091c46a17cbff0b1de97a",
+    "guid": "182014b6f82851ad8ba0d524ddb2fb6f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\CameraMotionBlur.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/Common.hlsl.meta",
+    "sourceGuid": "eaaf2a45502c59c4e907088b5f034c0c",
+    "guid": "fc7682b9dad154a7b79d25aa733e0dea",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\Common.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/EdgeAdaptiveSpatialUpsampling.shader.meta",
+    "sourceGuid": "562b7ae4f629f144aa97780546fce7c6",
+    "guid": "35318656c93b51bfbefc0a291644f1d8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\EdgeAdaptiveSpatialUpsampling.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/FinalPost.shader.meta",
+    "sourceGuid": "c49e63ed1bbcb334780a3bd19dfed403",
+    "guid": "362fd8c50992582a9fce708f45163dc9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\FinalPost.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/FXAA3_11.hlsl.meta",
+    "sourceGuid": "691e950f7acb24df5be4c31303d0991a",
+    "guid": "6750373c06a75d678f69c6aad0319c66",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\FXAA3_11.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/GaussianDepthOfField.shader.meta",
+    "sourceGuid": "5e7134d6e63e0bc47a1dd2669cedb379",
+    "guid": "ed0eb67ebf8a5f209a208ce9623422cd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\GaussianDepthOfField.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/LensFlareDataDriven.shader.meta",
+    "sourceGuid": "6cda457ac28612740adb23da5d39ea92",
+    "guid": "d5596344441853038b92c49bfe0404bc",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\LensFlareDataDriven.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/LensFlareScreenSpace.shader.meta",
+    "sourceGuid": "701880fecb344ea4c9cd0db3407ab287",
+    "guid": "9b21506903eb561e8e95aae9151b73cb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\LensFlareScreenSpace.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/LutBuilderHdr.shader.meta",
+    "sourceGuid": "ec9fec698a3456d4fb18cf8bacb7a2bc",
+    "guid": "c6af70df7a1856558e67ddc89fe55543",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\LutBuilderHdr.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/LutBuilderLdr.shader.meta",
+    "sourceGuid": "65df88701913c224d95fc554db28381a",
+    "guid": "0259454a6893547a924767bf497de597",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\LutBuilderLdr.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/PaniniProjection.shader.meta",
+    "sourceGuid": "a15b78cf8ca26ca4fb2090293153c62c",
+    "guid": "9edb6b96c1d151b993fe03f296790406",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\PaniniProjection.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/ScalingSetup.shader.meta",
+    "sourceGuid": "e8ee25143a34b8c4388709ea947055d1",
+    "guid": "a0ddc3db1bb25c9db233e21a9f87d59d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\ScalingSetup.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/StopNaN.shader.meta",
+    "sourceGuid": "1121bb4e615ca3c48b214e79e841e823",
+    "guid": "c21d8470cbbd578e90e95a8b508c7020",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\StopNaN.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/SubpixelMorphologicalAntialiasing.hlsl.meta",
+    "sourceGuid": "3f1f7ec9e0c852a48826fe085f257d80",
+    "guid": "160a4ee6287050c4aeac9dc33b47dd65",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\SubpixelMorphologicalAntialiasing.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/SubpixelMorphologicalAntialiasing.shader.meta",
+    "sourceGuid": "63eaba0ebfb82cc43bde059b4a8c65f6",
+    "guid": "f19b36cb97e35876aadaec09c19b7fdb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\SubpixelMorphologicalAntialiasing.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/SubpixelMorphologicalAntialiasingBridge.hlsl.meta",
+    "sourceGuid": "0c5832a72145a5b49a1b64a21a609bb4",
+    "guid": "237a199d08fc52adae26e1162dae1059",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\SubpixelMorphologicalAntialiasingBridge.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/TemporalAA.hlsl.meta",
+    "sourceGuid": "2d9f6a569c0b340a388b3e7c0428548c",
+    "guid": "aa5bc86fff47526fb5c3925830b8eb6e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\TemporalAA.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/TemporalAA.shader.meta",
+    "sourceGuid": "9c70c1a35ff15f340b38ea84842358bf",
+    "guid": "39a4d0a5d68f5490bf06a0ff67275847",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\TemporalAA.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing/UberPost.shader.meta",
+    "sourceGuid": "e7857e9d0c934dc4f83f270f8447b006",
+    "guid": "10086e6ba4b95b3eb0d6e40457f7f5aa",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing\\UberPost.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/PostProcessing.meta",
+    "sourceGuid": "a7a16c0caf8b8a84592e5c6591db2513",
+    "guid": "172934a331b25ef6bf3340b13cd52eaf",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\PostProcessing.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Shaders.cs.meta",
+    "sourceGuid": "573710bd101f2514f932ace958059d6a",
+    "guid": "ff9efe24d7d958fcbe3220e427cd2a61",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Shaders.cs.meta"
+    ]
+  },
+  {
+    "path": "Shaders/ShadowCasterPass.hlsl.meta",
+    "sourceGuid": "9a48a2987a0e11645adf07fe4a8d5ec9",
+    "guid": "2434ed3a90195fee9137229bfcd2f399",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\ShadowCasterPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLit.shader.meta",
+    "sourceGuid": "8d2bb70cbf9db8d4da26e15b26e74248",
+    "guid": "1f82a48f23da5c5491eecdebb7cc4cac",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLitDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "a63ccbef6bed14464a35b8a62ee9b775",
+    "guid": "66ffb99e6da8515f9433ec64cda235b4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLitDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLitForwardPass.hlsl.meta",
+    "sourceGuid": "ee447e65526c7db45a978c16b28827a9",
+    "guid": "bfbc80225024584d8aafce7f8f0faf0a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLitGBufferPass.hlsl.meta",
+    "sourceGuid": "5f8cea4f4fce7414ab78bcbf51dca71c",
+    "guid": "60873bd9c1415c1981b84ca2c2c84332",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLitGBufferPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLitInput.hlsl.meta",
+    "sourceGuid": "ad863d097888f42c6bcf419efb2946c5",
+    "guid": "d5e45cbf1d6c553dae493cfd6e82b36c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SimpleLitMetaPass.hlsl.meta",
+    "sourceGuid": "ffc632d1e38ef4682807a89afb2b966f",
+    "guid": "7fd0d208dec85654970eb767cd23549f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SimpleLitMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SpatialMappingOcclusion.shader.meta",
+    "sourceGuid": "60e10855641b4d84da68ec72e6f6eeb8",
+    "guid": "1179fe7631ee52a6b4f87c7c35f0f260",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SpatialMappingOcclusion.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/SpatialMappingWireframe.shader.meta",
+    "sourceGuid": "e8b802ac01d87144b91f12f40c1f2659",
+    "guid": "c094191f6cbd54878fca581d6716ea35",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\SpatialMappingWireframe.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainDetailLit.shader.meta",
+    "sourceGuid": "f6783ab646d374f94b199774402a5144",
+    "guid": "68fe015859825fdab01b5732f2462eb8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainDetailLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainDetailLitInput.hlsl.meta",
+    "sourceGuid": "6aa45ba0b4524671ae57fb74652592f3",
+    "guid": "f06ab861d14353c7ba3270b2c429e9ca",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainDetailLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainDetailLitPasses.hlsl.meta",
+    "sourceGuid": "749e1c2d203942319da1fdb1d94c5f2a",
+    "guid": "2228eae9c6215e8983f2f95e39af202b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainDetailLitPasses.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLit.shader.meta",
+    "sourceGuid": "69c1f799e772cb6438f56c23efccb782",
+    "guid": "400fa58e5d0d50b4b644b266b5b406fe",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitAdd.shader.meta",
+    "sourceGuid": "0a7e590f3cf1d4ee8a8fab5b6eff09ef",
+    "guid": "a579cd00b39e58bb8f5bfad496187848",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitAdd.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitBase.shader.meta",
+    "sourceGuid": "21322c8b137c66e49b86085d3c8161f6",
+    "guid": "90b0684a09f75a219ab1be88045db860",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitBase.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitBasemapGen.shader.meta",
+    "sourceGuid": "8fbe92a9edfe6074e841d6dd1509bc59",
+    "guid": "253379dd1e45524fa285225f09d07bcb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitBasemapGen.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "7b6328a4b0ed14a9ea5e0629d7c7966c",
+    "guid": "ff4a71702b6f5a88aa7bdcdb0cfa8c36",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitInput.hlsl.meta",
+    "sourceGuid": "a817cb90496894b368593402e13b040c",
+    "guid": "0c31d4d4136f5137be1c00a476263aa0",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitMetaPass.hlsl.meta",
+    "sourceGuid": "d00e32bd7638d40538d108b4e2581147",
+    "guid": "61fdec846d7d50bea1e0c22f576af68a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/TerrainLitPasses.hlsl.meta",
+    "sourceGuid": "ad25529ea2516421ab5f1a2440bee139",
+    "guid": "d3e7215cb0705af0b6a1110bf26ccefd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\TerrainLitPasses.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/WavingGrass.shader.meta",
+    "sourceGuid": "e507fdfead5ca47e8b9a768b51c291a1",
+    "guid": "3e2ca554ac18552ba3528ec261913af3",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\WavingGrass.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/WavingGrassBillboard.shader.meta",
+    "sourceGuid": "29868e73b638e48ca99a19ea58c48d90",
+    "guid": "a11bbffe69e75ef39b0202cdbdf5e675",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\WavingGrassBillboard.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/WavingGrassDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "97ce72d5527034cbca1d95b53d583472",
+    "guid": "1c479a52b1645ac49b0bff9d427dfe7e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\WavingGrassDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/WavingGrassInput.hlsl.meta",
+    "sourceGuid": "ca55f7593a02f4c1ab1bdbc03282d7af",
+    "guid": "7baf28af5f30592a81ce8bfeb3d7de17",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\WavingGrassInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain/WavingGrassPasses.hlsl.meta",
+    "sourceGuid": "b4bc78a1364154f15b718a412e9710b6",
+    "guid": "22bfc61e96c85f8e895746547923f5fa",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain\\WavingGrassPasses.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Terrain.meta",
+    "sourceGuid": "cf2defa266cfe43e59a7230ff55c6107",
+    "guid": "bfa32003a7115b5bb09b85efd3b36913",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Terrain.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Unity.RenderPipelines.Universal.Shaders.asmdef.meta",
+    "sourceGuid": "b4517ec124862cb4bb3b8b27d72843a6",
+    "guid": "5f7bf6bb7c4a5610ace97288e5e30db0",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Unity.RenderPipelines.Universal.Shaders.asmdef.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Unlit.shader.meta",
+    "sourceGuid": "650dd9526735d5b46b79224bc6e94025",
+    "guid": "b60e90e8725d58099e6fce219da6ad57",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Unlit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/UnlitDepthNormalsPass.hlsl.meta",
+    "sourceGuid": "ce8b43269e26f4263ac0da53665264b9",
+    "guid": "76f82896e17754529c304c585625c62e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\UnlitDepthNormalsPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/UnlitForwardPass.hlsl.meta",
+    "sourceGuid": "574332cc54d34b3b96cd214f5febe833",
+    "guid": "dc282916485c5a3bbf44ca86c2245ad8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\UnlitForwardPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/UnlitGBufferPass.hlsl.meta",
+    "sourceGuid": "28fcbf208a4c04495b93bb6d554908e0",
+    "guid": "964274ce7115532196a75918d4904c17",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\UnlitGBufferPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/UnlitInput.hlsl.meta",
+    "sourceGuid": "e7ba75cc852b14b7f934978b5697bf1b",
+    "guid": "f3b5f6a8558e5886b450485254b4de0d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\UnlitInput.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/UnlitMetaPass.hlsl.meta",
+    "sourceGuid": "138efaf7fb432134da44d5a4981a62ad",
+    "guid": "1ad41c144d4c5f48a7f2067403af73a5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\UnlitMetaPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/Blit.shader.meta",
+    "sourceGuid": "c17132b1f77d20942aa75f8429c0f8bc",
+    "guid": "66fe724acf495a84b7d85b24e8d44b99",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\Blit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/BlitHDROverlay.shader.meta",
+    "sourceGuid": "a89bee29cffa951418fc1e2da94d1959",
+    "guid": "2b985dfcb3a45559aba6acc6121eac7d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\BlitHDROverlay.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/CopyDepth.shader.meta",
+    "sourceGuid": "d6dae50ee9e1bfa4db75f19f99355220",
+    "guid": "7588fd2eee8559c39362ca9eb8da8c5e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\CopyDepth.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/CopyDepthPass.hlsl.meta",
+    "sourceGuid": "971e7c84ed6bc40fc95bdbb2e008013f",
+    "guid": "799fd1efed4159bbbcbfc6c35152a15d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\CopyDepthPass.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/CoreBlit.shader.meta",
+    "sourceGuid": "93446b5c5339d4f00b85c159e1159b7c",
+    "guid": "85bd38413ea15beebf269cd90511034f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\CoreBlit.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/CoreBlitColorAndDepth.shader.meta",
+    "sourceGuid": "d104b2fc1ca6445babb8e90b0758136b",
+    "guid": "b3c2f561e13452609597fd448c836384",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\CoreBlitColorAndDepth.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/Deferred.hlsl.meta",
+    "sourceGuid": "cfc329b92a1d36c48ae176d31d46cbf5",
+    "guid": "1fd02e6c99e9514e954eb6150113e58c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\Deferred.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/FallbackError.shader.meta",
+    "sourceGuid": "e6e9a19c3678ded42a3bc431ebef7dbd",
+    "guid": "c41c859f3a39527392db55b4809085c4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\FallbackError.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/FallbackLoading.shader.meta",
+    "sourceGuid": "7f888aff2ac86494babad1c2c5daeee2",
+    "guid": "e0a4a66055d0578e96bf18a0cf22ed91",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\FallbackLoading.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/MaterialError.shader.meta",
+    "sourceGuid": "5fd9a8feb75a4b5894c241777f519d4e",
+    "guid": "11a10f7ec09152d2900c32573577f095",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\MaterialError.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/Sampling.shader.meta",
+    "sourceGuid": "04c410c9937594faa893a11dceb85f7e",
+    "guid": "186059146d4958fda25ea7331859251e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\Sampling.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/ScreenSpaceAmbientOcclusion.shader.meta",
+    "sourceGuid": "0849e84e3d62649e8882e9d6f056a017",
+    "guid": "5b7d9fc8886b5353b5fc2fb0b4483f39",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\ScreenSpaceAmbientOcclusion.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/ScreenSpaceShadows.shader.meta",
+    "sourceGuid": "0f854b35a0cf61a429bd5dcfea30eddd",
+    "guid": "23f714f896105ac2af2833e159da1b99",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\ScreenSpaceShadows.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/StencilDeferred.hlsl.meta",
+    "sourceGuid": "83384e2d6206c8649ba879ec271c4254",
+    "guid": "5788d0009dbf58c2af7956492c711dcb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\StencilDeferred.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils/StencilDeferred.shader.meta",
+    "sourceGuid": "e9155b26e1bc55942a41e518703fe304",
+    "guid": "4bb942b50a295f99ba6d4431647f18df",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils\\StencilDeferred.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/Utils.meta",
+    "sourceGuid": "593842fd4bfffcc41877fd07df639f3c",
+    "guid": "cb67570f0a6a5b4b955e6a641ddf5e1d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\Utils.meta"
+    ]
+  },
+  {
+    "path": "Shaders/XR/XRMirrorView.hlsl.meta",
+    "sourceGuid": "0eac51a8dfc8fa341a5f8c6450bc0f84",
+    "guid": "c0013186bb7d51759d4e17ff54699ee4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\XR\\XRMirrorView.hlsl.meta"
+    ]
+  },
+  {
+    "path": "Shaders/XR/XRMirrorView.shader.meta",
+    "sourceGuid": "d5a307c014552314b9f560906d708772",
+    "guid": "6f294b3f08ad5c7f8122598241723680",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\XR\\XRMirrorView.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/XR/XRMotionVector.shader.meta",
+    "sourceGuid": "f89aac1e4f84468418fe30e611dff395",
+    "guid": "009e4b3ff67852e5b2e05526a801714d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\XR\\XRMotionVector.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/XR/XROcclusionMesh.shader.meta",
+    "sourceGuid": "4431b1f1f743fbf4eb310a967890cbea",
+    "guid": "0de3ae5b2be15969a99388aa0d75154c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\XR\\XROcclusionMesh.shader.meta"
+    ]
+  },
+  {
+    "path": "Shaders/XR.meta",
+    "sourceGuid": "e3ddeb98d5e10214c9be71d26faa6a3d",
+    "guid": "b1ad7d01303b5e789fbb7b1f3f4fef2a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Shaders\\XR.meta"
+    ]
+  },
+  {
+    "path": "Textures/2D/Sparkle.png.meta",
+    "sourceGuid": "119f93d0bcbf1e743bf5fcf237507d39",
+    "guid": "01eb4cde8da2586cbc0dbdf9d40c4e6b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\2D\\Sparkle.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/2D.meta",
+    "sourceGuid": "2ae61866cb0cccf4f820e4c006da6c91",
+    "guid": "745627fe390a5152977765d33964a046",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\2D.meta"
+    ]
+  },
+  {
+    "path": "Textures/BayerMatrix.png.meta",
+    "sourceGuid": "f9ee4ed84c1d10c49aabb9b210b0fc44",
+    "guid": "3451011f38b4587c94697e5cda330349",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BayerMatrix.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_0.png.meta",
+    "sourceGuid": "81200413a40918d4d8702e94db29911c",
+    "guid": "bf36581f7606571ba199f0cc948e7f22",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_0.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_1.png.meta",
+    "sourceGuid": "d50c5e07c9911a74982bddf7f3075e7b",
+    "guid": "6944b561fb285a61b250083c20e3d9d5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_1.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_10.png.meta",
+    "sourceGuid": "96aaab9cc247d0b4c98132159688c1af",
+    "guid": "b281297400de572fb2d7883c4950aba9",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_10.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_11.png.meta",
+    "sourceGuid": "fc3fa8f108657e14486697c9a84ccfc5",
+    "guid": "c8a8ce570cdf5c209cd750d977c302f2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_11.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_12.png.meta",
+    "sourceGuid": "bfed3e498947fcb4890b7f40f54d85b9",
+    "guid": "23b2fde0d2b95fb0bdbfc130f688bd7d",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_12.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_13.png.meta",
+    "sourceGuid": "d512512f4af60a442ab3458489412954",
+    "guid": "a42d37a4d48050fbb463b4be6f36a52c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_13.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_14.png.meta",
+    "sourceGuid": "47a45908f6db0cb44a0d5e961143afec",
+    "guid": "148efc22d17e517ead8d36d457adb378",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_14.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_15.png.meta",
+    "sourceGuid": "4dcc0502f8586f941b5c4a66717205e8",
+    "guid": "e31f0611f07751808ca3d77e393488f3",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_15.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_16.png.meta",
+    "sourceGuid": "9d92991794bb5864c8085468b97aa067",
+    "guid": "1c356b9bc9b95b04ae785471f03461fd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_16.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_17.png.meta",
+    "sourceGuid": "14381521ff11cb74abe3fe65401c23be",
+    "guid": "2e008ec7b3ad5c71b0a05776e01042af",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_17.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_18.png.meta",
+    "sourceGuid": "d36f0fe53425e08499a2333cf423634c",
+    "guid": "1951847fdcba5a63a45f7237e9633bf7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_18.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_19.png.meta",
+    "sourceGuid": "d4044ea2490d63b43aa1765f8efbf8a9",
+    "guid": "8d2da27970e25efea1c5e813464df9ef",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_19.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_2.png.meta",
+    "sourceGuid": "1134690bf9216164dbc75050e35b7900",
+    "guid": "cffa4f1cc6735bb58b2ec2ca5ae08eb0",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_2.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_20.png.meta",
+    "sourceGuid": "c9bd74624d8070f429e3f46d161f9204",
+    "guid": "d198c99d194c5a5cbbbce38c7d70556b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_20.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_21.png.meta",
+    "sourceGuid": "d5c9b274310e5524ebe32a4e4da3df1f",
+    "guid": "15e3a9b24a1454329724db3692982c75",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_21.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_22.png.meta",
+    "sourceGuid": "f69770e54f2823f43badf77916acad83",
+    "guid": "d924aa7e4f9d52cabdb9d0b4c6ec6459",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_22.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_23.png.meta",
+    "sourceGuid": "10b6c6d22e73dea46a8ab36b6eebd629",
+    "guid": "70d0c28291c35474867cc4315fa98223",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_23.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_24.png.meta",
+    "sourceGuid": "a2ec5cbf5a9b64345ad3fab0912ddf7b",
+    "guid": "d49010d4af4754b0a2510aa4f2484d68",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_24.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_25.png.meta",
+    "sourceGuid": "1c3c6d69a645b804fa232004b96b7ad3",
+    "guid": "44aa30c6b66957eba35604eb57bcd6d2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_25.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_26.png.meta",
+    "sourceGuid": "d18a24d7b4ed50f4387993566d9d3ae2",
+    "guid": "c9dd3ffeab1e5451821e5d9fc97086f2",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_26.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_27.png.meta",
+    "sourceGuid": "c989e1ed85cf7154caa922fec53e6af6",
+    "guid": "36131436cd0b51409343415d2f3ba1a6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_27.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_28.png.meta",
+    "sourceGuid": "ff47e5a0f105eb34883b973e51f4db62",
+    "guid": "a16dcac0a1d45a73bf883441bc07b2e5",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_28.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_29.png.meta",
+    "sourceGuid": "fa042edbfc40fbd4bad0ab9d505b1223",
+    "guid": "5283dc0b33395db4ba3d36f0a61c26d4",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_29.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_3.png.meta",
+    "sourceGuid": "7ce2118f74614a94aa8a0cdf2e6062c3",
+    "guid": "38c6e1ff768a5812b614c4212e9089a6",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_3.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_30.png.meta",
+    "sourceGuid": "896d9004736809c4fb5973b7c12eb8b9",
+    "guid": "076812967baf5df5885fd49795922a7b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_30.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_31.png.meta",
+    "sourceGuid": "179f794063d2a66478e6e726f84a65bc",
+    "guid": "0a737654c7c2520d9bf65162aef9887b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_31.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_4.png.meta",
+    "sourceGuid": "2ca97df9d1801e84a8a8f2c53cb744f0",
+    "guid": "674afd3457445b40905287377a614a1b",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_4.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_5.png.meta",
+    "sourceGuid": "e63eef8f54aa9dc4da9a5ac094b503b5",
+    "guid": "732288f3b2f455a88c817fb612be4e14",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_5.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_6.png.meta",
+    "sourceGuid": "39451254daebd6d40b52899c1f1c0c1b",
+    "guid": "ac51850911e558d1a4844c6c187a5c0f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_6.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_7.png.meta",
+    "sourceGuid": "c94ad916058dff743b0f1c969ddbe660",
+    "guid": "387678df49c95abea4ca991507781f61",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_7.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_8.png.meta",
+    "sourceGuid": "ed5ea7ce59ca8ec4f9f14bf470a30f35",
+    "guid": "9ce69ab876535161a35f9ed846713441",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_8.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L/LDR_LLL1_9.png.meta",
+    "sourceGuid": "071e954febf155243a6c81e48f452644",
+    "guid": "4967273003a453b483ff325440572863",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L\\LDR_LLL1_9.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16/L.meta",
+    "sourceGuid": "4eb46e164ba847b4396d73b7491c99d3",
+    "guid": "9d1f0e6c1ce050e5abe05ca6ef5a254a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16\\L.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise16.meta",
+    "sourceGuid": "bbde6b5e0eaaff14c98c49626833992e",
+    "guid": "60f8b2e1f03f51beaf69bd346ec8425e",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise16.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_0.png.meta",
+    "sourceGuid": "36f118343fc974119bee3d09e2111500",
+    "guid": "01a5aa8c90f25ed3a75235273b826838",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_0.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_1.png.meta",
+    "sourceGuid": "4b7b083e6b6734e8bb2838b0b50a0bc8",
+    "guid": "81b946eac89e5b46a82ee58c5677df8a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_1.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_2.png.meta",
+    "sourceGuid": "c06cc21c692f94f5fb5206247191eeee",
+    "guid": "051cb6a249115b5cbf48b5f6058231d7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_2.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_3.png.meta",
+    "sourceGuid": "cb76dd40fa7654f9587f6a344f125c9a",
+    "guid": "f56bdaea769451f488a04a821e8326fd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_3.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_4.png.meta",
+    "sourceGuid": "e32226222ff144b24bf3a5a451de54bc",
+    "guid": "ba14a6ff27905754afcc051d4525f5e1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_4.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_5.png.meta",
+    "sourceGuid": "3302065f671a8450b82c9ddf07426f3a",
+    "guid": "d10dd67edbea57699ee771aa722ce88c",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_5.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_6.png.meta",
+    "sourceGuid": "56a77a3e8d64f47b6afe9e3c95cb57d5",
+    "guid": "7b18070d78cd5828b4807676ca768d59",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_6.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256/LDR_LLL1_7.png.meta",
+    "sourceGuid": "331c5658939a2461d8c7a0b3691eb7d5",
+    "guid": "f686047ba480553f9011cf5dcc06be13",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256\\LDR_LLL1_7.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise256.meta",
+    "sourceGuid": "0da884cc73355482f99f2f3bf86511e5",
+    "guid": "3d1900e6845a55ce89e6c9504c985fa8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise256.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise64/L/LDR_LLL1_0.png.meta",
+    "sourceGuid": "e3d24661c1e055f45a7560c033dbb837",
+    "guid": "d2c9078c0c2f55f7a4a762e6c3edbbc8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise64\\L\\LDR_LLL1_0.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise64/L.meta",
+    "sourceGuid": "185beacae6c1ae444bf82919f9550d1a",
+    "guid": "1fce88859a5854b49804077f5bcacd55",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise64\\L.meta"
+    ]
+  },
+  {
+    "path": "Textures/BlueNoise64.meta",
+    "sourceGuid": "2213abb41e048da4ca7f2acee56cf116",
+    "guid": "5374836c25fa5f1b85c60ca8cc821123",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\BlueNoise64.meta"
+    ]
+  },
+  {
+    "path": "Textures/DebugFont.tga.meta",
+    "sourceGuid": "26a413214480ef144b2915d6ff4d0beb",
+    "guid": "76b6db3f644c562abbc49daf21cf50bf",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\DebugFont.tga.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Large01.png.meta",
+    "sourceGuid": "fd2fd78b392986e42a12df2177d3b89c",
+    "guid": "7fae05fcbfb55307a7330bac245229fb",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Large01.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Large02.png.meta",
+    "sourceGuid": "5cdee82a77d13994f83b8fdabed7c301",
+    "guid": "836b29502d655bb2a80f15f3d976f45f",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Large02.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium01.png.meta",
+    "sourceGuid": "1097e90e1306e26439701489f391a6c0",
+    "guid": "7582f6ad60df53c29e1c95c6329a6748",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium01.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium02.png.meta",
+    "sourceGuid": "f0b67500f7fad3b4c9f2b13e8f41ba6e",
+    "guid": "a2f6c27e5f915013b61ffc4df550702a",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium02.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium03.png.meta",
+    "sourceGuid": "9930fb4528622b34687b00bbe6883de7",
+    "guid": "08d47aadeade51f5b727075b4d5ff620",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium03.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium04.png.meta",
+    "sourceGuid": "bd9e8c758250ef449a4b4bfaad7a2133",
+    "guid": "58eec09654725cb79e34431430e616b7",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium04.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium05.png.meta",
+    "sourceGuid": "510a2f57334933e4a8dbabe4c30204e4",
+    "guid": "abdb51e5258b536aa1cf37567617f1c1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium05.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Medium06.png.meta",
+    "sourceGuid": "b4db8180660810945bf8d55ab44352ad",
+    "guid": "39862943a8d85b7ea8e373fe6957ff08",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Medium06.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Thin01.png.meta",
+    "sourceGuid": "654c582f7f8a5a14dbd7d119cbde215d",
+    "guid": "bcae22cc5c2b5aefa5055cbf0f8b6efd",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Thin01.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain/Thin02.png.meta",
+    "sourceGuid": "dd77ffd079630404e879388999033049",
+    "guid": "c93fa3d7fb205d8e867afa28b850e905",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain\\Thin02.png.meta"
+    ]
+  },
+  {
+    "path": "Textures/FilmGrain.meta",
+    "sourceGuid": "35e7db2dee6acee439714675bb2193f9",
+    "guid": "1cde61de43995238ba2e1a9887ba36e1",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\FilmGrain.meta"
+    ]
+  },
+  {
+    "path": "Textures/SMAA/AreaTex.tga.meta",
+    "sourceGuid": "d1f1048909d55cd4fa1126ab998f617e",
+    "guid": "63094f4f70695406973161358e853b88",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\SMAA\\AreaTex.tga.meta"
+    ]
+  },
+  {
+    "path": "Textures/SMAA/SearchTex.tga.meta",
+    "sourceGuid": "51eee22c2a633ef4aada830eed57c3fd",
+    "guid": "fa141dfe98905a269c7d6a60a20b0ff8",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\SMAA\\SearchTex.tga.meta"
+    ]
+  },
+  {
+    "path": "Textures/SMAA.meta",
+    "sourceGuid": "8175402ae6bf2a84f929602544c44007",
+    "guid": "b683f87fc1ca58cdb1edf38f15f78995",
+    "conflicts": [
+      "Fraxinus-URPExtensions\\Textures\\SMAA.meta"
+    ]
+  }
+]

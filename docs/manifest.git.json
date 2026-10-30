@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "com.fraxinus.rendering.light-transport": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-Light-Transport#main",
+    "com.unity.render-pipelines.core": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-RPCore#main",
+    "com.unity.shadergraph": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/Fraxinus-ShaderGraph#main",
+    "com.bluewhitebow.fraxinus-rp": "https://github.com/bluewhitebow/FraxinusGraphics2.0.git?path=/Packages/FraxinusRP#main"
+  }
+}

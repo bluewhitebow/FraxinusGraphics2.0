@@ -1,0 +1,59 @@
+.Port_RenderTexture {
+	--port-color: #F71;
+}
+
+.Port_Texture2D {
+	--port-color: #F91;
+}
+
+.Port_Texture2DArray {
+	--port-color: #FD6;
+}
+
+.Port_Texture3D {
+	--port-color: #F5C;
+}
+
+.Port_Texture {
+	--port-color: #FFF;
+}
+
+.Port_Cubemap {
+	--port-color: #9F1;
+}
+
+.Port_CubemapArray {
+	--port-color: #DF6;
+}
+
+.Port_Color {
+	--port-color: #5CF;
+}
+
+.Port_Single {
+	--port-color: #33F;
+}
+
+.Port_Vector4,
+.Port_Vector3,
+.Port_Vector2,
+.Port_Vector3Int,
+.Port_Vector2Int {
+	--port-color: #17F;
+}
+
+.Port_ComputeBuffer {
+	--port-color: #11ff94;
+}
+
+.Port_MixtureMesh {
+	--port-color: #14cba8;
+}
+
+.Port_MixtureAttribute {
+	--port-color: #14cba8;
+}
+
+.Port_MixtureAttributeList {
+	--port-color: #14cba8;
+}

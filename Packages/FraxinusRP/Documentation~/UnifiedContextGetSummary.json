@@ -1,0 +1,187 @@
+{
+  "checkpoint": "unity2022-checkpoint-2026-10-21-get",
+  "passed": true,
+  "environment": {
+    "unity": "2022.3.62f3",
+    "platform": "Windows Editor",
+    "graphicsApi": "Direct3D11",
+    "gpu": "NVIDIA GeForce GTX 1650"
+  },
+  "source": {
+    "FraxinusRP": "unity2022-checkpoint-2026-10-21-get",
+    "Fraxinus-RPCore": "038ad6278a1f92195b654724a78d92865a6017d5",
+    "packageVersions": {
+      "FraxinusRP": "0.1.0",
+      "Fraxinus-RPCore": "14.0.99"
+    }
+  },
+  "validation": {
+    "contextStorage": {
+      "passed": true,
+      "checks": 45
+    },
+    "nestedRendering": {
+      "passed": true,
+      "scenarios": 7,
+      "requestsPerScenario": 3
+    },
+    "depthTargets": {
+      "passed": true,
+      "requests": 30,
+      "modes": [
+        "Forward",
+        "Deferred",
+        "Clustered"
+      ]
+    },
+    "shaderGraphDeferred": {
+      "passed": true,
+      "modes": [
+        "Forward",
+        "Deferred",
+        "Clustered"
+      ]
+    },
+    "pipelineSwitch": {
+      "passed": true,
+      "sequence": [
+        "URP",
+        "UltraRP",
+        "URP"
+      ],
+      "mode": "Editor Play Mode, explicit RenderTexture requests",
+      "checks": "Actual lit/unlit pixels and shader pipeline state"
+    },
+    "allocation": {
+      "measurement": "Unity Profiler GC.Alloc recorder filtered to the current thread; warmed operations only",
+      "byteCounterSupported": false,
+      "unsupportedByteValue": -1,
+      "storagePositiveControlEvents": 1,
+      "renderingPositiveControlEvents": 1,
+      "getIterationsPerLoop": 1000000,
+      "scopedGetEvents": 0,
+      "fallbackGetEvents": 0,
+      "managerGetEvents": 0,
+      "bindSwitchResetIterations": 10000,
+      "bindSwitchResetEvents": 0,
+      "renderingLookupSwitchInjectionResetIterations": 10000,
+      "renderingLookupSwitchInjectionResetEvents": 0,
+      "correction": "Historical zero-byte counter readings are invalid allocation evidence: the retained intentional-allocation control also returned zero bytes on this Editor."
+    },
+    "settingsMatched": 44,
+    "pipelineSwitchFixtureRestored": true,
+    "playerRebuilt": false
+  },
+  "runOrder": [
+    "Regression-03: storage, nested GPU, Shader Graph graphics and pure-depth requests.",
+    "Regression-04: final custom-main binding compatibility change, storage and nested GPU. Both runs compile Runtime and Editor.",
+    "PipelineSwitch-02: final Editor Play Mode pipeline switching and existing node/resource validation."
+  ],
+  "excludedRuns": [
+    "Regression-01/02: rejected because the old byte counter failed the intentional-allocation control.",
+    "PipelineSwitch-01: rejected because the isolated URP reference renderer contained a missing FraxinusGPUBatcherRendererFeature. Run 02 used a plain reference renderer; original bytes were restored, recorded in PipelineSwitchFixture.json."
+  ],
+  "limits": [
+    "No Player rebuild for this refactor; earlier Player results refer to earlier source snapshots.",
+    "No IL2CPP, XR, other graphics API or whole-frame allocation acceptance.",
+    "Initialization, first generic/runtime setup and storage growth are outside warmed allocation measurements.",
+    "The pinned Git installation has not received a separate complete acceptance run in a new project."
+  ],
+  "evidenceRootInHostProject": "Logs/FraxinusRP/UnifiedContextGet-2026-10-21",
+  "evidenceStorage": "Raw logs, reports and captures remain in the host project and are not included in this source repository.",
+  "reports": {
+    "Accepted/ContextRenderingValidation.json": {
+      "sha256": "f61d83b3484f75dacc8a9e57aab9a2e2c341008a140be4080def9d5f97603412",
+      "passed": true
+    },
+    "Accepted/ContextStorageValidation.json": {
+      "sha256": "a27e38cabe428b3de21c3ebd806bdd69b8c277edcd99c17af6d9f98bbba46a44",
+      "passed": true
+    },
+    "Accepted/DepthTarget.json": {
+      "sha256": "1aa8a4eed4ea13a7d10a9972d555a7ff2437285bf30d0cd93762036df8dac104",
+      "passed": true
+    },
+    "Accepted/ShaderGraphDeferred.json": {
+      "sha256": "556d4394396855f94d273c0d230f1927d6dfdd04e186b101fabc935e64241211",
+      "passed": true
+    },
+    "Regression-03.log.process.json": {
+      "sha256": "8f50e3f0bc00ef56954db8f5f04c867828951ee016fe181c75db2524796cb272",
+      "exitCode": 0
+    },
+    "Regression-04.log.process.json": {
+      "sha256": "5aaa59172a02aa02f12830fdffd1a13e788f04b8289332034c434879201459eb",
+      "exitCode": 0
+    },
+    "PipelineSwitch-02.log.process.json": {
+      "sha256": "a400b6f4545bd5c5be2fdd6d6eb89a37ffb83b6cd23c430e15e0422f75b615e8",
+      "exitCode": 0
+    }
+  },
+  "additionalEvidenceSha256": {
+    "FinalReview.json": "808003aebb0c40f2f8a52c5c677d71e327ed55491c21dee72b6cdd75f77a618c",
+    "PipelineSwitchFixture.json": "9a72f40bdb03c8289ade5eeb1f30cbca5d4550a66d6daac8e20fdf0c61116d45",
+    "SettingsBefore.json": "1499167889a1df83878e15c6dcf55cf5dd6151ff1349f375b9ee077afc4a4901",
+    "Regression-03.log": "43d256f29ca97a13b0d29c4cad7d391ec71826853a9dfc7355ac4a159e394840",
+    "Regression-04.log": "8507cf653dd4275e327cb1e3ce6b19d9dc73272b3cf4e882a01c47690fdb063e",
+    "PipelineSwitch-02.log": "2dab6f4dcf62441dd241e15201376d63a9ae595ac22042bfa5b7361dd79810fe"
+  },
+  "testedSourceHashFormat": "SHA-256 of the tested on-disk C# bytes. Git checkouts may normalize line endings. Publication documentation is excluded.",
+  "testedSourceSha256": {
+    "FraxinusRP": {
+      "Editor/UltraRPEditor/Validation/UltraRPContextRenderingValidation.cs": "62aa9622e00c6c4b98998ecd93eaac4b8fe2802d03f5e27cf55b29d6db578a1c",
+      "Editor/UltraRPEditor/Validation/UltraRPContextStorageValidation.cs": "07abb44ce5369d039dde17e4e02618e7b5499e98f4ce2153cb1ae47e7707c5c9",
+      "Runtime/UltraRP/ContextScope/ContextData.cs": "d44f8ce443d3868d356956246cfa8a8739516108311d4e31165a738857b88df8",
+      "Runtime/UltraRP/ContextScope/ContextStateManager.cs": "549ff72521e2358eead831179e90cf2a9ba201079c1ca0251b89d33b9ad4b859",
+      "Runtime/UltraRP/Decal/DBuffer/DBufferCopyDepthPass.cs": "96766898297709fd23284023879dce6f8b76231a8f666c9ae2b3e69b1bb7a47c",
+      "Runtime/UltraRP/Decal/DBuffer/DBufferRenderPass.cs": "f6f14d9d0858b542f9352c28200bdb973cdefab62d43fe7619b8a85ab3c0e30f",
+      "Runtime/UltraRP/Decal/DBuffer/DecalForwardEmissivePass.cs": "fd98ecb039d40b8d659019146d220960d7b88c07984a57eac21a60943276e354",
+      "Runtime/UltraRP/Decal/DecalPreviewPass.cs": "793e2c9ad5d08d3ae033924d7c8119bc1c6dd19b827a5a851872bbe1811cd559",
+      "Runtime/UltraRP/Decal/ScreenSpace/DecalGBufferRenderPass.cs": "2fc4eb04d30825857906e8d0922b9fbb5b16a89b4e012dd2741456cdf64f91fb",
+      "Runtime/UltraRP/Decal/ScreenSpace/DecalScreenSpaceRenderPass.cs": "e76ce6ec896196b636fcf049359794895188f764d3445916ba95ad39fe4f2492",
+      "Runtime/UltraRP/LightLoop/Cluster/GPULights.cs": "a4f1d67ea7a26ee4d45b976b082f258c3db841c1ed4ad0f831cdf77df911b857",
+      "Runtime/UltraRP/LightLoop/DeferredLights.Cluster.cs": "53c7ebb7e9c21d28d969c94ebed3d4817a1882d989d3e4c5b28bce807de6b870",
+      "Runtime/UltraRP/Passes/AdditionalLightsShadowCasterPass.cs": "3887e4ddb720f38f682f51c234b91fd5e478054e7e1ea0fd386ddc07f5c66885",
+      "Runtime/UltraRP/Passes/ColorGradingLutPass.cs": "c77975bb3e60c0466d1203dde8898c756313ee2c0308903c8c78d06bede659f4",
+      "Runtime/UltraRP/Passes/ContextBeginNode.cs": "45a926c690002771d0a8b5e680017301c7aece964d78e771a6eb9a9550debdf6",
+      "Runtime/UltraRP/Passes/ContextEndNode.cs": "4301473fb3369eae849ca7d1572f77980cdfca35ac0b05efe5ac29dd50943087",
+      "Runtime/UltraRP/Passes/DecalRenderPassNode.cs": "f7e4a7a63c5297b22bc2e9252a9cddaff1d46772843c46ba5ec0993636a25b1c",
+      "Runtime/UltraRP/Passes/DeferredObjectPass.cs": "e5d9ddc4ce20ac2ef08a8281fbef476a28a170a7c742597b9963c9f8e2bb0caf",
+      "Runtime/UltraRP/Passes/DrawObjectsPass.cs": "834721b4567a3932ecc344a189bf0360e0dabbb1199b2a6f9b9f4f034376bf02",
+      "Runtime/UltraRP/Passes/DrawSkyboxPass.cs": "253651097b8ab66dc07d48882cbcc19e909e3cbd48bcfe3de7300eb69cb8d37d",
+      "Runtime/UltraRP/Passes/GBufferPassNode.cs": "09f2ae2307407030853826e126c7caaf83e52e4e30009e9568b916351a5e5e44",
+      "Runtime/UltraRP/Passes/InternalPasses/CapturePass.cs": "f6bce299ac391c262aa5604e3daa5d6759c3c82a90b16389ad6955da43bdc4f0",
+      "Runtime/UltraRP/Passes/InternalPasses/DeferredPass.cs": "b950641b44dfe8d59590bf4c8460d015006707d0c55e448cc8b7df87ec22f97c",
+      "Runtime/UltraRP/Passes/InternalPasses/DepthCopyAndMotionPassBase.cs": "d64adf7c7601a2e6426e779c785ae780cd816cfea2176b4cdea283c9ba8f7387",
+      "Runtime/UltraRP/Passes/InternalPasses/DepthCopyPass.cs": "248ca4914613f527e7b9e59685ec153342117d7e4219d57c0f233d6732601c07",
+      "Runtime/UltraRP/Passes/InternalPasses/DepthNormalOnlyPass.cs": "ac1dc8c6148f127c641176b95f1ff26db62f613214588c3091d55e3aa62bb616",
+      "Runtime/UltraRP/Passes/InternalPasses/DepthOnlyPass.cs": "b90e915e6a1642038f46ea607b2b72bfa3f9e275853e3fb795fc771491730dd7",
+      "Runtime/UltraRP/Passes/InternalPasses/DrawScreenSpaceUIPass.cs": "25b40e97653f530d89c7efbc30b24b2670edf73d5c22aa41a90c9dea7fe7e68d",
+      "Runtime/UltraRP/Passes/InternalPasses/GBufferDepthCopyAndMotionPass.cs": "07c10d490a42546d381acf714f4a22c17232714ea9320ec44538d2962f6b11b0",
+      "Runtime/UltraRP/Passes/InternalPasses/GBufferPass.cs": "b218b80380c2f728add20a1514ece4a5bb48888b25548097eefd01a185458146",
+      "Runtime/UltraRP/Passes/InternalPasses/InvokeOnRenderObjectCallbackPass.cs": "a9c9a354482fa3281b650244a1281561c373c57fffd4c14cc1a8583df4d20533",
+      "Runtime/UltraRP/Passes/InternalPasses/MotionVectorRenderPass.cs": "4e5d60edd3525c64c76e99054a9564620e6bb1068c696a8b965ec5f99de08438",
+      "Runtime/UltraRP/Passes/InternalPasses/OffscreenDepthPass.cs": "6c84af62edc7882eca6c45f738111c0c7d4fd75ee68bf9cdef27e390effc0008",
+      "Runtime/UltraRP/Passes/InternalPasses/ProbeVolumeDebugPass.cs": "8ce25b63fa0acc7e0f1844d7fc195daf856f1f12dfa1a5b44ec676f1b5a35259",
+      "Runtime/UltraRP/Passes/MainLightShadowCasterPass.cs": "4858deb9cd28ac2dad175f56b1ee4936827416d9c7200eae693fc1b23a6be4fe",
+      "Runtime/UltraRP/Passes/PRTRelightPassNode.cs": "e07bebd6e3a2217b694ce12738858b489255dbda57f8f535966b287ebe6fa0e4",
+      "Runtime/UltraRP/Passes/PostProcessPass.cs": "2739264f35271c00bd063d1eb8c1ec256fc3dd470bf97958fca7f5bdd3662f9e",
+      "Runtime/UltraRP/Passes/RenderDrivenPass.cs": "5a8edd65714fce465a5a65cfe5694e280d86d130cd8011120b057fd3a82c9338",
+      "Runtime/UltraRP/Passes/ScriptableRenderPassNode.RenderPass.cs": "257139f47da3bed0098195938b4972c63c001c50b73a6c2a2a1b90e4ad635c94",
+      "Runtime/UltraRP/Passes/ScriptableRenderPassNode.cs": "3dfd92518d32015fca591c57c855c316f81c4a29024afb6d8e9bac9da8c47207",
+      "Runtime/UltraRP/PostProcess/BloomPass.cs": "03e874b883d291a0e4fd826db156abc6a92e3619e31923fee9bbb612d1b78adc",
+      "Runtime/UltraRP/PostProcess/DepthOfFieldPass.cs": "c9694789498033e7d658be4cd5baf073d1648b0123b59df3a0dfb811c8ccbd9c",
+      "Runtime/UltraRP/PostProcess/FinalBlitPass.cs": "843fd5eef701c459fcd8363fbd32637686a643d2b97181ca0d3b951d73784dd5",
+      "Runtime/UltraRP/PostProcess/LensFlarePass.cs": "3e3ee6dafc01a612f79e121996ce5db90e8adbf890c927928c8e87c33ec0974a",
+      "Runtime/UltraRP/PostProcess/MotionBlurPass.cs": "2d428fe598add8ad6c62b39c1613966fff323f66540f20e66d4b2995e6d625f9",
+      "Runtime/UltraRP/PostProcess/SMAAPass.cs": "47e6d5e4e39387b0a6ae88cc38ecd980a625aa8d5f14f81bfaf9e9f967be18dd",
+      "Runtime/UltraRP/PostProcess/TAAPass.cs": "5aafdd6f7a4020490fc288b052b5eb4154ae03f31b9e0097b11b8d3a1d8d3e0f",
+      "Runtime/UltraRP/Processing/ScriptableRenderer.cs": "873189bdb9c9c3ce2e2bbd15f6b9defd45c59c5ffe0676a38a46fdab6f3177b5",
+      "Runtime/UltraRP/Processing/UltraRenderer.cs": "9b6ac62da4d030fea480a6730959ce0c004b0231c6ff191de78e651427ba490e"
+    },
+    "Fraxinus-RPCore": {
+      "Runtime/Common/ContextContainer.cs": "69fc99bfaceb9f8aac2d1441315a3f482aa3b1162d830cd53c6526348fd68a80"
+    }
+  }
+}

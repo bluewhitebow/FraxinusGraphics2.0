@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "checkpoint_date": "2026-10-21",
+  "source_tag": "unity2022-checkpoint-2026-10-21",
+  "status": "passed",
+  "environment": {
+    "unity": "2022.3.62f3",
+    "platform": "Windows",
+    "graphics_api": "Direct3D 11",
+    "gpu": "NVIDIA GTX 1650",
+    "player_backend": "Mono",
+    "managed_stripping": "Disabled",
+    "shader_feature_stripping": true
+  },
+  "paired_core_commit": "a7eaff92af3e6c5c936cdb5062ac30e70c9539bf",
+  "shader_graph_commit": "ac5b57a251cf2bf170baca4c8a08c6bc08ccc87d",
+  "checks": {
+    "nested_context_scenarios": 7,
+    "nested_context_requests": 21,
+    "temporal_play_mode_frames": 31,
+    "lens_flare_checks": 151,
+    "shader_graph_auxiliary_checks": 126,
+    "depth_only_requests": 30,
+    "build_shader_count": 65,
+    "build_compute_count": 20,
+    "required_variant_groups_observed": 17,
+    "player_offscreen_smoke": "passed",
+    "project_settings_hashes_restored": 44
+  },
+  "allocation_measurement": {
+    "operations": "Warmed generic lookup/switch/injection/reset",
+    "cycles": 10000,
+    "managed_bytes": 0,
+    "scope": "Measured Editor operations only; initialization, growth, whole-frame and IL2CPP allocations excluded."
+  },
+  "terrain_defaults": {
+    "shader_pass_compilation_requests": 114,
+    "graphics_checks": 84,
+    "render_requests": 63,
+    "evidence_root": "Logs/FraxinusRP/TerrainDefaults-2026-10-20",
+    "scope": "Real terrain details plus selected SpeedTree shader compilation; no real SpeedTree import/wind/LOD or SpeedTree 9 acceptance."
+  },
+  "scope": "Unity 2022.3.62f3 D3D11. Editor GPU fixtures plus Windows x64 Mono Player offscreen StandardRequest smoke. No current IL2CPP/XR/backbuffer acceptance.",
+  "limits": [
+    "No current IL2CPP, XR, other graphics API, native-render-pass or backbuffer acceptance.",
+    "SG GBuffer, custom interpolators and complete Decal target remain unavailable; Meta export is not a complete bake.",
+    "Dedicated Editor GPU fixtures establish individual effects and motion/history; Player smoke establishes offscreen rendering, pixels and runtime node behavior."
+  ],
+  "rejected_player_launch": {
+    "log": "Player-RenderTexture.log",
+    "reason": "Hidden window did not produce ordinary camera frames. Accepted Player smoke uses a validation-only StandardRequest driver."
+  },
+  "evidence_root": "Host project Logs/FraxinusRP/FeatureCompletion-2026-10-21",
+  "evidence_files": {
+    "Accepted/ContextRenderingValidation.json": {
+      "passed": true,
+      "sha256": "45181bface1ec57f724a2b316ff870b6389b72646110932e433de49577da1eb9"
+    },
+    "Accepted/ContextStorageValidation.json": {
+      "passed": true,
+      "sha256": "e20ed665834980c53233bf35636df0c92b355550261d14886846db45a7caf65f"
+    },
+    "Accepted/DepthTarget.json": {
+      "passed": true,
+      "sha256": "1aa8a4eed4ea13a7d10a9972d555a7ff2437285bf30d0cd93762036df8dac104"
+    },
+    "Temporal-05/TemporalRenderingValidation.json": {
+      "passed": true,
+      "sha256": "f94412061942ba368e6acc9a55a98146c90174a9b2941c343fc9592024c81a4e"
+    },
+    "Accepted/ShaderGraphAuxiliary/Report.json": {
+      "sha256": "4a465e50906e258d558d0b4258504ba2a5fa807f2ada76384c641a50a50e3fb0",
+      "passed": true
+    },
+    "Accepted/LensFlareValidation/Report.json": {
+      "sha256": "dc948fff7b5be5ab4298975eb294a92f861071fbbec1cdad1c0e280aef0c8aed",
+      "passed": true
+    },
+    "PlayerBuild-04.log.process.json": {
+      "exitCode": 0,
+      "sha256": "ad37be193879f3edb03fd5314e39a79ea8dfc444bfeb035fd31e4a3a473c13d2"
+    },
+    "Player-HiddenRequests.process.json": {
+      "exitCode": 0,
+      "sha256": "1bed84dc242763a930c3f0d9d68aed1f9079f597fc19426baa19ac4692c69d7a"
+    },
+    "Temporal-05.log.process.json": {
+      "exitCode": 0,
+      "sha256": "8b7d410443d7ede0faf67a69a00b55d1292ed922aa0b33b9aee1069a4d33aba8"
+    },
+    "FinalReview.json": {
+      "sha256": "d410e344a8963d43c9925410bb42d9407f5a92f4b3ae7caade5214f2d1f13859"
+    },
+    "Accepted/PlayerBuild04/Fixture.json": {
+      "sha256": "dff3c93b663204bb42882a7b1f6d7536efeb4305628e7198bac587b0892532eb"
+    },
+    "Accepted/PlayerBuild04/RetainedVariants.json": {
+      "sha256": "bced56401f11a8d9e5c416cddc3181804ef863655cb30ed231a9cd6628ba8d47"
+    },
+    "Accepted/PlayerBuild04/ShaderBuildDiagnostics.json": {
+      "sha256": "3cccdf6a248e380ac99bba73800e5f8d3d12405cbb6e5748af2a2f1dd16905bc"
+    },
+    "Player-HiddenRequests/stage-1.png": {
+      "sha256": "d28a492b315698d5b16fd63ef9eddb1c1d0a75ae78c1a474561d71962e081740"
+    }
+  },
+  "player_artifacts_sha256": {
+    "Player.exe": "76a4560e40ec43334f5300f52d45e74f55579709d5ea01eb838f24c7ac9e568b",
+    "Player_Data/Managed/Fraxinus.Runtime.dll": "7e334c21ff9b864d70cffc341b85de83a306f4e56720d9a89925ff2b51823d32",
+    "Player_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll": "9ff7fac4a008af957a9ccfaf1ad4d6795fb5b1ae7be854ee579e1c11b48306de",
+    "Player_Data/Managed/Assembly-CSharp.dll": "05f22b50b8dab1a6a5b818e2a36f1920f7f3943ec9fe374360b97787eafceb86",
+    "Player_Data/resources.assets": "7224136ccd5f42b70e76a17eb89ca9a0f0f989402a948212dc683fb859f6e1a0",
+    "Player_Data/sharedassets0.assets": "75c3e59aa9cff2a8ac4af6fa22736482a9d159193997c63ef14ea701ed2c7cb3",
+    "Player_Data/globalgamemanagers": "883a1b9d7a2d03efe9eb706ea349f855509426d7c60786676585abe6a57b78d3"
+  }
+}

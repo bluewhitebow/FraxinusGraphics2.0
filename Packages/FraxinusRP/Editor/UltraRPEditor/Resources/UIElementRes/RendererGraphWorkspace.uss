@@ -1,0 +1,170 @@
+.fraxinus-renderer-graph {
+    background-color: #171c24;
+    color: #dce4ef;
+}
+
+.fraxinus-renderer-graph #renderer-grid {
+    --grid-background-color: #171c24;
+    --line-color: rgba(133, 152, 180, 0.045);
+    --thick-line-color: rgba(133, 152, 180, 0.085);
+    --spacing: 24;
+    --thick-lines: 5;
+}
+
+.fraxinus-renderer-graph .fraxinus-preview-bar {
+    height: 36px;
+    min-height: 36px;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 12px;
+    background-color: #1c222c;
+    border-bottom-width: 1px;
+    border-bottom-color: #303946;
+}
+
+.fraxinus-renderer-graph .fraxinus-spacer { flex-grow: 1; }
+
+.fraxinus-renderer-graph .fraxinus-graph-name {
+    color: #aab8ca;
+    font-size: 11px;
+    -unity-font-style: bold;
+    min-width: 40px;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.fraxinus-renderer-graph .fraxinus-camera-selector {
+    width: 300px;
+    min-width: 220px;
+    margin: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.fraxinus-renderer-graph .fraxinus-camera-selector > .unity-base-field__label {
+    min-width: 96px;
+    color: #8f9eb2;
+    font-size: 11px;
+    padding: 0;
+}
+
+.fraxinus-renderer-graph .fraxinus-camera-selector > .unity-base-field__input {
+    background-color: #262f3b;
+    border-color: #394656;
+    border-width: 1px;
+    border-radius: 4px;
+    height: 24px;
+    color: #dce4ef;
+}
+
+.fraxinus-renderer-graph .fraxinus-camera-selector > .unity-base-field__input:hover {
+    border-color: #60c7b8;
+}
+
+.fraxinus-renderer-graph .fraxinus-status-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 32px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 10px;
+    background-color: #1c222c;
+    border-top-color: #303946;
+    border-top-width: 1px;
+}
+
+.fraxinus-renderer-graph .fraxinus-graph-summary {
+    color: #a4b2c5;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.fraxinus-renderer-graph .fraxinus-canvas-hint {
+    margin-left: 24px;
+    color: #728298;
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.fraxinus-renderer-graph .fraxinus-navigation-button {
+    background-color: transparent;
+    background-image: none;
+    border-width: 0;
+    border-radius: 4px;
+    color: #acbacc;
+    min-width: 28px;
+    height: 24px;
+    margin: 0 1px;
+    padding: 0 6px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.fraxinus-renderer-graph .fraxinus-navigation-button:hover {
+    background-color: #303d4c;
+    color: #e3edf8;
+}
+
+.fraxinus-renderer-graph .fraxinus-navigation-button:active {
+    background-color: #365950;
+    color: #90e3d5;
+}
+
+.fraxinus-renderer-graph .fraxinus-zoom-value { min-width: 52px; color: #60c7b8; }
+.fraxinus-renderer-graph.fraxinus-compact .fraxinus-canvas-hint { display: none; }
+.fraxinus-renderer-graph.fraxinus-compact .fraxinus-camera-selector { width: 250px; }
+
+.fraxinus-renderer-graph .edge {
+    --selected-edge-color: #95ebdf;
+    --ghost-edge-color: #647b91;
+}
+
+.fraxinus-renderer-graph .pinnedElement {
+    background-color: #252d38;
+    border-color: #45566b;
+    border-radius: 8px;
+    color: #dce4ef;
+}
+
+.fraxinus-renderer-graph .pinnedElement > .mainContainer > #content > #header {
+    background-color: #2e3845;
+    border-bottom-color: #45566b;
+    padding: 6px;
+}
+
+.fraxinus-renderer-graph .pinnedElement #titleLabel { color: #dce4ef; }
+.fraxinus-renderer-graph .pinnedElement #subTitleLabel { color: #9aacc1; }
+
+/* Base resource nodes share the same surfaces as render passes. */
+.fraxinus-renderer-graph .node > #node-border {
+    background-color: #252d38;
+    border-color: #435064;
+    border-width: 1px;
+    border-radius: 8px;
+}
+
+.fraxinus-renderer-graph .node #title {
+    background-color: #2e3845;
+    min-height: 32px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.fraxinus-renderer-graph .node #title-label {
+    color: #e1e9f2;
+    -unity-font-style: bold;
+    font-size: 13px;
+    padding-left: 8px;
+}
+
+.fraxinus-renderer-graph .node #controls { background-color: #252d38; }
+.fraxinus-renderer-graph .node #contents { background-color: #252d38; }

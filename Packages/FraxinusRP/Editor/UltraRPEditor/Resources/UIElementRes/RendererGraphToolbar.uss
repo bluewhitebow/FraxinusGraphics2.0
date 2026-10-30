@@ -1,0 +1,265 @@
+.fraxinus-graph-toolbar {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: 44px;
+    min-height: 44px;
+    padding-left: 12px;
+    padding-right: 10px;
+    background-color: #202630;
+    border-bottom-width: 1px;
+    border-bottom-color: #303a48;
+    color: #dce4ef;
+    font-size: 12px;
+}
+
+.fraxinus-toolbar-brand {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.fraxinus-toolbar-mark {
+    width: 27px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    background-color: #60c7b8;
+    color: #152923;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    font-size: 19px;
+}
+
+.fraxinus-toolbar-brand-text { margin-left: 9px; }
+.fraxinus-toolbar-title {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: #e8f1fa;
+}
+.fraxinus-toolbar-subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 9px;
+    color: #8e9bae;
+}
+
+.fraxinus-toolbar-group {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.fraxinus-toolbar-spacer { flex-grow: 1; min-width: 14px; }
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-button {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 28px;
+    min-width: 28px;
+    margin: 0 2px;
+    padding: 0 7px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    color: #c4cedb;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-button:hover {
+    background-color: #303b49;
+    border-color: #3e4c5d;
+    color: #f2f7fc;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-button:active {
+    background-color: #172c2c;
+    border-color: #60c7b8;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-button:focus { border-color: #60c7b8; }
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-fit {
+    margin-left: 6px;
+    border-color: #3b4c59;
+    background-color: #29343f;
+    color: #e1eaf2;
+}
+
+.fraxinus-toolbar-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.fraxinus-toolbar-button-label {
+    margin: 0 0 0 5px;
+    padding: 0;
+    -unity-text-align: middle-center;
+    font-size: 12px;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-preview-toggle {
+    height: 28px;
+    flex-shrink: 0;
+    margin: 0 8px 0 0;
+    padding: 0 7px;
+    border-width: 1px;
+    border-color: #3a4656;
+    border-radius: 6px;
+    background-color: #29343f;
+    color: #c4cedb;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-preview-toggle > .unity-base-field__input {
+    background-color: transparent;
+    padding: 0;
+    align-items: center;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-preview-toggle .unity-toggle__text {
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-preview-toggle.is-active {
+    background-color: #24423f;
+    border-color: #3b6c63;
+    color: #8ce0d1;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-preview-toggle:hover {
+    border-color: #60c7b8;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-resolution {
+    width: 82px;
+    height: 28px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-resolution > .unity-base-field__input {
+    height: 28px;
+    margin: 0;
+    padding-left: 9px;
+    border-width: 1px;
+    border-color: #3a4656;
+    border-radius: 6px;
+    background-color: #151a22;
+    color: #dce4ef;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-resolution > .unity-base-field__input:hover { border-color: #60c7b8; }
+
+.fraxinus-toolbar-custom-resolution { margin-left: 5px; }
+.fraxinus-toolbar-custom-resolution > Label {
+    margin: 0 3px;
+    color: #8291a5;
+    font-size: 11px;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-dimension {
+    width: 46px;
+    height: 27px;
+    margin: 0;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-dimension > .unity-base-field__input {
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 3px;
+    border-width: 1px;
+    border-color: #3a4656;
+    border-radius: 5px;
+    background-color: #151a22;
+    color: #dce4ef;
+}
+
+.fraxinus-toolbar-utilities {
+    margin-left: 12px;
+    padding-left: 9px;
+    border-left-width: 1px;
+    border-left-color: #3a4554;
+}
+
+.fraxinus-graph-toolbar .fraxinus-toolbar-button.is-active {
+    background-color: #24423f;
+    border-color: #3b6c63;
+    color: #8ce0d1;
+}
+
+.fraxinus-toolbar-utility-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.fraxinus-toolbar-parameters-icon .fraxinus-toolbar-icon-bar {
+    height: 2px;
+    margin: 1px 0;
+    border-radius: 1px;
+    background-color: #a3b2c4;
+}
+.fraxinus-toolbar-parameters-icon .fraxinus-toolbar-icon-bar-1 { width: 9px; }
+.fraxinus-toolbar-parameters-icon .fraxinus-toolbar-icon-bar-2 { width: 11px; }
+
+.fraxinus-toolbar-analysis-icon { flex-direction: row; align-items: flex-end; }
+.fraxinus-toolbar-analysis-icon .fraxinus-toolbar-icon-bar {
+    width: 3px;
+    margin-right: 2px;
+    border-radius: 1px;
+    background-color: #a3b2c4;
+}
+.fraxinus-toolbar-analysis-icon .fraxinus-toolbar-icon-bar-0 { height: 7px; }
+.fraxinus-toolbar-analysis-icon .fraxinus-toolbar-icon-bar-1 { height: 13px; }
+.fraxinus-toolbar-analysis-icon .fraxinus-toolbar-icon-bar-2 { height: 10px; }
+
+.fraxinus-graph-toolbar.is-compact .fraxinus-toolbar-brand-text,
+.fraxinus-graph-toolbar.is-compact .fraxinus-toolbar-actions .fraxinus-toolbar-button-label {
+    display: none;
+}
+
+.fraxinus-graph-toolbar.is-compact .fraxinus-toolbar-brand { margin-right: 12px; }
+.fraxinus-graph-toolbar.is-compact .fraxinus-toolbar-utilities .fraxinus-toolbar-button-label { display: flex; }
+
+.fraxinus-graph-toolbar.is-narrow .fraxinus-toolbar-brand,
+.fraxinus-graph-toolbar.is-narrow .fraxinus-toolbar-button .fraxinus-toolbar-button-label {
+    display: none;
+}
+.fraxinus-graph-toolbar.is-narrow { padding-left: 5px; padding-right: 5px; }
+.fraxinus-graph-toolbar.is-narrow .fraxinus-toolbar-utilities { margin-left: 6px; padding-left: 5px; }
+.fraxinus-graph-toolbar.is-narrow .fraxinus-toolbar-spacer { min-width: 7px; }
+
+.fraxinus-analysis-popup {
+    padding: 10px;
+    background-color: #202630;
+    color: #dce4ef;
+}
+.fraxinus-popup-caption {
+    margin: 0 2px 7px 2px;
+    color: #8e9bae;
+    font-size: 9px;
+    -unity-font-style: bold;
+}
+.fraxinus-analysis-popup Button {
+    height: 28px;
+    margin: 0 0 5px 0;
+    padding-left: 8px;
+    border-width: 1px;
+    border-color: #3a4656;
+    border-radius: 6px;
+    background-color: #293340;
+    color: #dce4ef;
+    -unity-text-align: middle-left;
+}
+.fraxinus-analysis-popup Button:hover { background-color: #344756; border-color: #60c7b8; }

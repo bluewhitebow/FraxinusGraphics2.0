@@ -1,0 +1,15 @@
+﻿using UnityEngine.UIElements;
+using FraxinusEditor.Base;
+
+[NodeCustomEditor(typeof(NODE_TYPE))]
+public class #SCRIPTNAME# : BaseNodeView
+{
+    public override void Enable()
+    {
+        var node = nodeTarget as NODE_TYPE;
+    
+        // Create your fields using node's variables and add them to the controlsContainer
+    
+        controlsContainer.Add(new Label("Hello World !"));
+    }
+}

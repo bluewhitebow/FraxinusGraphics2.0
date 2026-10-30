@@ -1,0 +1,130 @@
+// PRT Probe Relight Compute Shader
+// Computes final SH coefficients for a probe by combining brick radiance with PRT factors
+
+#pragma kernel CSMain
+
+#include "Packages/com.bluewhitebow.fraxinus-rp/ShaderLibrary/Core.hlsl"
+#include "Packages/com.bluewhitebow.fraxinus-rp/ShaderLibrary/GlobalIllumination/PRT/SphericalHarmonics.hlsl"
+
+// Brick radiance
+struct BrickRadiance
+{
+    float3 radianceL0;
+    float3 radianceL1;
+    float shadowFactor;
+};
+
+// PRT transfer factor
+struct BrickFactor
+{
+    int brickIndex;
+    float weights[9]; // SH transfer coefficients
+};
+
+// Factor indices for a probe
+struct FactorIndices
+{
+    int start;
+    int end;
+};
+
+// Buffers
+StructuredBuffer<BrickRadiance> _brickRadiance;
+StructuredBuffer<BrickFactor> _factors;
+StructuredBuffer<float> _validityMasks;
+RWTexture3D<float3> _coefficientVoxel3D;
+RWTexture3D<float> _validityVoxel3D;
+
+// Debug output
+RWStructuredBuffer<float> _CoefficientSH9;
+
+// Probe parameters
+float4 _probePos;
+int _factorStart;
+int _factorCount;
+int _indexInProbeVolume;
+
+// Voxel parameters
+float4 _boundingBoxMin;
+float4 _boundingBoxSize;
+float4 _originalBoundingBoxMin;
+
+// Convert probe index to voxel coordinates
+uint3 ProbeIndexToVoxelCoord(uint probeIndex, uint3 volumeSize)
+{
+    uint x = probeIndex / (volumeSize.y * volumeSize.z);
+    uint yz = probeIndex % (volumeSize.y * volumeSize.z);
+    uint y = yz / volumeSize.z;
+    uint z = yz % volumeSize.z;
+    return uint3(x, y, z);
+}
+
+// Toroidal addressing for voxel coordinates
+uint3 WrapVoxelCoord(uint3 coord, uint3 minCorner, uint3 size)
+{
+    uint3 relativeCoord = coord - minCorner;
+    uint3 wrappedCoord = (relativeCoord % size + size) % size;
+    return wrappedCoord;
+}
+
+[numthreads(1, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    // Accumulate SH coefficients from all bricks
+    float3 shCoefficients[9];
+    
+    [unroll]
+    for (int i = 0; i < 9; i++)
+    {
+        shCoefficients[i] = float3(0, 0, 0);
+    }
+    
+    // Sum contributions from all factors
+    for (int factorIdx = _factorStart; factorIdx <= _factorStart + _factorCount - 1; factorIdx++)
+    {
+        BrickFactor factor = _factors[factorIdx];
+        int brickIdx = factor.brickIndex;
+        
+        if (brickIdx < 0)
+            continue;
+        
+        BrickRadiance brickRad = _brickRadiance[brickIdx];
+        
+        // Apply transfer factors to brick radiance
+        [unroll]
+        for (int i = 0; i < 9; i++)
+        {
+            shCoefficients[i] += brickRad.radianceL0 * factor.weights[i];
+        }
+    }
+    
+    // Get voxel coordinates for this probe
+    uint3 volumeSize = uint3(_boundingBoxSize.xyz);
+    uint3 voxelCoord = ProbeIndexToVoxelCoord(uint(_indexInProbeVolume), volumeSize);
+    uint3 wrappedCoord = WrapVoxelCoord(voxelCoord, uint3(_boundingBoxMin.xyz), volumeSize);
+    
+    // Write SH coefficients to voxel texture
+    // Layout: [X, Z, Y * 9] - each Y slice has 9 depth layers for SH coefficients
+    [unroll]
+    for (int coeff = 0; coeff < 9; coeff++)
+    {
+        uint3 writeCoord = uint3(wrappedCoord.x, wrappedCoord.z, wrappedCoord.y * 9 + coeff);
+        _coefficientVoxel3D[writeCoord] = shCoefficients[coeff];
+    }
+    
+    // Write validity
+    float validity = _validityMasks[_indexInProbeVolume];
+    uint3 validityCoord = uint3(wrappedCoord.x, wrappedCoord.z, wrappedCoord.y);
+    _validityVoxel3D[validityCoord] = validity;
+    
+    // Debug output
+    #ifdef _RELIGHT_DEBUG_RADIANCE
+    [unroll]
+    for (int dbg = 0; dbg < 9; dbg++)
+    {
+        _CoefficientSH9[dbg * 3 + 0] = shCoefficients[dbg].r;
+        _CoefficientSH9[dbg * 3 + 1] = shCoefficients[dbg].g;
+        _CoefficientSH9[dbg * 3 + 2] = shCoefficients[dbg].b;
+    }
+#endif
+}

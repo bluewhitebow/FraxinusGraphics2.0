@@ -1,0 +1,173 @@
+#pragma kernel ContactShadows
+
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Random.hlsl"
+
+Texture2D<float> _ContactDepthTexture;
+RWTexture2D<float> _ContactShadowOutput;
+float4 _ContactShadowSize;
+float4x4 _ContactProjection;
+float4x4 _ContactInverseProjection;
+float4 _ContactLightDirectionVS;
+float4 _ContactRayParameters;      // length, world-space bias, thickness, distance scale
+float4 _ContactFadeParameters;     // max distance, fade distance, opacity, near plane
+float4 _ContactSamplingParameters; // sample count, temporal phase, orthographic
+
+bool IsBackground(float depth)
+{
+#if UNITY_REVERSED_Z
+    return depth <= 0.0;
+#else
+    return depth >= 1.0;
+#endif
+}
+
+float3 ReconstructViewPosition(float2 uv, float depth)
+{
+#if !UNITY_REVERSED_Z
+    depth = lerp(UNITY_NEAR_CLIP_VALUE, 1.0, depth);
+#endif
+    // Use the native Unity view convention (negative Z forward). Unlike
+    // ComputeViewSpacePosition, this does not negate the reconstructed Z.
+    float4 position = mul(_ContactInverseProjection, ComputeClipSpacePosition(uv, depth));
+    return position.xyz / position.w;
+}
+
+bool LoadReceiverDepth(int2 pixel, out float depth)
+{
+    depth = 0.0;
+    if (any(pixel < 0) || any(pixel >= (int2)_ContactShadowSize.xy))
+        return false;
+    depth = _ContactDepthTexture.Load(int3(pixel, 0));
+    return !IsBackground(depth);
+}
+
+bool ReceiverTangent(int2 pixel, int2 axis, float depth, float3 position, out float3 tangent)
+{
+    tangent = 0.0;
+    float left1, left2, right1, right2;
+    bool hasLeft1 = LoadReceiverDepth(pixel - axis, left1);
+    bool hasLeft2 = LoadReceiverDepth(pixel - 2 * axis, left2);
+    bool hasRight1 = LoadReceiverDepth(pixel + axis, right1);
+    bool hasRight2 = LoadReceiverDepth(pixel + 2 * axis, right2);
+    bool hasLeft = hasLeft1 && hasLeft2;
+    bool hasRight = hasRight1 && hasRight2;
+    if (!hasLeft && !hasRight)
+        return false;
+
+    // Projected raw depth is affine on a plane for perspective and orthographic
+    // cameras. Two agreeing intervals keep silhouettes and thin foreground
+    // samples from defining the receiver's plane.
+    float leftError = abs(depth - 2.0 * left1 + left2);
+    float rightError = abs(depth - 2.0 * right1 + right2);
+    bool useLeft = hasLeft && (!hasRight || leftError <= rightError);
+    float error = useLeft ? leftError : rightError;
+    if (error > max(abs(depth), 1e-5) * 2e-6)
+        return false;
+    int2 neighbor = pixel + (useLeft ? -2 : 2) * axis;
+    tangent = ReconstructViewPosition((neighbor + 0.5) * _ContactShadowSize.zw,
+        useLeft ? left2 : right2) - position;
+    return true;
+}
+
+bool ReceiverPlane(int2 pixel, float depth, float3 position, out float3 normal)
+{
+    normal = 0.0;
+    float3 tangentX, tangentY;
+    bool hasX = ReceiverTangent(pixel, int2(1, 0), depth, position, tangentX);
+    bool hasY = ReceiverTangent(pixel, int2(0, 1), depth, position, tangentY);
+    if (!hasX || !hasY)
+        return false;
+    normal = cross(tangentX, tangentY);
+    float lengthSquared = dot(normal, normal);
+    if (lengthSquared < 1e-20)
+        return false;
+    normal *= rsqrt(lengthSquared);
+    return true;
+}
+
+[numthreads(8, 8, 1)]
+void ContactShadows(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_ContactShadowSize.xy))
+        return;
+
+    float visibility = 1.0;
+    float2 uv = (id.xy + 0.5) * _ContactShadowSize.zw;
+    float depth = _ContactDepthTexture.Load(int3(id.xy, 0));
+    if (IsBackground(depth))
+    {
+        _ContactShadowOutput[id.xy] = visibility;
+        return;
+    }
+
+    float3 origin = ReconstructViewPosition(uv, depth);
+    float viewDepth = -origin.z;
+    float distanceFade = saturate((_ContactFadeParameters.x - viewDepth) / max(_ContactFadeParameters.y, 0.0001));
+    if (distanceFade <= 0.0)
+    {
+        _ContactShadowOutput[id.xy] = visibility;
+        return;
+    }
+
+    float3 receiverPosition = origin;
+    float3 receiverNormal = 0.0;
+    bool planeChecked = false;
+    bool hasReceiverPlane = false;
+    float3 towardCamera = _ContactSamplingParameters.z > 0.5 ? float3(0, 0, 1) : normalize(-origin);
+    origin += towardCamera * _ContactRayParameters.y;
+    float rayLength = _ContactRayParameters.x * lerp(1.0, max(1.0, viewDepth), _ContactRayParameters.w);
+    uint samples = (uint)_ContactSamplingParameters.x;
+    float jitter = InterleavedGradientNoise(id.xy, (int)_ContactSamplingParameters.y);
+
+    [loop]
+    for (uint step = 0; step < samples; ++step)
+    {
+        float t = (step + 0.5 + 0.5 * jitter) / samples;
+        float3 rayPosition = origin + _ContactLightDirectionVS.xyz * (rayLength * t);
+        if (-rayPosition.z <= _ContactFadeParameters.w)
+            break;
+        float2 sampleUV = ComputeNormalizedDeviceCoordinates(rayPosition, _ContactProjection);
+        if (any(sampleUV <= 0.0) || any(sampleUV >= 1.0))
+            break;
+
+        uint2 pixel = min((uint2)(sampleUV * _ContactShadowSize.xy), (uint2)_ContactShadowSize.xy - 1);
+        // A ray still inside its origin texel has no new surface information.
+        // Testing it would shadow the receiver against its own depth sample.
+        if (all(pixel == id.xy))
+            continue;
+        float sampleDepth = _ContactDepthTexture.Load(int3(pixel, 0));
+        if (IsBackground(sampleDepth))
+            continue;
+
+        float3 surface = ReconstructViewPosition((pixel + 0.5) * _ContactShadowSize.zw, sampleDepth);
+        float depthDifference = surface.z - rayPosition.z;
+        if (depthDifference > 0.0 && depthDifference < _ContactRayParameters.z)
+        {
+            if (!planeChecked)
+            {
+                hasReceiverPlane = ReceiverPlane(int2(id.xy), depth, receiverPosition, receiverNormal);
+                if (dot(receiverNormal, towardCamera) < 0.0)
+                    receiverNormal = -receiverNormal;
+                planeChecked = true;
+            }
+            // The sampled texel center and the continuous ray use different
+            // screen rays. On a slope their Z difference can be a false hit.
+            // Reject only a reliable receiver-plane match, using float-scale
+            // tolerance rather than the ray thickness or user bias.
+            float planeTolerance = max(1e-5, viewDepth * 4e-6);
+            if (hasReceiverPlane && dot(rayPosition - receiverPosition, receiverNormal) >= -planeTolerance &&
+                abs(dot(surface - receiverPosition, receiverNormal)) <= planeTolerance)
+                continue;
+
+            // Fade near screen borders and at the end of the short ray so a
+            // departing occluder does not create a hard rectangular cutoff.
+            float2 border = min(sampleUV, 1.0 - sampleUV);
+            float edgeFade = saturate(min(border.x, border.y) * 20.0);
+            float rayFade = saturate((1.0 - t) * 4.0);
+            visibility = 1.0 - _ContactFadeParameters.z * distanceFade * edgeFade * rayFade;
+            break;
+        }
+    }
+    _ContactShadowOutput[id.xy] = visibility;
+}

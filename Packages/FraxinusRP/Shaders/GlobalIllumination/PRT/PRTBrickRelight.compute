@@ -1,0 +1,114 @@
+// PRT Brick Relight Compute Shader
+// Relights individual bricks (surfel groups) based on current scene lighting
+
+#pragma kernel CSMain
+
+#include "Packages/com.bluewhitebow.fraxinus-rp/ShaderLibrary/Core.hlsl"
+#include "Packages/com.bluewhitebow.fraxinus-rp/ShaderLibrary/GlobalIllumination/PRT/SphericalHarmonics.hlsl"
+
+// Surfel structure
+struct Surfel
+{
+    float3 position;
+    float3 normal;
+    float3 albedo;
+    float area;
+};
+
+// Brick radiance output
+struct BrickRadiance
+{
+    float3 radianceL0;
+    float3 radianceL1;
+    float shadowFactor;
+};
+
+// Surfel indices for a brick
+struct SurfelIndices
+{
+    int start;
+    int end;
+};
+
+// Buffers
+StructuredBuffer<Surfel> _surfels;
+StructuredBuffer<SurfelIndices> _brickInfo;
+StructuredBuffer<int> _brickIndexMapping;
+RWStructuredBuffer<BrickRadiance> _brickRadiance;
+RWStructuredBuffer<float> _shadowCache;
+
+// Constants
+int _brickCount;
+
+// Lighting parameters (would be set from C# side)
+float4 _mainLightDirection;
+float4 _mainLightColor;
+
+// Shadow evaluation (simplified)
+float EvaluateShadow(float3 worldPos, float3 normal)
+{
+    // TODO: Implement proper shadow sampling
+    // For now, use a simple N·L test
+    float ndotl = saturate(dot(normal, -_mainLightDirection.xyz));
+    return ndotl;
+}
+
+// Evaluate lighting for a single surfel
+float3 EvaluateSurfelLighting(Surfel surfel)
+{
+    // Diffuse lighting
+    float ndotl = saturate(dot(surfel.normal, -_mainLightDirection.xyz));
+    float3 diffuse = _mainLightColor.rgb * ndotl;
+    
+    // Apply albedo
+    float3 radiance = diffuse * surfel.albedo;
+    
+    // Shadow
+    float shadow = EvaluateShadow(surfel.position, surfel.normal);
+    radiance *= shadow;
+    
+    return radiance;
+}
+
+[numthreads(64, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= (uint)_brickCount)
+        return;
+    
+    // Get brick info
+    SurfelIndices brickInfo = _brickInfo[id.x];
+    int brickIndex = _brickIndexMapping[id.x];
+    
+    // Accumulate radiance from all surfels in this brick
+    float3 totalRadiance = float3(0, 0, 0);
+    float totalWeight = 0.0;
+    
+    for (int i = brickInfo.start; i <= brickInfo.end; i++)
+    {
+        Surfel surfel = _surfels[i];
+        float3 radiance = EvaluateSurfelLighting(surfel);
+        
+        float weight = surfel.area;
+        totalRadiance += radiance * weight;
+        totalWeight += weight;
+        
+        // Cache shadow for this surfel
+        float shadow = EvaluateShadow(surfel.position, surfel.normal);
+        _shadowCache[i] = shadow;
+    }
+    
+    // Average radiance
+    if (totalWeight > 0.0)
+    {
+        totalRadiance /= totalWeight;
+    }
+    
+    // Store brick radiance (simplified - only storing total radiance)
+    BrickRadiance output;
+    output.radianceL0 = totalRadiance;
+    output.radianceL1 = totalRadiance * 0.5; // Simplified
+    output.shadowFactor = 1.0;
+    
+    _brickRadiance[brickIndex] = output;
+}

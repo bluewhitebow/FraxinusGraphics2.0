@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "com.fraxinus.rendering.light-transport": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-Light-Transport",
+    "com.unity.render-pipelines.core": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-RPCore",
+    "com.unity.shadergraph": "file:../../FraxinusGraphics2.0/Packages/Fraxinus-ShaderGraph",
+    "com.bluewhitebow.fraxinus-rp": "file:../../FraxinusGraphics2.0/Packages/FraxinusRP"
+  }
+}

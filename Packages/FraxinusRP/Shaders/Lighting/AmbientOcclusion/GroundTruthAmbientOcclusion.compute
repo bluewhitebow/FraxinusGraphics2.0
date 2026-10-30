@@ -1,0 +1,411 @@
+// GTAO horizon integration and bilateral filtering adaptations; see README.md.
+#pragma kernel DownsampleDepth
+#pragma kernel GTAOMain
+#pragma kernel SpatialDenoise
+#pragma kernel BlurUpsample
+#pragma only_renderers d3d11 vulkan metal
+
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl"
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Random.hlsl"
+
+Texture2D<float> _GTAODepthInput;
+RWTexture2D<float> _GTAODepthOutput;
+float4 _GTAODownsampleSize; // output width/height, input width/height
+
+Texture2D<float> _GTAODepthTexture;
+Texture2D<float> _GTAODepthHalf;
+Texture2D<float> _GTAODepthQuarter;
+Texture2D<float4> _GTAONormalsTexture;
+Texture2D<float2> _GTAOPackedData;
+RWTexture2D<float2> _RW_GTAOPackedData;
+RWTexture2D<float> _GTAOOutput;
+
+float4 _GTAOFullSize;
+float4 _GTAOTraceSize;
+float4 _GTAOParams;   // world radius, intensity, thickness, maximum trace radius in pixels
+float4 _GTAOSampling; // steps, directions, downsample factor, bilateral sharpness [0, 1]
+float4x4 _GTAOProjection;
+float4x4 _GTAOInvProjection;
+float4x4 _GTAOView;
+int _GTAONormalsOct;
+int _GTAOOrthographic;
+
+bool GTAOIsBackground(float rawDepth)
+{
+#if UNITY_REVERSED_Z
+    return rawDepth <= 0.0;
+#else
+    return rawDepth >= 1.0;
+#endif
+}
+
+bool GTAOIsCloser(float candidate, float reference)
+{
+#if UNITY_REVERSED_Z
+    return candidate > reference;
+#else
+    return candidate < reference;
+#endif
+}
+
+int2 GTAOClampPixel(int2 pixel, int2 size)
+{
+    return clamp(pixel, int2(0, 0), max(size - 1, int2(0, 0)));
+}
+
+// The GPU projection has the same render-target flip as the depth producer.
+// Reflect native Unity view-space Z so the horizon formula uses positive Z forward.
+float3 GTAOPositionVS(float2 uv, float rawDepth)
+{
+#if !UNITY_REVERSED_Z
+    rawDepth = lerp(UNITY_NEAR_CLIP_VALUE, 1.0, rawDepth);
+#endif
+    float4 position = mul(_GTAOInvProjection, ComputeClipSpacePosition(uv, rawDepth));
+    float3 positionVS = position.xyz / position.w;
+    return positionVS * float3(1.0, 1.0, -1.0);
+}
+
+float3 GTAONormalVS(int2 pixel)
+{
+    float3 normal = _GTAONormalsTexture.Load(int3(pixel, 0)).xyz;
+    if (_GTAONormalsOct != 0)
+        normal = UnpackNormalOctQuadEncode(Unpack888ToFloat2(normal) * 2.0 - 1.0);
+    float3 normalVS = mul((float3x3)_GTAOView, normal) * float3(1.0, 1.0, -1.0);
+    return normalVS * rsqrt(max(dot(normalVS, normalVS), 1e-8));
+}
+
+[numthreads(8, 8, 1)]
+void DownsampleDepth(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GTAODownsampleSize.xy))
+        return;
+
+    int2 inputSize = (int2)_GTAODownsampleSize.zw;
+    int2 origin = int2(id.xy) * 2;
+    float nearest = _GTAODepthInput.Load(int3(GTAOClampPixel(origin, inputSize), 0));
+    [unroll]
+    for (int y = 0; y < 2; ++y)
+    {
+        [unroll]
+        for (int x = 0; x < 2; ++x)
+        {
+            float depth = _GTAODepthInput.Load(int3(GTAOClampPixel(origin + int2(x, y), inputSize), 0));
+            if (GTAOIsCloser(depth, nearest))
+                nearest = depth;
+        }
+    }
+    _GTAODepthOutput[id.xy] = nearest;
+}
+
+// Match the closest full-resolution depth and its normal in a half-resolution
+// footprint, including odd-sized targets. Do not combine foreground depth with
+// the normal of a different pixel on a silhouette.
+void GTAOCenter(uint2 tracePixel, out int2 fullPixel, out float rawDepth)
+{
+    int factor = _GTAOSampling.z > 1.0 ? 2 : 1;
+    int2 origin = int2(tracePixel) * factor;
+    fullPixel = GTAOClampPixel(origin, (int2)_GTAOFullSize.xy);
+    rawDepth = _GTAODepthTexture.Load(int3(fullPixel, 0));
+    [unroll]
+    for (int y = 0; y < 2; ++y)
+    {
+        [unroll]
+        for (int x = 0; x < 2; ++x)
+        {
+            if (x >= factor || y >= factor)
+                continue;
+            int2 pixel = GTAOClampPixel(origin + int2(x, y), (int2)_GTAOFullSize.xy);
+            float candidate = _GTAODepthTexture.Load(int3(pixel, 0));
+            if (GTAOIsCloser(candidate, rawDepth))
+            {
+                rawDepth = candidate;
+                fullPixel = pixel;
+            }
+        }
+    }
+}
+
+float GTAOSampleDepth(float2 uv, bool lowerResolution)
+{
+    int2 fullPixel = GTAOClampPixel((int2)(uv * _GTAOFullSize.xy), (int2)_GTAOFullSize.xy);
+    int2 halfSize = ((int2)_GTAOFullSize.xy + 1) >> 1;
+    int2 halfPixel = GTAOClampPixel(fullPixel >> 1, halfSize);
+    float result = _GTAODepthHalf.Load(int3(halfPixel, 0));
+    if (_GTAOSampling.z > 1.0 && lowerResolution)
+    {
+        int2 quarterSize = (halfSize + 1) >> 1;
+        int2 pixel = GTAOClampPixel(fullPixel >> 2, quarterSize);
+        result = _GTAODepthQuarter.Load(int3(pixel, 0));
+    }
+    return result;
+}
+
+float GTAOFastAcos(float cosine)
+{
+    cosine = clamp(cosine, -1.0, 1.0);
+    float value = (-0.156583 * abs(cosine) + HALF_PI) * sqrt(saturate(1.0 - abs(cosine)));
+    return cosine >= 0.0 ? value : PI - value;
+}
+
+float GTAOIntegrateArc(float horizon1, float horizon2, float normalAngle, float normalCosine)
+{
+    float h1 = 2.0 * horizon1;
+    float h2 = 2.0 * horizon2;
+    float normalSine = sin(normalAngle);
+    return 0.25 * ((-cos(h1 - normalAngle) + normalCosine + h1 * normalSine)
+                + (-cos(h2 - normalAngle) + normalCosine + h2 * normalSine));
+}
+
+float GTAOHorizon(float3 centerVS, float3 viewDirection, float2 centerUV,
+    float2 direction, float stepSize, float offset, uint steps)
+{
+    float horizon = -1.0;
+    float distanceAlongRay = (1.0 + offset) * stepSize;
+    float invRadiusSq = rcp(max(_GTAOParams.x * _GTAOParams.x, 1e-8));
+    float thickness = min(saturate(_GTAOParams.z * _GTAOParams.z), 0.99);
+
+    [loop]
+    for (uint i = 0; i < steps; ++i)
+    {
+        float2 uv = centerUV + direction * distanceAlongRay * _GTAOTraceSize.zw;
+        if (any(uv <= 0.0) || any(uv >= 1.0))
+            break;
+        float depth = GTAOSampleDepth(uv, i >= min(steps >> 1, 3u));
+        if (!GTAOIsBackground(depth))
+        {
+            float3 delta = GTAOPositionVS(uv, depth) - centerVS;
+            float distanceSq = dot(delta, delta);
+            if (distanceSq > 1e-8)
+            {
+                float candidate = dot(delta, viewDirection) * rsqrt(distanceSq + 1e-6);
+                float falloff = saturate(1.0 - distanceSq * invRadiusSq);
+                horizon = candidate > horizon
+                    ? lerp(horizon, candidate, falloff)
+                    : lerp(horizon, candidate, thickness);
+            }
+        }
+        distanceAlongRay += stepSize;
+    }
+    return horizon;
+}
+
+[numthreads(8, 8, 1)]
+void GTAOMain(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GTAOTraceSize.xy))
+        return;
+
+    int2 fullPixel;
+    float depth;
+    GTAOCenter(id.xy, fullPixel, depth);
+    if (GTAOIsBackground(depth))
+    {
+        _RW_GTAOPackedData[id.xy] = float2(1.0, 0.0);
+        return;
+    }
+
+    float2 uv = (fullPixel + 0.5) * _GTAOFullSize.zw;
+    float3 positionVS = GTAOPositionVS(uv, depth);
+    float3 normalVS = GTAONormalVS(fullPixel);
+    float eyeDepth = max(positionVS.z, 0.0);
+    if (dot(normalVS, normalVS) < 0.5 || eyeDepth <= 0.0 || _GTAOParams.x <= 0.0)
+    {
+        _RW_GTAOPackedData[id.xy] = float2(1.0, eyeDepth);
+        return;
+    }
+
+    float3 viewDirection = _GTAOOrthographic != 0 ? float3(0, 0, -1) : normalize(-positionVS);
+    float radiusPixels = _GTAOParams.x * abs(_GTAOProjection._m11) * _GTAOTraceSize.y * 0.5;
+    if (_GTAOOrthographic == 0)
+        radiusPixels /= max(eyeDepth, 1e-4);
+    radiusPixels = min(radiusPixels, max(_GTAOParams.w, 1.0));
+    if (radiusPixels < 1.0)
+    {
+        _RW_GTAOPackedData[id.xy] = float2(1.0, eyeDepth);
+        return;
+    }
+
+    uint steps = (uint)clamp(_GTAOSampling.x, 2.0, 32.0);
+    uint directions = (uint)clamp(_GTAOSampling.y, 1.0, 6.0);
+    float rayStep = max(1.0, radiusPixels / (steps + 1.0));
+    // Stable spatial noise: no frame counter or history is required.
+    float noise = InterleavedGradientNoise(id.xy, 0);
+    float offset = 0.25 * ((id.y - id.x) & 3u);
+    float visibility = 0.0;
+    [loop]
+    for (uint directionIndex = 0; directionIndex < directions; ++directionIndex)
+    {
+        float angle = PI * (noise + (float)directionIndex / directions);
+        float2 direction = float2(cos(angle), sin(angle));
+        float2 horizons = float2(
+            GTAOHorizon(positionVS, viewDirection, uv, direction, rayStep, offset, steps),
+            GTAOHorizon(positionVS, viewDirection, uv, -direction, rayStep, offset, steps));
+
+        // Derive the slice direction with the same inverse projection as depth.
+        // This handles RT Y flips, asymmetric projections and orthographic views.
+        float3 tangent = GTAOPositionVS(uv + direction * _GTAOTraceSize.zw, depth) - positionVS;
+        float3 sliceNormal = cross(tangent, viewDirection);
+        sliceNormal *= rsqrt(max(dot(sliceNormal, sliceNormal), 1e-10));
+        float3 projectedNormal = normalVS - sliceNormal * dot(normalVS, sliceNormal);
+        float projectedLength = length(projectedNormal);
+        if (projectedLength < 1e-5)
+        {
+            visibility += 1.0;
+            continue;
+        }
+        float normalCosine = clamp(dot(projectedNormal / projectedLength, viewDirection), -1.0, 1.0);
+        float3 sliceTangent = cross(viewDirection, sliceNormal);
+        float normalAngle = -sign(dot(projectedNormal, sliceTangent)) * GTAOFastAcos(normalCosine);
+        horizons.x = -GTAOFastAcos(horizons.x);
+        horizons.y = GTAOFastAcos(horizons.y);
+        horizons.x = normalAngle + max(horizons.x - normalAngle, -HALF_PI);
+        horizons.y = normalAngle + min(horizons.y - normalAngle, HALF_PI);
+        visibility += GTAOIntegrateArc(horizons.x, horizons.y, normalAngle, normalCosine);
+    }
+    _RW_GTAOPackedData[id.xy] = float2(saturate(visibility / directions), eyeDepth);
+}
+
+float GTAODepthWeight(float sampleDepth, float centerDepth)
+{
+    if (sampleDepth <= 0.0)
+        return 0.0;
+    // Express the bilateral threshold in world units relative to the AO radius.
+    float aggressiveness = exp2(lerp(2.0, 8.0, saturate(_GTAOSampling.w))) / max(_GTAOParams.x, 1e-4);
+    return saturate(1.0 - abs(sampleDepth - centerDepth) * aggressiveness);
+}
+
+float GTAOFinalVisibility(float visibility)
+{
+    return _GTAOParams.y <= 0.0 ? 1.0 : pow(saturate(visibility), _GTAOParams.y);
+}
+
+float GTAOPlaneDepth(float eyeDepth)
+{
+    // Reciprocal eye depth is affine over a projected perspective plane.
+    return _GTAOOrthographic != 0 ? eyeDepth : rcp(max(eyeDepth, 1e-6));
+}
+
+bool GTAOLoadPlaneDepth(int2 pixel, out float planeDepth)
+{
+    planeDepth = 0.0;
+    if (any(pixel < 0) || any(pixel >= (int2)_GTAOFullSize.xy))
+        return false;
+    float rawDepth = _GTAODepthTexture.Load(int3(pixel, 0));
+    if (GTAOIsBackground(rawDepth))
+        return false;
+    float eyeDepth = GTAOPositionVS((pixel + 0.5) * _GTAOFullSize.zw, rawDepth).z;
+    if (eyeDepth <= 0.0)
+        return false;
+    planeDepth = GTAOPlaneDepth(eyeDepth);
+    return true;
+}
+
+float GTAOPlaneDepthSlope(int2 pixel, int2 axis, float centerDepth)
+{
+    float left1, left2, right1, right2;
+    bool hasLeft1 = GTAOLoadPlaneDepth(pixel - axis, left1);
+    bool hasLeft2 = GTAOLoadPlaneDepth(pixel - 2 * axis, left2);
+    bool hasRight1 = GTAOLoadPlaneDepth(pixel + axis, right1);
+    bool hasRight2 = GTAOLoadPlaneDepth(pixel + 2 * axis, right2);
+    bool hasLeft = hasLeft1 && hasLeft2;
+    bool hasRight = hasRight1 && hasRight2;
+    if (!hasLeft && !hasRight)
+        return 0.0;
+
+    // Two consecutive intervals must agree before a slope may explain a depth
+    // difference. A silhouette or a one-pixel foreground object is not a plane.
+    float leftError = abs(centerDepth - 2.0 * left1 + left2);
+    float rightError = abs(centerDepth - 2.0 * right1 + right2);
+    bool useLeft = hasLeft && (!hasRight || leftError <= rightError);
+    float slope = useLeft ? centerDepth - left1 : right1 - centerDepth;
+    float error = useLeft ? leftError : rightError;
+    return error <= abs(slope) * 0.25 + abs(centerDepth) * 1e-5 ? slope : 0.0;
+}
+
+float GTAOUpsampleExpectedDepth(int2 tracePixel, int2 fullPixel, float planeDepth, float2 slope)
+{
+    int2 first = tracePixel * 2;
+    int2 last = min(first + 1, (int2)_GTAOFullSize.xy - 1);
+    // GTAOCenter chooses the nearest full-resolution point in this footprint.
+    // Predict that same point on the receiver's plane, including odd image edges.
+    float nearestSign = _GTAOOrthographic != 0 ? -1.0 : 1.0;
+    int2 nearest = int2(slope.x * nearestSign > 0.0 ? last.x : first.x,
+                       slope.y * nearestSign > 0.0 ? last.y : first.y);
+    float expected = planeDepth + dot(slope, float2(nearest - fullPixel));
+    return expected > 0.0 ? GTAOPlaneDepth(expected) : 0.0;
+}
+
+[numthreads(8, 8, 1)]
+void SpatialDenoise(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GTAOFullSize.xy))
+        return;
+    float2 center = _GTAOPackedData.Load(int3(id.xy, 0));
+    if (center.y <= 0.0)
+    {
+        _GTAOOutput[id.xy] = 1.0;
+        return;
+    }
+    float total = 0.0;
+    float totalWeight = 0.0;
+    [unroll]
+    for (int y = -1; y <= 1; ++y)
+    {
+        [unroll]
+        for (int x = -1; x <= 1; ++x)
+        {
+            int2 pixel = GTAOClampPixel(int2(id.xy) + int2(x, y), (int2)_GTAOTraceSize.xy);
+            float2 sampleData = _GTAOPackedData.Load(int3(pixel, 0));
+            float spatialWeight = (x == 0 ? 2.0 : 1.0) * (y == 0 ? 2.0 : 1.0);
+            float weight = spatialWeight * GTAODepthWeight(sampleData.y, center.y);
+            total += sampleData.x * weight;
+            totalWeight += weight;
+        }
+    }
+    _GTAOOutput[id.xy] = GTAOFinalVisibility(total / max(totalWeight, 1e-6));
+}
+
+[numthreads(8, 8, 1)]
+void BlurUpsample(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GTAOFullSize.xy))
+        return;
+    float depth = _GTAODepthTexture.Load(int3(id.xy, 0));
+    if (GTAOIsBackground(depth))
+    {
+        _GTAOOutput[id.xy] = 1.0;
+        return;
+    }
+    float2 uv = (id.xy + 0.5) * _GTAOFullSize.zw;
+    float centerDepth = GTAOPositionVS(uv, depth).z;
+    float planeDepth = GTAOPlaneDepth(centerDepth);
+    float2 depthSlope = float2(
+        GTAOPlaneDepthSlope(int2(id.xy), int2(1, 0), planeDepth),
+        GTAOPlaneDepthSlope(int2(id.xy), int2(0, 1), planeDepth));
+    // Use the true 2:1 footprint, rather than width ratios, for odd resolutions.
+    float2 tracePosition = (id.xy + 0.5) / max(_GTAOSampling.z, 1.0) - 0.5;
+    int2 origin = (int2)floor(tracePosition);
+    float total = 0.0;
+    float totalWeight = 0.0;
+    [unroll]
+    for (int y = -1; y <= 2; ++y)
+    {
+        [unroll]
+        for (int x = -1; x <= 2; ++x)
+        {
+            int2 pixel = GTAOClampPixel(origin + int2(x, y), (int2)_GTAOTraceSize.xy);
+            float2 sampleData = _GTAOPackedData.Load(int3(pixel, 0));
+            float2 delta = float2(pixel) - tracePosition;
+            float spatialWeight = exp2(-dot(delta, delta));
+            float expectedDepth = GTAOUpsampleExpectedDepth(pixel, int2(id.xy), planeDepth, depthSlope);
+            float weight = expectedDepth > 0.0
+                ? spatialWeight * GTAODepthWeight(sampleData.y, expectedDepth) : 0.0;
+            total += sampleData.x * weight;
+            totalWeight += weight;
+        }
+    }
+    // No matching depth means the half-resolution AO belongs to another surface.
+    float visibility = totalWeight > 1e-6 ? total / totalWeight : 1.0;
+    _GTAOOutput[id.xy] = GTAOFinalVisibility(visibility);
+}

@@ -1,0 +1,4 @@
+<linker>
+  <!-- Graph nodes and parameter implementations are discovered through reflection. -->
+  <assembly fullname="Fraxinus.Runtime" preserve="all" />
+</linker>
