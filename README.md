@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A Scriptable ***Render*** ***Pipeline*** (SRP) designed for visual rendering workflows and interactive debugging.
+A Scriptable Render Pipeline (SRP) designed for visual rendering workflows and interactive debugging.
 
 Unity-FraxinusRP brings **UltraRP**, an independent Unity render pipeline, and its companion packages into one repository. Its editable **Renderer Graph** connects shadows, geometry, lighting and post-processing, with stage outputs previewed inside the nodes. Editing the rendering workflow and inspecting the resulting image happen in the same graph.
 
